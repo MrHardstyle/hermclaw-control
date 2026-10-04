@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "v025-postdeploy-head",
+  "action": "get_branch_head",
+  "request_sha": "682375e965b2f0b90bfed54819430f89bad9d257",
+  "result": {
+    "branch": "redesign/autonomous-agent",
+    "commit": "a75674ebc65d463f2c0319bd8a030392af1efd8f",
+    "short_id": "a75674eb",
+    "title": "Retry Agent Core v0.2.5 deployment after watcher token repair",
+    "committed_date": "2026-10-04T22:10:55.000+00:00"
+  }
+}
