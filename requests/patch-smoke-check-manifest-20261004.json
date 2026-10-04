@@ -1,0 +1,7 @@
+{
+  "request_id": "patch-smoke-check-manifest-20261004",
+  "action": "read_file",
+  "project": "local-ai/hermclaw",
+  "ref": "redesign/autonomous-agent",
+  "path": ".hermclaw/patch.json"
+}
