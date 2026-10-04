@@ -1,0 +1,6 @@
+{
+  "request_id": "v025-check-patch-head",
+  "action": "get_branch_head",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/patch-agent-core-v025"
+}
