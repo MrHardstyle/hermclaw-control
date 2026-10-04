@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "patch-smoke-head-20261004",
+  "action": "get_branch_head",
+  "request_sha": "1024568ef07522b1721528a61ac11024d8fed244",
+  "result": {
+    "branch": "redesign/autonomous-agent",
+    "commit": "b9de6f5100d63cfe053bb2cb8e394acd1abb84f9",
+    "short_id": "b9de6f51",
+    "title": "Agent core 0.2.3: make finish checks recoverable and add final review",
+    "committed_date": "2026-10-04T11:22:45.000+02:00"
+  }
+}
