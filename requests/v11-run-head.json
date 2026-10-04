@@ -1,0 +1,6 @@
+{
+  "request_id": "v11-run-head",
+  "action": "get_branch_head",
+  "project": "local-ai/hermclaw",
+  "branch": "agent-runs/interne-notizen-v11"
+}
