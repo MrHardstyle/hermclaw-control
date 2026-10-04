@@ -1,0 +1,6 @@
+{
+  "request_id": "v12-diag-diff",
+  "action": "get_commit_diff",
+  "project": "local-ai/hermclaw",
+  "sha": "c6e57c0de4242d6c79c1460a500243af7ddc7644"
+}
