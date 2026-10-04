@@ -1,0 +1,6 @@
+{
+  "request_id": "diag-v024-apply",
+  "action": "get_branch_head",
+  "project": "local-ai/hermclaw",
+  "branch": "agent-runs/agent-core-v024-apply"
+}
