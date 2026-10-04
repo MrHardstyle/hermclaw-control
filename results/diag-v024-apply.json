@@ -1,0 +1,6 @@
+{
+  "ok": false,
+  "request_id": "diag-v024-apply",
+  "error_type": "ValueError",
+  "error": "Branch enthält keinen Commit oder existiert nicht: agent-runs/agent-core-v024-apply"
+}
