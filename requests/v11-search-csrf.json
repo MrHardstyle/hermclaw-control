@@ -1,0 +1,8 @@
+{
+  "request_id": "v11-search-csrf",
+  "action": "list_tree",
+  "project": "local-ai/hermclaw",
+  "ref": "ai/job-interne-notizen-v11-erweitere-das-bestehende-webinterface-um-e",
+  "path": "inc",
+  "recursive": true
+}
