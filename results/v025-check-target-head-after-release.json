@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "v025-check-target-head-after-release",
+  "action": "get_branch_head",
+  "request_sha": "52c96a12e303e8cc9d4075011b7cb714fa48a9a0",
+  "result": {
+    "branch": "redesign/autonomous-agent",
+    "commit": "5f0f382fc73be4e295bd97d5c78fcc638e82a245",
+    "short_id": "5f0f382f",
+    "title": "Prepare Agent Core v0.2.4 release",
+    "committed_date": "2026-10-04T20:53:27.000+00:00"
+  }
+}
