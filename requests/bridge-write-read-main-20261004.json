@@ -1,0 +1,7 @@
+{
+  "request_id": "bridge-write-read-main-20261004",
+  "action": "read_file",
+  "project": "local-ai/hermclaw",
+  "ref": "main",
+  "path": "bridge-tests/chatgpt-write-test-20261004.txt"
+}
