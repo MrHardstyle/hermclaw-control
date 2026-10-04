@@ -1,0 +1,296 @@
+{
+  "ok": true,
+  "request_id": "v11-search-csrf",
+  "action": "list_tree",
+  "request_sha": "abdcecdc4a143fd4c1cfe1f4ba90eee135c25525",
+  "result": [
+    {
+      "id": "372a2e2bdc7e38e3ad759ab70e83e20b36ebee59",
+      "name": ".htaccess",
+      "type": "blob",
+      "path": "inc/.htaccess"
+    },
+    {
+      "id": "eb94ed939a486e1650e21985898b1e049551e8aa",
+      "name": "config.php",
+      "type": "blob",
+      "path": "inc/config.php"
+    },
+    {
+      "id": "cdccb8900b5ba2be0cdea10971047d35c1d6a483",
+      "name": "datenbank.php",
+      "type": "blob",
+      "path": "inc/datenbank.php"
+    },
+    {
+      "id": "53052538f30c7edd631c07a03477c00e74b98dfc",
+      "name": "footer.php",
+      "type": "blob",
+      "path": "inc/footer.php"
+    },
+    {
+      "id": "1fa53261c9ed43dbd0546f1c298d0704172269f3",
+      "name": "funktionen.php",
+      "type": "blob",
+      "path": "inc/funktionen.php"
+    },
+    {
+      "id": "8599f1542c10668c5ac81804165ffdf6e602503d",
+      "name": "funktionen_agenten.php",
+      "type": "blob",
+      "path": "inc/funktionen_agenten.php"
+    },
+    {
+      "id": "08e8351f0f2d516a4a967163cb847952c9a4b2e5",
+      "name": "funktionen_agenten_auftraege.php",
+      "type": "blob",
+      "path": "inc/funktionen_agenten_auftraege.php"
+    },
+    {
+      "id": "55a57218a8f548de79d3fda80679345d5c8b04b7",
+      "name": "funktionen_agenten_chat.php",
+      "type": "blob",
+      "path": "inc/funktionen_agenten_chat.php"
+    },
+    {
+      "id": "a08cb5071d552a38a7ecf68c12b607a71277f3a6",
+      "name": "funktionen_agenten_client_log.php",
+      "type": "blob",
+      "path": "inc/funktionen_agenten_client_log.php"
+    },
+    {
+      "id": "38da4d154e4890d1dd8719e0f50ee2bed54b29d4",
+      "name": "funktionen_agenten_client_prozesse.php",
+      "type": "blob",
+      "path": "inc/funktionen_agenten_client_prozesse.php"
+    },
+    {
+      "id": "8bec1d6e8044dd172adc163724815dd0e0b41d22",
+      "name": "funktionen_agenten_client_updates.php",
+      "type": "blob",
+      "path": "inc/funktionen_agenten_client_updates.php"
+    },
+    {
+      "id": "cb0ed0996f87921e47486f7567092d47413f8cf5",
+      "name": "funktionen_agenten_clients.php",
+      "type": "blob",
+      "path": "inc/funktionen_agenten_clients.php"
+    },
+    {
+      "id": "2b1b57fbfe35ac6dea23eeb9836ef1db7d80f2e8",
+      "name": "funktionen_agents.php",
+      "type": "blob",
+      "path": "inc/funktionen_agents.php"
+    },
+    {
+      "id": "ed9a66a653b7f64593fcdd647c5298d0353131ad",
+      "name": "funktionen_api.php",
+      "type": "blob",
+      "path": "inc/funktionen_api.php"
+    },
+    {
+      "id": "a7876585b4e58249672d3afff687d4bc1ab26915",
+      "name": "funktionen_benutzer.php",
+      "type": "blob",
+      "path": "inc/funktionen_benutzer.php"
+    },
+    {
+      "id": "db1391905b7b7f3f34c2c26e559f27ec344854c0",
+      "name": "funktionen_bild_agent.php",
+      "type": "blob",
+      "path": "inc/funktionen_bild_agent.php"
+    },
+    {
+      "id": "bd0dd75dd5c949c5d80eda945b58ffdc6af344c2",
+      "name": "funktionen_cli_ergebnis.php",
+      "type": "blob",
+      "path": "inc/funktionen_cli_ergebnis.php"
+    },
+    {
+      "id": "f603ab3e5df9e77889062b6ab8166c29f86bd5fa",
+      "name": "funktionen_client_api.php",
+      "type": "blob",
+      "path": "inc/funktionen_client_api.php"
+    },
+    {
+      "id": "43f6e1ff61261a531e9b7805cca1b40af0bfbe94",
+      "name": "funktionen_client_update.php",
+      "type": "blob",
+      "path": "inc/funktionen_client_update.php"
+    },
+    {
+      "id": "47f4eb2f88d354b1b19ef4b94edb5bdbc10735d9",
+      "name": "funktionen_config.php",
+      "type": "blob",
+      "path": "inc/funktionen_config.php"
+    },
+    {
+      "id": "f20b6df1e65a38af0f0447d2c8e6b8dc2b26c93d",
+      "name": "funktionen_crypto.php",
+      "type": "blob",
+      "path": "inc/funktionen_crypto.php"
+    },
+    {
+      "id": "b1c41ea53494588612f61e1cf3dc008858fa3254",
+      "name": "funktionen_dateien.php",
+      "type": "blob",
+      "path": "inc/funktionen_dateien.php"
+    },
+    {
+      "id": "d4ef432432b99644b5a4b6176cb0749faf8c4b5c",
+      "name": "funktionen_debug.php",
+      "type": "blob",
+      "path": "inc/funktionen_debug.php"
+    },
+    {
+      "id": "78847dceae5079f8cb113f6e1ef47d0ba746427f",
+      "name": "funktionen_einstellungen.php",
+      "type": "blob",
+      "path": "inc/funktionen_einstellungen.php"
+    },
+    {
+      "id": "05a2078b42cab7427cb03012cbbc749f358f52a7",
+      "name": "funktionen_etsy.php",
+      "type": "blob",
+      "path": "inc/funktionen_etsy.php"
+    },
+    {
+      "id": "12a61e6f815ab1e1a7a0b703c96f374299038509",
+      "name": "funktionen_integrationen.php",
+      "type": "blob",
+      "path": "inc/funktionen_integrationen.php"
+    },
+    {
+      "id": "95528ccf938e6e09124930544cab998f6730f776",
+      "name": "funktionen_interne_notizen.php",
+      "type": "blob",
+      "path": "inc/funktionen_interne_notizen.php"
+    },
+    {
+      "id": "b7f4bb0ce91b99296d3f016704013b4ed5f742ee",
+      "name": "funktionen_json.php",
+      "type": "blob",
+      "path": "inc/funktionen_json.php"
+    },
+    {
+      "id": "e59ebba4ec53041ba5d142ad16100244224b3347",
+      "name": "funktionen_login.php",
+      "type": "blob",
+      "path": "inc/funktionen_login.php"
+    },
+    {
+      "id": "5666247e66f6b79aa4d99fb3c2d45793e262822f",
+      "name": "funktionen_logs.php",
+      "type": "blob",
+      "path": "inc/funktionen_logs.php"
+    },
+    {
+      "id": "6b3f9946244e67f76611e4b7e8e69866aa7cd8fd",
+      "name": "funktionen_mcp.php",
+      "type": "blob",
+      "path": "inc/funktionen_mcp.php"
+    },
+    {
+      "id": "21ff44e8eb6993360b96013cae8498a02d97d058",
+      "name": "funktionen_mcp_wiki.php",
+      "type": "blob",
+      "path": "inc/funktionen_mcp_wiki.php"
+    },
+    {
+      "id": "9a30f48de052c42af96aa4ad02aa7f8376a3de2a",
+      "name": "funktionen_multiagent.php",
+      "type": "blob",
+      "path": "inc/funktionen_multiagent.php"
+    },
+    {
+      "id": "e5b168c4df7acc2b1eaf451f96038c4731b0f8e3",
+      "name": "funktionen_multiworker.php",
+      "type": "blob",
+      "path": "inc/funktionen_multiworker.php"
+    },
+    {
+      "id": "4f4010d83155b5d9659e0fa33cb865b33a5b6cd1",
+      "name": "funktionen_navigation.php",
+      "type": "blob",
+      "path": "inc/funktionen_navigation.php"
+    },
+    {
+      "id": "09ecf08473078a2415b31fa79b6536fff56da49e",
+      "name": "funktionen_qualitaet.php",
+      "type": "blob",
+      "path": "inc/funktionen_qualitaet.php"
+    },
+    {
+      "id": "074ed90617334369350ee7452baf75612824752b",
+      "name": "funktionen_rechte.php",
+      "type": "blob",
+      "path": "inc/funktionen_rechte.php"
+    },
+    {
+      "id": "f29458e51b4d78c8d845521308ed15f104570fa7",
+      "name": "funktionen_sessions.php",
+      "type": "blob",
+      "path": "inc/funktionen_sessions.php"
+    },
+    {
+      "id": "cc11c8b42224d19454e8ec1fc29ca537d39bc1cc",
+      "name": "funktionen_system.php",
+      "type": "blob",
+      "path": "inc/funktionen_system.php"
+    },
+    {
+      "id": "ec93f6228429c75213d371dbe3d8c2570a8d75b6",
+      "name": "funktionen_totp.php",
+      "type": "blob",
+      "path": "inc/funktionen_totp.php"
+    },
+    {
+      "id": "08e2327462625bbd44b786de74981410be49b157",
+      "name": "funktionen_validierung.php",
+      "type": "blob",
+      "path": "inc/funktionen_validierung.php"
+    },
+    {
+      "id": "5887570eb7527988c42b14e9e5349088a7e30614",
+      "name": "funktionen_video_analyse.php",
+      "type": "blob",
+      "path": "inc/funktionen_video_analyse.php"
+    },
+    {
+      "id": "4947ceb08c7bc7239aa95084e79843503b447e62",
+      "name": "funktionen_wiki.php",
+      "type": "blob",
+      "path": "inc/funktionen_wiki.php"
+    },
+    {
+      "id": "31b9e45b3c47ed8e448a4c7ec6184ecd6ca1b9de",
+      "name": "header.php",
+      "type": "blob",
+      "path": "inc/header.php"
+    },
+    {
+      "id": "062e22354699298e642360158329937a55454f0f",
+      "name": "meldungen.php",
+      "type": "blob",
+      "path": "inc/meldungen.php"
+    },
+    {
+      "id": "50ee59755bdfd77182f89052bdf597cb2386fa38",
+      "name": "navigation.php",
+      "type": "blob",
+      "path": "inc/navigation.php"
+    },
+    {
+      "id": "b838f49b3093f8827324d1fe134ecc9b2ac59698",
+      "name": "session.php",
+      "type": "blob",
+      "path": "inc/session.php"
+    },
+    {
+      "id": "b5ba381defa62d4ef369698878b01e63a26402f3",
+      "name": "wiki_teaser_app.php",
+      "type": "blob",
+      "path": "inc/wiki_teaser_app.php"
+    }
+  ]
+}
