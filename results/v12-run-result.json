@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "request_id": "v12-run-result",
+  "action": "read_file",
+  "request_sha": "a7cf89f5755cda390576983be17fe231e84aad11",
+  "result": {
+    "file_path": ".hermclaw/runs/interne-notizen-v12/result.json",
+    "ref": "agent-runs/interne-notizen-v12",
+    "blob_id": "244f40198e03b9ae17e383fc164b8884927968ea",
+    "last_commit_id": "c6e57c0de4242d6c79c1460a500243af7ddc7644",
+    "encoding": "utf-8",
+    "content": "{\n  \"version\": \"0.2.5\",\n  \"completed_at\": \"2026-10-04T22:21:35+00:00\",\n  \"ok\": false,\n  \"job_id\": \"interne-notizen-v12\",\n  \"branch\": \"ai/job-interne-notizen-v12-hermclaw-v12-interne-notizen-erneuter-vert\",\n  \"error_type\": \"AgentError\",\n  \"error\": \"Drei ungültige Modellaktionen in Folge.\"\n}\n"
+  }
+}
