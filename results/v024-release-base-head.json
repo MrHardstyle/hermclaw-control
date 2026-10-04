@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "v024-release-base-head",
+  "action": "get_branch_head",
+  "request_sha": "75a061a02155b8e1bdfa0439d187d1cbe54bfdb8",
+  "result": {
+    "branch": "redesign/autonomous-agent",
+    "commit": "6ae32fef085bd9c2601c6bdbd0060cf9a1663d08",
+    "short_id": "6ae32fef",
+    "title": "Smoke test automatic deployment pipeline v0.2.2",
+    "committed_date": "2026-10-04T20:04:29.000+00:00"
+  }
+}
