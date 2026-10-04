@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "request_id": "v11-search-schema-init",
+  "action": "read_file",
+  "request_sha": "98403ad0edbd81c48c1a81b71f07bc3b7054157c",
+  "result": {
+    "file_path": "inc/datenbank.php",
+    "ref": "ai/job-interne-notizen-v11-erweitere-das-bestehende-webinterface-um-e",
+    "blob_id": "cdccb8900b5ba2be0cdea10971047d35c1d6a483",
+    "last_commit_id": "f18aeda257dd016e6a84a301300767f91a6fc7ce",
+    "encoding": "utf-8",
+    "content": "<?php\ndeclare(strict_types=1);\n\nfunction datenbank_verbindung(): ?PDO\n{\n    static $verbindung = null;\n\n    if ($verbindung instanceof PDO) {\n        return $verbindung;\n    }\n\n    $dsn = 'mysql:host=' . DB_HOST . ';port=' . DB_PORT . ';dbname=' . DB_NAME . ';charset=utf8mb4';\n\n    try {\n        $verbindung = new PDO($dsn, DB_BENUTZER, DB_PASSWORT, [\n            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,\n            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,\n            PDO::ATTR_EMULATE_PREPARES => false,\n        ]);\n        return $verbindung;\n    } catch (Throwable $fehler) {\n        logs_schreiben('db_fehler', 'datenbank', 'Verbindung fehlgeschlagen');\n        return null;\n    }\n}\n\nfunction datenbank_ist_verfuegbar(): bool\n{\n    return datenbank_verbindung() instanceof PDO;\n}\n\n"
+  }
+}
