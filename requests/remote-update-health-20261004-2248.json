@@ -1,0 +1,5 @@
+{
+  "request_id": "remote-update-health-20261004-2248",
+  "action": "get_project",
+  "project": "local-ai/hermclaw"
+}
