@@ -1,0 +1,7 @@
+{
+  "request_id": "v12-run-result",
+  "action": "read_file",
+  "project": "local-ai/hermclaw",
+  "ref": "agent-runs/interne-notizen-v12",
+  "path": ".hermclaw/runs/interne-notizen-v12/result.json"
+}
