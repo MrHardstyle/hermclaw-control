@@ -1,0 +1,44 @@
+{
+  "ok": true,
+  "request_id": "v11-diag-tree",
+  "action": "list_tree",
+  "request_sha": "35130eed89218578002613e613e9c0dfd74be1fc",
+  "result": [
+    {
+      "id": "3840ad00c0c26fb8e866e8f711c2cb82566e6661",
+      "name": "interne-notizen-v11",
+      "type": "tree",
+      "path": ".hermclaw/runs/interne-notizen-v11"
+    },
+    {
+      "id": "ad66cdbcd6366e39d5a41f8be4efc8d75b03de7c",
+      "name": "README.txt",
+      "type": "blob",
+      "path": ".hermclaw/runs/interne-notizen-v11/README.txt"
+    },
+    {
+      "id": "6763b2a061df986f06392e3839b6c4327ba0543f",
+      "name": "events.jsonl",
+      "type": "blob",
+      "path": ".hermclaw/runs/interne-notizen-v11/events.jsonl"
+    },
+    {
+      "id": "83370829ad4ff5392ad37e63ae6518744cf50d61",
+      "name": "metadata.json",
+      "type": "blob",
+      "path": ".hermclaw/runs/interne-notizen-v11/metadata.json"
+    },
+    {
+      "id": "57c379f3c90582d9722989e1c771f8c2c20393d9",
+      "name": "result.json",
+      "type": "blob",
+      "path": ".hermclaw/runs/interne-notizen-v11/result.json"
+    },
+    {
+      "id": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "name": "working-tree.patch",
+      "type": "blob",
+      "path": ".hermclaw/runs/interne-notizen-v11/working-tree.patch"
+    }
+  ]
+}
