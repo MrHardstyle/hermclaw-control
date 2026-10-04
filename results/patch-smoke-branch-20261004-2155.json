@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "request_id": "patch-smoke-branch-20261004-2155",
+  "action": "create_branch",
+  "request_sha": "6d043c97240467aa085f1bb06ed67299f7a8cdf7",
+  "result": {
+    "name": "chatgpt/patch-smoke-20261004-2155",
+    "commit": "b9de6f5100d63cfe053bb2cb8e394acd1abb84f9"
+  }
+}
