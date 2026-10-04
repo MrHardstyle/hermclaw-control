@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "v024-postverify-head",
+  "action": "get_branch_head",
+  "request_sha": "4c7d23642eed362c702817702779e89eef41cfbd",
+  "result": {
+    "branch": "redesign/autonomous-agent",
+    "commit": "5f0f382fc73be4e295bd97d5c78fcc638e82a245",
+    "short_id": "5f0f382f",
+    "title": "Prepare Agent Core v0.2.4 release",
+    "committed_date": "2026-10-04T20:53:27.000+00:00"
+  }
+}
