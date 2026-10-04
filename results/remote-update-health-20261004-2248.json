@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "remote-update-health-20261004-2248",
+  "action": "get_project",
+  "request_sha": "895385ec6f85579c0e9fe8ae96f0a0e4ce3d254e",
+  "result": {
+    "id": 1,
+    "path_with_namespace": "local-ai/hermclaw",
+    "default_branch": "main",
+    "visibility": "private",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw"
+  }
+}
