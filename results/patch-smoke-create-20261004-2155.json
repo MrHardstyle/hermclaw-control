@@ -1,0 +1,6 @@
+{
+  "ok": false,
+  "request_id": "patch-smoke-create-20261004-2155",
+  "error_type": "HTTPError",
+  "error": "400 Client Error: Bad Request for url: http://192.168.178.226/api/v4/projects/local-ai%2Fhermclaw/repository/commits"
+}
