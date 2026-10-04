@@ -1,0 +1,8 @@
+{
+  "request_id": "v11-diag-tree",
+  "action": "list_tree",
+  "project": "local-ai/hermclaw",
+  "ref": "agent-runs/interne-notizen-v11",
+  "path": ".hermclaw/runs",
+  "recursive": true
+}
