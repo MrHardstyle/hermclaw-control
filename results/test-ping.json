@@ -1,0 +1,6 @@
+{
+  "ok": false,
+  "request_id": "test-ping",
+  "error_type": "HTTPError",
+  "error": "403 Client Error: Forbidden for url: http://192.168.178.226/api/v4/user"
+}
