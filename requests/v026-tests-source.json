@@ -1,0 +1,7 @@
+{
+  "request_id": "v026-tests-source",
+  "action": "read_file",
+  "project": "local-ai/hermclaw",
+  "ref": "redesign/autonomous-agent",
+  "path": "agent_core/tests/test_agent_core.py"
+}
