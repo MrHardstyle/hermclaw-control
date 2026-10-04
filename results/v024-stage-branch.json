@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "request_id": "v024-stage-branch",
+  "action": "create_branch",
+  "request_sha": "e176acb16c71fd9ef2bd703af01af05356601c0a",
+  "result": {
+    "name": "chatgpt/stage-agent-core-v024",
+    "commit": "9c07a74da6472aab68c6e8cc826e250de5548d8f"
+  }
+}
