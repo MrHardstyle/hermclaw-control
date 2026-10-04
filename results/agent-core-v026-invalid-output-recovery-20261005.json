@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "agent-core-v026-invalid-output-recovery-20261005",
+  "action": "commit_files",
+  "request_sha": "d8ebce011c6fae1809e592a2de5d5da2a7c6836e",
+  "result": {
+    "id": "3fa96a20890a585dc065caf32ea4a54e35509969",
+    "short_id": "3fa96a20",
+    "title": "Agent Core v0.2.6: recover cleanly from malformed model output",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/3fa96a20890a585dc065caf32ea4a54e35509969"
+  }
+}
