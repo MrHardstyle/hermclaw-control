@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "v025-check-patch-head",
+  "action": "get_branch_head",
+  "request_sha": "a4a68d9923ce1ff43372ed012a7d9ac33c50ce27",
+  "result": {
+    "branch": "chatgpt/patch-agent-core-v025",
+    "commit": "07455382e41af1f5197700b61f0da3267578bf0e",
+    "short_id": "07455382",
+    "title": "Agent Core v0.2.5: independent reviewer and diagnostics fixes",
+    "committed_date": "2026-10-04T22:01:06.000+00:00"
+  }
+}
