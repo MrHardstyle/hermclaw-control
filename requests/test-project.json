@@ -1,0 +1,5 @@
+{
+  "request_id": "test-project",
+  "action": "get_project",
+  "project": "local-ai/hermclaw"
+}
