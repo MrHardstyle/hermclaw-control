@@ -1,0 +1,6 @@
+{
+  "request_id": "v024-verify-branch",
+  "action": "get_branch_head",
+  "project": "local-ai/hermclaw",
+  "branch": "ai/job-agent-core-v024-apply-wende-den-bereits-vorbereiteten-hermclaw-a"
+}
