@@ -1,0 +1,14 @@
+{
+  "request_id": "v025-retry-release",
+  "action": "commit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/patch-agent-core-v025",
+  "commit_message": "Retry Agent Core v0.2.5 deployment after watcher token repair",
+  "actions": [
+    {
+      "action": "update",
+      "file_path": ".hermclaw/patch.json",
+      "content": "{\n  \"schema\": 1,\n  \"patch_id\": \"agent-core-v0.2.5-retry1\",\n  \"ready\": true,\n  \"target_branch\": \"redesign/autonomous-agent\",\n  \"base_sha\": \"5f0f382fc73be4e295bd97d5c78fcc638e82a245\",\n  \"profile\": \"agent-core\",\n  \"deploy_to_225\": true\n}\n"
+    }
+  ]
+}
