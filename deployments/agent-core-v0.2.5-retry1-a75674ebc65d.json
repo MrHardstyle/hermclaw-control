@@ -1,6 +1,6 @@
 {
   "patch_id": "agent-core-v0.2.5-retry1",
   "sha": "a75674ebc65d463f2c0319bd8a030392af1efd8f",
-  "status": "DEPLOYING_225",
+  "status": "APPLYING_223",
   "branch": "chatgpt/patch-agent-core-v025"
 }
