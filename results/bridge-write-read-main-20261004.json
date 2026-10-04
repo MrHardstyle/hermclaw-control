@@ -1,0 +1,6 @@
+{
+  "ok": false,
+  "request_id": "bridge-write-read-main-20261004",
+  "error_type": "HTTPError",
+  "error": "404 Client Error: Not Found for url: http://192.168.178.226/api/v4/projects/local-ai%2Fhermclaw/repository/files/bridge-tests%2Fchatgpt-write-test-20261004.txt?ref=main"
+}
