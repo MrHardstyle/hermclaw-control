@@ -1,0 +1,16 @@
+{
+  "ok": true,
+  "request_id": "bridge-write-diff-20261004",
+  "action": "get_commit_diff",
+  "request_sha": "e2d888fe8a97beff74d6b6aa59efa0296b676b7b",
+  "result": [
+    {
+      "old_path": "bridge-tests/chatgpt-write-test-20261004.txt",
+      "new_path": "bridge-tests/chatgpt-write-test-20261004.txt",
+      "new_file": true,
+      "deleted_file": false,
+      "renamed_file": false,
+      "diff": "@@ -0,0 +1,2 @@\n+Hermclaw GitLab Bridge write test\n+Created through ChatGPT -> GitHub relay -> local bridge -> GitLab.\n"
+    }
+  ]
+}
