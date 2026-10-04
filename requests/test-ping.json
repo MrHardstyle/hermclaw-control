@@ -1,7 +1,7 @@
 {
-  "request_id": "review-v024-read-core",
+  "request_id": "v12-run-protocol-alt",
   "action": "read_file",
   "project": "local-ai/hermclaw",
-  "ref": "redesign/autonomous-agent",
-  "path": "agent_core/agent_core.py"
+  "ref": "agent-runs/interne-notizen-v12",
+  "path": ".hermclaw/runs/interne-notizen-v12/protocol.log"
 }
