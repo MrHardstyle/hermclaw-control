@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "v026-postdeploy-head",
+  "action": "get_branch_head",
+  "request_sha": "5751321eae8134d8f1059814e7aa38edd4a04dde",
+  "result": {
+    "branch": "redesign/autonomous-agent",
+    "commit": "3fa96a20890a585dc065caf32ea4a54e35509969",
+    "short_id": "3fa96a20",
+    "title": "Agent Core v0.2.6: recover cleanly from malformed model output",
+    "committed_date": "2026-10-04T23:11:50.000+00:00"
+  }
+}
