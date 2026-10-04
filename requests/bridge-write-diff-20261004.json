@@ -1,0 +1,6 @@
+{
+  "request_id": "bridge-write-diff-20261004",
+  "action": "get_commit_diff",
+  "project": "local-ai/hermclaw",
+  "sha": "e385546e7b9f02e5fe6cd53712e532815bb51ec7"
+}
