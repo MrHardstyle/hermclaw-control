@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "bridge-write-commit-20261004",
+  "action": "commit_files",
+  "request_sha": "df9772788d83c8a33292408757d647d57c28b6fc",
+  "result": {
+    "id": "e385546e7b9f02e5fe6cd53712e532815bb51ec7",
+    "short_id": "e385546e",
+    "title": "Test Hermclaw GitLab Bridge write path",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/e385546e7b9f02e5fe6cd53712e532815bb51ec7"
+  }
+}
