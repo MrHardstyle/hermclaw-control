@@ -1,0 +1,7 @@
+{
+  "request_id": "v11-read-gitignore",
+  "action": "read_file",
+  "project": "local-ai/hermclaw",
+  "ref": "redesign/autonomous-agent",
+  "path": ".gitignore"
+}
