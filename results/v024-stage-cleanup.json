@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "v024-stage-cleanup",
+  "action": "commit_files",
+  "request_sha": "fea88269b7956baf4598f2ae97c792f17804de95",
+  "result": {
+    "id": "5f0f382fc73be4e295bd97d5c78fcc638e82a245",
+    "short_id": "5f0f382f",
+    "title": "Prepare Agent Core v0.2.4 release",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/5f0f382fc73be4e295bd97d5c78fcc638e82a245"
+  }
+}
