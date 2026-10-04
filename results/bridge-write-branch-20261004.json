@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "request_id": "bridge-write-branch-20261004",
+  "action": "create_branch",
+  "request_sha": "7198e6989bae2be69e6ff47c1b0d9d5346cb7d70",
+  "result": {
+    "name": "chatgpt/bridge-write-test-20261004",
+    "commit": "f18aeda257dd016e6a84a301300767f91a6fc7ce"
+  }
+}
