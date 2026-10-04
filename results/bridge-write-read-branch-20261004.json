@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "request_id": "bridge-write-read-branch-20261004",
+  "action": "read_file",
+  "request_sha": "28d67406c9b1f7ce50f07329e37d5e8acdab7bbf",
+  "result": {
+    "file_path": "bridge-tests/chatgpt-write-test-20261004.txt",
+    "ref": "chatgpt/bridge-write-test-20261004",
+    "blob_id": "3dbddb68c80f192c58dd5fffa302556dd4e22474",
+    "last_commit_id": "e385546e7b9f02e5fe6cd53712e532815bb51ec7",
+    "encoding": "utf-8",
+    "content": "Hermclaw GitLab Bridge write test\nCreated through ChatGPT -> GitHub relay -> local bridge -> GitLab.\n"
+  }
+}
