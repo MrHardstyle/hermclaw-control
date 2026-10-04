@@ -1,6 +1,10 @@
 {
   "patch_id": "patch-watcher-v022-smoke-20261004",
   "sha": "6ae32fef085bd9c2601c6bdbd0060cf9a1663d08",
-  "status": "APPLYING_223",
-  "branch": "chatgpt/patch-v022-smoke-20261004"
+  "status": "APPLIED",
+  "branch": "chatgpt/patch-v022-smoke-20261004",
+  "target_branch": "redesign/autonomous-agent",
+  "changed_files": [
+    ".hermclaw/patch.json"
+  ]
 }
