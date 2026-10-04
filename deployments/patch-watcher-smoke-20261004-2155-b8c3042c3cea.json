@@ -1,6 +1,7 @@
 {
   "patch_id": "patch-watcher-smoke-20261004-2155",
   "sha": "b8c3042c3ceac093cf9b4c766145612f9bc9cc01",
-  "status": "VALIDATING",
-  "branch": "chatgpt/patch-smoke-20261004-2155"
+  "status": "FAILED",
+  "branch": "chatgpt/patch-smoke-20261004-2155",
+  "error": "Live-Repo auf .223 ist nicht sauber:\nM android_app/gradlew.bat"
 }
