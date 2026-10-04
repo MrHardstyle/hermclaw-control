@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "request_id": "v11-read-rights-functions",
+  "action": "read_file",
+  "request_sha": "41396b398ab846b7a861561811e07391d2d710d1",
+  "result": {
+    "file_path": "inc/funktionen_rechte.php",
+    "ref": "ai/job-interne-notizen-v11-erweitere-das-bestehende-webinterface-um-e",
+    "blob_id": "074ed90617334369350ee7452baf75612824752b",
+    "last_commit_id": "f18aeda257dd016e6a84a301300767f91a6fc7ce",
+    "encoding": "utf-8",
+    "content": "<?php\ndeclare(strict_types=1);\n\nfunction rechte_pruefen(string $recht): bool\n{\n    $rechte = $_SESSION['rechte'] ?? [];\n    return in_array($recht, is_array($rechte) ? $rechte : [], true);\n}\n\n"
+  }
+}
