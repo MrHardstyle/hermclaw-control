@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "request_id": "v11-diag-working-tree-patch",
+  "action": "read_file",
+  "request_sha": "30cb838232cec752f7a47f47eee5d2abefacc57f",
+  "result": {
+    "file_path": ".hermclaw/runs/interne-notizen-v11/working-tree.patch",
+    "ref": "agent-runs/interne-notizen-v11",
+    "blob_id": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "last_commit_id": "7e8013a9cb8a3aca0bac4a83faa1716df909c3f8",
+    "encoding": "utf-8",
+    "content": ""
+  }
+}
