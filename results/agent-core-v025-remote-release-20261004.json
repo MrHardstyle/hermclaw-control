@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "agent-core-v025-remote-release-20261004",
+  "action": "commit_files",
+  "request_sha": "d7a70129773417888b1fbc3a71971dc556ca69d9",
+  "result": {
+    "id": "07455382e41af1f5197700b61f0da3267578bf0e",
+    "short_id": "07455382",
+    "title": "Agent Core v0.2.5: independent reviewer and diagnostics fixes",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/07455382e41af1f5197700b61f0da3267578bf0e"
+  }
+}
