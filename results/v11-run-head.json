@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "v11-run-head",
+  "action": "get_branch_head",
+  "request_sha": "1018ede13bc85e0e765d2bd2bb2d5c83c5bf3427",
+  "result": {
+    "branch": "agent-runs/interne-notizen-v11",
+    "commit": "7e8013a9cb8a3aca0bac4a83faa1716df909c3f8",
+    "short_id": "7e8013a9",
+    "title": "Hermclaw run protocol: interne-notizen-v11",
+    "committed_date": "2026-10-04T21:15:47.000+00:00"
+  }
+}
