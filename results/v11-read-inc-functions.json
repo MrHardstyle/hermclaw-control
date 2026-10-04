@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "request_id": "v11-read-inc-functions",
+  "action": "read_file",
+  "request_sha": "8dc8bf2742d1b18cb2142c1a6b35b6a0ef521f0e",
+  "result": {
+    "file_path": "inc/funktionen.php",
+    "ref": "ai/job-interne-notizen-v11-erweitere-das-bestehende-webinterface-um-e",
+    "blob_id": "1fa53261c9ed43dbd0546f1c298d0704172269f3",
+    "last_commit_id": "f18aeda257dd016e6a84a301300767f91a6fc7ce",
+    "encoding": "utf-8",
+    "content": "<?php\ndeclare(strict_types=1);\n\nforeach (glob(__DIR__ . '/funktionen_*.php') ?: [] as $funktionsdatei) {\n    require_once $funktionsdatei;\n}\n\n"
+  }
+}
