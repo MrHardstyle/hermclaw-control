@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "v11-code-head",
+  "action": "get_branch_head",
+  "request_sha": "e9dfbac9495ffa48e061b5ff8043c39fdae54970",
+  "result": {
+    "branch": "ai/job-interne-notizen-v11-erweitere-das-bestehende-webinterface-um-e",
+    "commit": "473443db3d830f2e2a62cc3028150e1bf1f56232",
+    "short_id": "473443db",
+    "title": "Implementiere interne Notizen Funktion mit vollständiger CRUD-Unterstützung, Rechteverwaltung und Sicherheitsmechanismen",
+    "committed_date": "2026-10-04T21:15:43.000+00:00"
+  }
+}
