@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "test-project",
+  "action": "get_project",
+  "request_sha": "70e17cd68c2c8610bb15a0db6cd389b8c4ef8feb",
+  "result": {
+    "id": 1,
+    "path_with_namespace": "local-ai/hermclaw",
+    "default_branch": "main",
+    "visibility": "private",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw"
+  }
+}
