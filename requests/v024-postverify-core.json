@@ -1,0 +1,7 @@
+{
+  "request_id": "v024-postverify-core",
+  "action": "read_file",
+  "project": "local-ai/hermclaw",
+  "ref": "redesign/autonomous-agent",
+  "path": "agent_core/agent_core.py"
+}
