@@ -1,0 +1,6 @@
+{
+  "request_id": "v024-verify-diff",
+  "action": "get_commit_diff",
+  "project": "local-ai/hermclaw",
+  "sha": "9c07a74da6472aab68c6e8cc826e250de5548d8f"
+}
