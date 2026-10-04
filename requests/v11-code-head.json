@@ -1,0 +1,6 @@
+{
+  "request_id": "v11-code-head",
+  "action": "get_branch_head",
+  "project": "local-ai/hermclaw",
+  "branch": "ai/job-interne-notizen-v11-erweitere-das-bestehende-webinterface-um-e"
+}
