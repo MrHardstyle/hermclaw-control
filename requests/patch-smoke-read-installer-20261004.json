@@ -1,0 +1,7 @@
+{
+  "request_id": "patch-smoke-read-installer-20261004",
+  "action": "read_file",
+  "project": "local-ai/hermclaw",
+  "ref": "redesign/autonomous-agent",
+  "path": "install-agent-core.sh"
+}
