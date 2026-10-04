@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "request_id": "v11-read-index",
+  "action": "read_file",
+  "request_sha": "b904887d4c1378f78322a3fee1fe31dee7d924f2",
+  "result": {
+    "file_path": "index.php",
+    "ref": "ai/job-interne-notizen-v11-erweitere-das-bestehende-webinterface-um-e",
+    "blob_id": "573f7688c781237741744607439adb8801b75fb7",
+    "last_commit_id": "f18aeda257dd016e6a84a301300767f91a6fc7ce",
+    "encoding": "utf-8",
+    "content": "<?php\ndeclare(strict_types=1);\n\nrequire_once __DIR__ . '/inc/config.php';\nrequire_once __DIR__ . '/inc/funktionen.php';\nrequire_once __DIR__ . '/inc/datenbank.php';\nrequire_once __DIR__ . '/inc/session.php';\n\nsession_initialisieren();\nsystem_schema_initialisieren();\nbenutzer_admin_initialisieren();\n\nif (!session_angemeldet()) {\n    header('Location: login.php');\n    exit;\n}\n\nsessions_aktivitaet_aktualisieren(session_benutzer_id());\n\n$aktive_seite = navigation_aktive_seite();\n$seiten_meta = navigation_meta_laden(__DIR__ . '/nav/' . $aktive_seite . '.php');\n\nif (!$seiten_meta || !rechte_pruefen($seiten_meta['RECHT'])) {\n    http_response_code(403);\n    $aktive_seite = '';\n    $seiten_meta = [\n        'ICON' => 'shield-alert',\n        'TITLE' => 'Kein Zugriff',\n        'PRIO' => '0',\n        'BEREICH' => 'system',\n        'RECHT' => '',\n    ];\n}\n\nrequire __DIR__ . '/inc/header.php';\nrequire __DIR__ . '/inc/navigation.php';\n\nif ($aktive_seite === '') {\n    echo '<section class=\"seitenkopf\"><div><p class=\"seitenkopf__eyebrow\">Sicherheit</p><h1>Kein Zugriff</h1><p>Fuer diese Seite ist keine passende Berechtigung vorhanden.</p></div></section>';\n} else {\n    require __DIR__ . '/nav/' . $aktive_seite . '.php';\n}\n\nrequire __DIR__ . '/inc/footer.php';\n"
+  }
+}
