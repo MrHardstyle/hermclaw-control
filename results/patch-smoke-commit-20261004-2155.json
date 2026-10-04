@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "patch-smoke-commit-20261004-2155",
+  "action": "commit_files",
+  "request_sha": "da54a752a289332b9305b208facfcc2ba6cd1aea",
+  "result": {
+    "id": "b8c3042c3ceac093cf9b4c766145612f9bc9cc01",
+    "short_id": "b8c3042c",
+    "title": "Smoke test automatic patch deployment to .223 and .225",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/b8c3042c3ceac093cf9b4c766145612f9bc9cc01"
+  }
+}
