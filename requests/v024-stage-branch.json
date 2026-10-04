@@ -1,0 +1,7 @@
+{
+  "request_id": "v024-stage-branch",
+  "action": "create_branch",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/stage-agent-core-v024",
+  "ref": "9c07a74da6472aab68c6e8cc826e250de5548d8f"
+}
