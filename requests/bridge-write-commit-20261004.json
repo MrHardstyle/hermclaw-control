@@ -1,0 +1,14 @@
+{
+  "request_id": "bridge-write-commit-20261004",
+  "action": "commit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/bridge-write-test-20261004",
+  "commit_message": "Test Hermclaw GitLab Bridge write path",
+  "actions": [
+    {
+      "action": "create",
+      "file_path": "bridge-tests/chatgpt-write-test-20261004.txt",
+      "content": "Hermclaw GitLab Bridge write test\nCreated through ChatGPT -> GitHub relay -> local bridge -> GitLab.\n"
+    }
+  ]
+}
