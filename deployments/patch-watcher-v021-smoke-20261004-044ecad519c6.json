@@ -1,6 +1,7 @@
 {
   "patch_id": "patch-watcher-v021-smoke-20261004",
   "sha": "044ecad519c66e7fbf43d340fccd86c847834e8e",
-  "status": "VALIDATING",
-  "branch": "chatgpt/patch-v021-smoke-20261004"
+  "status": "FAILED",
+  "branch": "chatgpt/patch-v021-smoke-20261004",
+  "error": "Live-Repo auf .223 enthält unerwartete Änderungen:\nM android_app/gradlew.bat"
 }
