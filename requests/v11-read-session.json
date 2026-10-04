@@ -1,0 +1,7 @@
+{
+  "request_id": "v11-read-session",
+  "action": "read_file",
+  "project": "local-ai/hermclaw",
+  "ref": "ai/job-interne-notizen-v11-erweitere-das-bestehende-webinterface-um-e",
+  "path": "inc/session.php"
+}
