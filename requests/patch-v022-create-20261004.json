@@ -1,0 +1,15 @@
+{
+  "request_id": "patch-v022-create-20261004",
+  "action": "commit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/patch-v022-smoke-20261004",
+  "start_sha": "b9de6f5100d63cfe053bb2cb8e394acd1abb84f9",
+  "commit_message": "Smoke test automatic deployment pipeline v0.2.2",
+  "actions": [
+    {
+      "action": "create",
+      "file_path": ".hermclaw/patch.json",
+      "content": "{\n  \"schema\": 1,\n  \"patch_id\": \"patch-watcher-v022-smoke-20261004\",\n  \"ready\": true,\n  \"target_branch\": \"redesign/autonomous-agent\",\n  \"base_sha\": \"b9de6f5100d63cfe053bb2cb8e394acd1abb84f9\",\n  \"profile\": \"agent-core\",\n  \"deploy_to_225\": true\n}\n"
+    }
+  ]
+}
