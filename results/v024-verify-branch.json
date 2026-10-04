@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "v024-verify-branch",
+  "action": "get_branch_head",
+  "request_sha": "917522fc78ccb6af47cd10593d26b1e6f9331277",
+  "result": {
+    "branch": "ai/job-agent-core-v024-apply-wende-den-bereits-vorbereiteten-hermclaw-a",
+    "commit": "9c07a74da6472aab68c6e8cc826e250de5548d8f",
+    "short_id": "9c07a74d",
+    "title": "Apply Hermclaw-Agent-Core-v0.2.4 patch with enhanced privacy and diagnostics",
+    "committed_date": "2026-10-04T20:48:08.000+00:00"
+  }
+}
