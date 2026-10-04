@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "request_id": "patch-smoke-read-installer-20261004",
+  "action": "read_file",
+  "request_sha": "8716e21155e47dc11660be25dc8fe598758ea9f1",
+  "result": {
+    "file_path": "install-agent-core.sh",
+    "ref": "redesign/autonomous-agent",
+    "blob_id": "c0bfef7a128871a7097236f4712c8f3b28f2e69b",
+    "last_commit_id": "6d53be363e5838e1d65ccfefc49cf5e54498de38",
+    "encoding": "utf-8",
+    "content": "#!/usr/bin/env bash\nset -euo pipefail\n\nTARGET_ROOT=\"${HERMCLAW_RUNTIME_DIR:-/home/kiworker/noob2claw_runtime}\"\nTARGET=\"$TARGET_ROOT/agent_core\"\nBIN=\"$TARGET_ROOT/bin\"\nSOURCE_DIR=\"$(cd -- \"$(dirname -- \"${BASH_SOURCE[0]}\")\" && pwd)/agent_core\"\n\nif [[ ! -f \"$SOURCE_DIR/agent_core.py\" ]]; then\n  echo \"agent_core/agent_core.py fehlt neben dem Installer.\" >&2\n  exit 2\nfi\n\nmkdir -p \"$TARGET\" \"$BIN\"\ncp -a \"$SOURCE_DIR/.\" \"$TARGET/\"\nchmod 0755 \"$TARGET/agent_core.py\"\ncat > \"$BIN/hermclaw-agent\" <<EOF\n#!/usr/bin/env bash\nexec python3 \"$TARGET/agent_core.py\" \"\\$@\"\nEOF\nchmod 0755 \"$BIN/hermclaw-agent\"\n\nprintf 'Installiert: %s\\n' \"$TARGET\"\nprintf 'Wrapper:     %s\\n' \"$BIN/hermclaw-agent\"\nprintf '\\nPreflight:\\n  %s preflight --repo git@192.168.178.226:local-ai/hermclaw.git --base main\\n' \"$BIN/hermclaw-agent\"\n"
+  }
+}
