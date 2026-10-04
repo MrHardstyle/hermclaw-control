@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "v025-retry-release",
+  "action": "commit_files",
+  "request_sha": "42f1aa84cc2b8f4a0ff18244ed2334ebaf573941",
+  "result": {
+    "id": "a75674ebc65d463f2c0319bd8a030392af1efd8f",
+    "short_id": "a75674eb",
+    "title": "Retry Agent Core v0.2.5 deployment after watcher token repair",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/a75674ebc65d463f2c0319bd8a030392af1efd8f"
+  }
+}
