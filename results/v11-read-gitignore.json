@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "request_id": "v11-read-gitignore",
+  "action": "read_file",
+  "request_sha": "0046b3a03c778061aaf6ab91fffc1b98406e7e90",
+  "result": {
+    "file_path": ".gitignore",
+    "ref": "redesign/autonomous-agent",
+    "blob_id": "8c2718df7486ae46a0a44dd9da56a7ab67ccd2b7",
+    "last_commit_id": "f18aeda257dd016e6a84a301300767f91a6fc7ce",
+    "encoding": "utf-8",
+    "content": "# =========================\n# Secrets / lokale Konfig\n# =========================\n.env\n.env.*\n!.env.example\n\n*.pem\n*.key\n*.p12\n*.pfx\n\nid_rsa\nid_rsa.pub\nid_ed25519\nid_ed25519.pub\n\n# =========================\n# Logs\n# =========================\n*.log\nlogs/\nlog/\n\n# =========================\n# Temporäre Dateien\n# =========================\ntmp/\ntemp/\ncache/\n*.tmp\n*.temp\n*.bak\n*.old\n*~\n\n# =========================\n# Python\n# =========================\n__pycache__/\n*.py[cod]\n.pytest_cache/\n.mypy_cache/\n.ruff_cache/\n\nvenv/\n.venv/\nenv/\n\n# =========================\n# Node / JavaScript\n# =========================\nnode_modules/\nnpm-debug.log*\nyarn-debug.log*\nyarn-error.log*\n\n# =========================\n# Lokale Datenbanken\n# =========================\n*.sqlite\n*.sqlite3\n*.db\n\n# =========================\n# IDE / Betriebssystem\n# =========================\n.vscode/\n.idea/\n.DS_Store\nThumbs.db\n\n# =========================\n# Git\n# =========================\n.git/\n\n# =========================\n# Hermclaw / Noob2Claw Runtime\n# =========================\nuploads/\nmultiworker_generated/\n.private_metrics/\n\n# Debug-/Test-Helfer im Webroot\n/.diag_*\n/zz_*.php\n\n# Alte Patch-/Backup-Versionen\n*.bak-*\n*.bak.*\n*.before-*\n*.v*-before-*\n*.orig\n*.rej\n\n# =========================\n# Lokale Worker-Konfiguration\n# =========================\n/noob2claw_client/config.php\n/video_worker/config.php\n/image_worker/config.php\n/etsy_worker/config.php\n/multiworker_orchestrator/config.json\n/windows_client/config.ps1\n\n# Beispielkonfigurationen ausdrücklich behalten\n!/noob2claw_client/config.example.php\n!/video_worker/config.example.php\n!/image_worker/config.example.php\n!/etsy_worker/config.example.php\n!/multiworker_orchestrator/config.example.json\n!/windows_client/config.example.ps1\n\n# =========================\n# Android / Gradle Builddaten\n# =========================\n/android_app/.gradle/\n/android_app/app/build/\n/android_app/build/\n/android_app/local.properties\n*.apk\n*.aab\n*.jks\n*.keystore\n\n# =========================\n# Kompilierte Clients\n# =========================\n/windows_client/*.exe\n/windows_client/*.dll\n\n# =========================\n# Rohdiagnosen / Maschinen-Dumps\n# =========================\ndocs/**/*_raw.txt\n\n# =========================\n# Generierte Benutzer-/Build-Artefakte\n# =========================\n/dokumente/\n/docs/v12_memory/*.txt\n/android_client/*.apk.sha256\n/windows_client/*.zip\n"
+  }
+}
