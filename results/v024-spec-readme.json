@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "v024-spec-readme",
+  "action": "commit_files",
+  "request_sha": "cf95f98d8d9e32c1fac5e1e6aec82c5cbc1e1bc3",
+  "result": {
+    "id": "de8aa1e9be1d2b6247faa607be01edf5d3b879d1",
+    "short_id": "de8aa1e9",
+    "title": "Document Agent Core v0.2.4 patch application",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/de8aa1e9be1d2b6247faa607be01edf5d3b879d1"
+  }
+}
