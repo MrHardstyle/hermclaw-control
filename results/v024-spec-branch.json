@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "request_id": "v024-spec-branch",
+  "action": "create_branch",
+  "request_sha": "f81fee24e056f7f742f1c5ebe79645cabdcf9e58",
+  "result": {
+    "name": "chatgpt/spec-agent-core-v024",
+    "commit": "6ae32fef085bd9c2601c6bdbd0060cf9a1663d08"
+  }
+}
