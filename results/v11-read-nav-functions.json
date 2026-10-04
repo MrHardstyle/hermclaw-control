@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "request_id": "v11-read-nav-functions",
+  "action": "read_file",
+  "request_sha": "a9d7819e3824caa64424cc2e60141c0c595746ba",
+  "result": {
+    "file_path": "inc/funktionen_navigation.php",
+    "ref": "ai/job-interne-notizen-v11-erweitere-das-bestehende-webinterface-um-e",
+    "blob_id": "4f4010d83155b5d9659e0fa33cb865b33a5b6cd1",
+    "last_commit_id": "f18aeda257dd016e6a84a301300767f91a6fc7ce",
+    "encoding": "utf-8",
+    "content": "<?php\ndeclare(strict_types=1);\n\nfunction navigation_punkte_laden(): array\n{\n    $punkte = [];\n    foreach (glob(PFAD_ROOT . '/nav/*.php') ?: [] as $pfad) {\n        $meta = navigation_meta_laden($pfad);\n        if (!$meta || !rechte_pruefen($meta['RECHT'])) {\n            continue;\n        }\n        $meta['datei'] = basename($pfad, '.php');\n        $punkte[] = $meta;\n    }\n\n    usort($punkte, static fn(array $a, array $b): int => ((int)$a['PRIO'] <=> (int)$b['PRIO']) ?: strcmp($a['TITLE'], $b['TITLE']));\n    return $punkte;\n}\n\nfunction navigation_meta_laden(string $pfad): array\n{\n    $inhalt = file_get_contents($pfad, false, null, 0, 700);\n    if (!is_string($inhalt)) {\n        return [];\n    }\n\n    $meta = [];\n    foreach (['ICON', 'TITLE', 'PRIO', 'BEREICH', 'RECHT'] as $feld) {\n        if (preg_match('/' . $feld . ':\\s*(.+)/', $inhalt, $treffer)) {\n            $meta[$feld] = trim($treffer[1]);\n        }\n    }\n\n    if (count($meta) !== 5) {\n        return [];\n    }\n\n    if (preg_match('/URL:\\s*(.+)/', $inhalt, $treffer)) {\n        $meta['URL'] = trim($treffer[1]);\n    }\n\n    return $meta;\n}\n\nfunction navigation_aktive_seite(): string\n{\n    $seite = preg_replace('/[^a-z0-9_]/', '', strtolower((string)($_GET['seite'] ?? 'main_dashboard')));\n    $pfad = PFAD_ROOT . '/nav/' . $seite . '.php';\n    return is_file($pfad) ? $seite : 'main_dashboard';\n}\n\nfunction navigation_bereich_label(string $bereich): string\n{\n    return match ($bereich) {\n        'main' => 'Uebersicht',\n        'work' => 'Arbeit',\n        'tools' => 'Tools',\n        'control' => 'Betrieb',\n        'settings' => 'Einstellungen',\n        default => ucfirst($bereich),\n    };\n}\n"
+  }
+}
