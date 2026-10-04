@@ -1,0 +1,6 @@
+{
+  "request_id": "v11-code-diff",
+  "action": "get_commit_diff",
+  "project": "local-ai/hermclaw",
+  "sha": "473443db3d830f2e2a62cc3028150e1bf1f56232"
+}
