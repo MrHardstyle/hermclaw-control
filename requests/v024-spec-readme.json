@@ -1,0 +1,14 @@
+{
+  "request_id": "v024-spec-readme",
+  "action": "commit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/spec-agent-core-v024",
+  "commit_message": "Document Agent Core v0.2.4 patch application",
+  "actions": [
+    {
+      "action": "create",
+      "file_path": "agent_core/patches/README-v0.2.4.md",
+      "content": "# Hermclaw Agent Core v0.2.4 patch\n\nBase target: `redesign/autonomous-agent`\nBase SHA when prepared: `6ae32fef085bd9c2601c6bdbd0060cf9a1663d08`\n\nThe exact unified patch is split across these files, in this order:\n\n1. `v0.2.4.part01.patch`\n2. `v0.2.4.part02.patch`\n3. `v0.2.4.part03.patch`\n4. `v0.2.4.part04.patch`\n5. `v0.2.4.part05.patch`\n\nConcatenated SHA256:\n\n`61cc636d6ced57fb08611a2150a5e51a871b44aaea3b03331be4ef9ef27e89e6`\n\nPurpose:\n- auto-normalize trailing horizontal whitespace in agent-mutated UTF-8 text files before final diff check;\n- rerun the last successful test after that mechanical cleanup;\n- expose the current UTC date in the model runtime context;\n- persist structured failure result metadata;\n- publish a separate `agent-runs/<job-id>` diagnostics branch on pushed runs, including human-readable protocol, events, transcript, result metadata, sources, and working-tree patch;\n- keep diagnostics out of the code branch.\n\nRequired verification after applying:\n- `python3 -m py_compile agent_core/agent_core.py`\n- `python3 -m unittest discover -s agent_core/tests -v`\n- `git diff --check`\n- version reports `0.2.4`\n- inspect the complete diff before finish.\n\nDo not commit the patch-part files to the implementation branch. They are specification/transport artifacts only.\n"
+    }
+  ]
+}
