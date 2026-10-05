@@ -1,6 +1,11 @@
 {
   "patch_id": "agent-core-v0.2.19",
   "sha": "2cc3cf5035f0bbbca57f22b328fb2d1c632bc8b7",
-  "status": "VALIDATING",
-  "branch": "chatgpt/patch-agent-core-v0219"
+  "status": "TESTING",
+  "branch": "chatgpt/patch-agent-core-v0219",
+  "changed_files": [
+    ".hermclaw/patch.json",
+    "agent_core/agent_core.py",
+    "agent_core/tests/test_agent_core.py"
+  ]
 }
