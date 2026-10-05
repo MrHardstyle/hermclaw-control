@@ -1,0 +1,34 @@
+{
+  "request_id": "agent-core-v0216-stage1",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/patch-agent-core-v0216",
+  "start_sha": "a93549e3f146f487e4132759b83eba7625c29fdc",
+  "commit_message": "Agent Core v0.2.16: make acceptance evidence gate non-overridable",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/agent_core.py",
+      "old": "VERSION = \"0.2.15\"",
+      "new": "VERSION = \"0.2.16\""
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/agent_core.py",
+      "old": "                return {\n                    \"verdict\": \"FIX_REQUIRED\",\n                    \"summary\": (\n                        \"Der Acceptance Reviewer meldete PASS, konnte die behaupteten Erfüllungen \"\n                        \"aber nicht mit überprüfbaren exakten Belegen aus dem finalen Diff nachweisen.\"\n                    ),\n                    \"issues\": [\n                        shorten(\n                            \"Acceptance-Nachweis ungültig: \" + problem\n                            + \" Prüfe die genannte Originalanforderung am aktuellen Code und implementiere sie, falls sie fehlt.\",\n                            700,\n                        )\n                        for problem in evidence_problems[:8]\n                    ],\n                    \"checks\": checks,\n                }\n",
+      "new": "                return {\n                    \"verdict\": \"FIX_REQUIRED\",\n                    \"gate\": \"ACCEPTANCE_EVIDENCE_INVALID\",\n                    \"summary\": (\n                        \"Der Acceptance Reviewer meldete PASS, konnte die behaupteten Erfüllungen \"\n                        \"aber nicht mit überprüfbaren exakten Belegen aus dem finalen Diff nachweisen.\"\n                    ),\n                    \"issues\": [\n                        shorten(\n                            \"Acceptance-Nachweis ungültig: \" + problem\n                            + \" Prüfe die genannte Originalanforderung am aktuellen Code und implementiere sie, falls sie fehlt.\",\n                            700,\n                        )\n                        for problem in evidence_problems[:8]\n                    ],\n                    \"checks\": checks,\n                }\n"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/agent_core.py",
+      "old": "                if independent_review[\"verdict\"] == \"FIX_REQUIRED\":\n                    self.review_failures += 1\n                    issues = independent_review.get(\"issues\", [])\n                    self.logger.emit(\n                        \"review\",\n                        \"Unabhängiger Review fordert Korrekturen.\",\n                        cycle=self.review_failures,\n                        issues=issues,\n                        summary=independent_review.get(\"summary\", \"\"),\n                    )\n                    if self.review_failures >= self.max_review_cycles:\n                        adjudication = self._adjudicate_review(\n                            issues,\n                            str(independent_review.get(\"summary\", \"\")),\n                        )\n",
+      "new": "                if independent_review[\"verdict\"] == \"FIX_REQUIRED\":\n                    self.review_failures += 1\n                    issues = independent_review.get(\"issues\", [])\n                    blocking_gate = str(independent_review.get(\"gate\", \"\") or \"\")\n                    self.logger.emit(\n                        \"review\",\n                        \"Unabhängiger Review fordert Korrekturen.\",\n                        cycle=self.review_failures,\n                        issues=issues,\n                        summary=independent_review.get(\"summary\", \"\"),\n                        blocking_gate=blocking_gate,\n                    )\n                    if self.review_failures >= self.max_review_cycles:\n                        if blocking_gate == \"ACCEPTANCE_EVIDENCE_INVALID\":\n                            self.logger.emit(\n                                \"review\",\n                                \"Deterministisches Acceptance-Gate bleibt nach allen Review-Zyklen offen; \"\n                                \"finaler LLM-Schiedsrichter darf es nicht überstimmen.\",\n                                error_code=\"ACCEPTANCE_EVIDENCE_INVALID_AFTER_RETRIES\",\n                                cycle=self.review_failures,\n                                issues=issues,\n                            )\n                            raise AgentError(\n                                \"ACCEPTANCE_EVIDENCE_INVALID_AFTER_RETRIES: \"\n                                f\"Acceptance-PASS blieb nach {self.review_failures} Review-Zyklen \"\n                                \"deterministisch unbelegt. Kein Commit/Push zulässig: \"\n                                + \"; \".join(issues[:6])\n                            )\n                        adjudication = self._adjudicate_review(\n                            issues,\n                            str(independent_review.get(\"summary\", \"\")),\n                        )\n"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": ".hermclaw/patch.json",
+      "old": "{\n  \"schema\": 1,\n  \"patch_id\": \"agent-core-v0.2.15\",\n  \"ready\": true,\n  \"target_branch\": \"redesign/autonomous-agent\",\n  \"base_sha\": \"98974c941e64d1acb7274b188f6bbb8404937742\",\n  \"profile\": \"agent-core\",\n  \"deploy_to_225\": true\n}\n",
+      "new": "{\n  \"schema\": 1,\n  \"patch_id\": \"agent-core-v0.2.16\",\n  \"ready\": false,\n  \"target_branch\": \"redesign/autonomous-agent\",\n  \"base_sha\": \"a93549e3f146f487e4132759b83eba7625c29fdc\",\n  \"profile\": \"agent-core\",\n  \"deploy_to_225\": true\n}\n"
+    }
+  ]
+}
