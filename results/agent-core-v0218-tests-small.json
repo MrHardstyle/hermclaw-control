@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "agent-core-v0218-tests-small",
+  "action": "commit_files",
+  "request_sha": "325d121dedc346d8a6031048031336752e6649aa",
+  "result": {
+    "id": "704af3a543bea6f7875680af6c64f2950a5ccca7",
+    "short_id": "704af3a5",
+    "title": "Agent Core v0.2.18 tests: final-file acceptance evidence",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/704af3a543bea6f7875680af6c64f2950a5ccca7"
+  }
+}
