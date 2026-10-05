@@ -1,0 +1,5 @@
+{
+  "request_id": "bridge-health-v0241",
+  "action": "bridge_health",
+  "project": "local-ai/hermclaw"
+}
