@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "agent-core-v0220-tests",
+  "action": "commit_files",
+  "request_sha": "749c60f00c5827dfb8f0f2daff9f8a7740f06632",
+  "result": {
+    "id": "44ada627874f02920ba1c11fc688c45bb9a799f8",
+    "short_id": "44ada627",
+    "title": "Agent Core v0.2.20 tests: acceptance failure gate and numeric constraints",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/44ada627874f02920ba1c11fc688c45bb9a799f8"
+  }
+}
