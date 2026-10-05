@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "agent-core-v027-context-and-chunking-20261005",
+  "action": "commit_files",
+  "request_sha": "5582dfd48c1b408514fd1669baa07e15a6a4e3f3",
+  "result": {
+    "id": "01b2be28e6bca98515b285155b1e76256fbf2a6e",
+    "short_id": "01b2be28",
+    "title": "Agent Core v0.2.7: compact earlier and bound coding actions",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/01b2be28e6bca98515b285155b1e76256fbf2a6e"
+  }
+}
