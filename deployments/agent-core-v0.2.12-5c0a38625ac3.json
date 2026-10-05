@@ -1,6 +1,12 @@
 {
   "patch_id": "agent-core-v0.2.12",
   "sha": "5c0a38625ac35c6b43dc0e0b6f6452e1b93e0b85",
-  "status": "APPLYING_223",
-  "branch": "chatgpt/patch-agent-core-v0212"
+  "status": "APPLIED",
+  "branch": "chatgpt/patch-agent-core-v0212",
+  "target_branch": "redesign/autonomous-agent",
+  "changed_files": [
+    ".hermclaw/patch.json",
+    "agent_core/agent_core.py",
+    "agent_core/tests/test_agent_core.py"
+  ]
 }
