@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "request_id": "agent-core-v0211-fix-newline-serialization",
+  "action": "edit_files",
+  "request_sha": "a15daace9970658b5d768922d7f222d5f6709033",
+  "result": {
+    "id": "66de3ca044be2ad9c06a7d1683a7ad1925fa8934",
+    "short_id": "66de3ca0",
+    "title": "Agent Core v0.2.11: fix newline serialization",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/66de3ca044be2ad9c06a7d1683a7ad1925fa8934",
+    "edit_summary": {
+      "operations": 1,
+      "files": [
+        "agent_core/agent_core.py"
+      ],
+      "base": "c0a3c7c6fb72c28a1bb411d60ceff16c09fb0017",
+      "branch_existed": true
+    }
+  }
+}
