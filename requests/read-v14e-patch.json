@@ -1,0 +1,7 @@
+{
+  "request_id": "read-v14e-patch",
+  "action": "read_file",
+  "project": "local-ai/hermclaw",
+  "ref": "agent-runs/stability-v14e-benutzerfilter",
+  "path": ".hermclaw/runs/stability-v14e-benutzerfilter/working-tree.patch"
+}
