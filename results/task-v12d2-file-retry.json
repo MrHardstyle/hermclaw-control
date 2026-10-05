@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "task-v12d2-file-retry",
+  "action": "commit_files",
+  "request_sha": "3ec749647ca698af5924f4537f561873c96c3be0",
+  "result": {
+    "id": "dd022ffaf5db9c83188b6be3d630eeca997ef36e",
+    "short_id": "dd022ffa",
+    "title": "Add V12D2 internal notes test task",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/dd022ffaf5db9c83188b6be3d630eeca997ef36e"
+  }
+}
