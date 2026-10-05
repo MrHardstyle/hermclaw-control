@@ -1,0 +1,7 @@
+{
+  "request_id": "agent-core-v0221-create-branch",
+  "action": "create_branch",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/patch-agent-core-v0221",
+  "ref": "c79d7226dfa75933ecd30f1c782bf68b1d608f68"
+}
