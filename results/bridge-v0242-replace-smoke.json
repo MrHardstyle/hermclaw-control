@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "request_id": "bridge-v0242-replace-smoke",
+  "action": "edit_files",
+  "request_sha": "a84e093412b4ca118785c4320060b76d8eaf4ea6",
+  "result": {
+    "id": "e16dac104268145d4727fd88ee5ecc8ed66d4b77",
+    "short_id": "e16dac10",
+    "title": "Bridge v0.2.4.2 replace_text smoke test",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/e16dac104268145d4727fd88ee5ecc8ed66d4b77",
+    "edit_summary": {
+      "operations": 1,
+      "files": [
+        ".hermclaw/smoke/bridge-v0242.txt"
+      ],
+      "base": "5ed7aa15359289049d287bd0f2619b5102761038",
+      "branch_existed": true
+    }
+  }
+}
