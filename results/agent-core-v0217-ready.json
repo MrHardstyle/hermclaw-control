@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "agent-core-v0217-ready",
+  "action": "commit_files",
+  "request_sha": "e28d8eadb6b31d96155260ec401facd06fa3ace5",
+  "result": {
+    "id": "323fd727b6c9ed8f7866322452eb3abbad6ae0c2",
+    "short_id": "323fd727",
+    "title": "Agent Core v0.2.17 ready",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/323fd727b6c9ed8f7866322452eb3abbad6ae0c2"
+  }
+}
