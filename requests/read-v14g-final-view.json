@@ -1,0 +1,7 @@
+{
+  "request_id": "read-v14g-final-view",
+  "action": "read_file",
+  "project": "local-ai/hermclaw",
+  "ref": "ai/job-stability-v14g-benutzerfilter-stability-test-v14-bestehende-benutzerlist",
+  "path": "nav/settings_benutzer.php"
+}
