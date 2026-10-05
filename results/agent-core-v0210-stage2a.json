@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "request_id": "agent-core-v0210-stage2a",
+  "action": "edit_files",
+  "request_sha": "4f66bed0ddd427ad8573038dcbab233ad205eac9",
+  "result": {
+    "id": "9a3a9a9d3cfc5f198609f6e0b92f61f01856a20e",
+    "short_id": "9a3a9a9d",
+    "title": "Agent Core v0.2.10 update review test",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/9a3a9a9d3cfc5f198609f6e0b92f61f01856a20e",
+    "edit_summary": {
+      "operations": 2,
+      "files": [
+        "agent_core/tests/test_agent_core.py"
+      ],
+      "base": "7ed1d22e2b85bac5eb232563842c72c566156cbf",
+      "branch_existed": true
+    }
+  }
+}
