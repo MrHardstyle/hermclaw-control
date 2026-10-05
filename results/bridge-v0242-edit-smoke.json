@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "request_id": "bridge-v0242-edit-smoke",
+  "action": "edit_files",
+  "request_sha": "2b486155a6cb69200b495d31a9584edaf30393ca",
+  "result": {
+    "id": "5ed7aa15359289049d287bd0f2619b5102761038",
+    "short_id": "5ed7aa15",
+    "title": "Bridge v0.2.4.2 delta smoke test",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/5ed7aa15359289049d287bd0f2619b5102761038",
+    "edit_summary": {
+      "operations": 1,
+      "files": [
+        ".hermclaw/smoke/bridge-v0242.txt"
+      ],
+      "base": "bbe5b2f1e674327ea456a5fb315a91994142237f",
+      "branch_existed": false
+    }
+  }
+}
