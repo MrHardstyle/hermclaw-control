@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "request_id": "agent-core-v0216-stage1",
+  "action": "edit_files",
+  "request_sha": "238378120f19b6e1601c84dbfe8be2577e6b8733",
+  "result": {
+    "id": "c890eedaab0679187efd19d581824671cc6bc450",
+    "short_id": "c890eeda",
+    "title": "Agent Core v0.2.16: make acceptance evidence gate non-overridable",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/c890eedaab0679187efd19d581824671cc6bc450",
+    "edit_summary": {
+      "operations": 4,
+      "files": [
+        "agent_core/agent_core.py",
+        ".hermclaw/patch.json"
+      ],
+      "base": "a93549e3f146f487e4132759b83eba7625c29fdc",
+      "branch_existed": true
+    }
+  }
+}
