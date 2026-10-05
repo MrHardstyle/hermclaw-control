@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "request_id": "agent-core-v0211-ready",
+  "action": "edit_files",
+  "request_sha": "0868cc1192000c4e652552fe8b7fdf1c94db274a",
+  "result": {
+    "id": "c0a3c7c6fb72c28a1bb411d60ceff16c09fb0017",
+    "short_id": "c0a3c7c6",
+    "title": "Agent Core v0.2.11 ready",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/c0a3c7c6fb72c28a1bb411d60ceff16c09fb0017",
+    "edit_summary": {
+      "operations": 1,
+      "files": [
+        ".hermclaw/patch.json"
+      ],
+      "base": "bf68376ec01ba7d0bc942303522b6445c4977d6a",
+      "branch_existed": true
+    }
+  }
+}
