@@ -1,0 +1,7 @@
+{
+  "request_id": "read-v0219-init",
+  "action": "read_file",
+  "project": "local-ai/hermclaw",
+  "ref": "chatgpt/patch-agent-core-v0219",
+  "path": "agent_core/__init__.py"
+}
