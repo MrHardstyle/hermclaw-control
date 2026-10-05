@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "v028-head",
+  "action": "get_branch_head",
+  "request_sha": "5b01dd9eacf96123487f9909d7f0263cb70c4ecc",
+  "result": {
+    "branch": "redesign/autonomous-agent",
+    "commit": "bbe5b2f1e674327ea456a5fb315a91994142237f",
+    "short_id": "bbe5b2f1",
+    "title": "Agent Core v0.2.8: adapt output budget after truncation",
+    "committed_date": "2026-10-05T00:35:51.000+00:00"
+  }
+}
