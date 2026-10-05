@@ -2,5 +2,5 @@
   "request_id": "bridge-health-v0241",
   "action": "get_commit_diff",
   "project": "local-ai/hermclaw",
-  "commit": "8516a48ce13801a7908239ba276bf359fbd79f5b"
+  "sha": "8516a48ce13801a7908239ba276bf359fbd79f5b"
 }
