@@ -1,0 +1,58 @@
+{
+  "request_id": "agent-core-v0210-stage1",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/patch-agent-core-v0210",
+  "start_sha": "73b16a4add361d8ef7ab4534b766a22ecdd9788d",
+  "commit_message": "Agent Core v0.2.10 stage 1",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/agent_core.py",
+      "old": "VERSION = \"0.2.9\"",
+      "new": "VERSION = \"0.2.10\""
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/agent_core.py",
+      "old": "REVIEW_ADJUDICATION_MAX_OUTPUT_TOKENS = int(os.environ.get(\"HERMCLAW_REVIEW_ADJUDICATION_MAX_OUTPUT_TOKENS\", \"1600\"))\nMAX_REVIEW_DIFF_CHARS = 60000\n",
+      "new": "REVIEW_ADJUDICATION_MAX_OUTPUT_TOKENS = int(os.environ.get(\"HERMCLAW_REVIEW_ADJUDICATION_MAX_OUTPUT_TOKENS\", \"1600\"))\nACCEPTANCE_REVIEW_MAX_OUTPUT_TOKENS = int(os.environ.get(\"HERMCLAW_ACCEPTANCE_REVIEW_MAX_OUTPUT_TOKENS\", \"1800\"))\nMAX_REVIEW_DIFF_CHARS = 60000\n"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/agent_core.py",
+      "old": "- Lies den gesamten aktuellen Diff, bevor du eine Anforderung als fehlend meldest.\n- Suche bei jeder behaupteten Lücke aktiv nach Gegenbelegen im Diff.\n",
+      "new": "- Lies den gesamten aktuellen Diff, bevor du eine Anforderung als fehlend meldest.\n- Prüfe bei jeder expliziten Anforderung auch den ausführbaren Pfad: nur eine Datei/Funktion anzulegen reicht nicht, wenn Einbindung oder Aufruf zur Anforderung gehören.\n- Prüfe neue Helfer/Dateien darauf, ob sie im aktuellen Diff tatsächlich verwendet oder für den Auftrag konkret notwendig sind.\n- Suche bei jeder behaupteten Lücke aktiv nach Gegenbelegen im Diff.\n"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/agent_core.py",
+      "old": "SUMMARY_REQUEST = \"\"\"\n",
+      "new": "ACCEPTANCE_REVIEW_SYSTEM_PROMPT = r\"\"\"\nDu bist die zweite, frische Akzeptanzprüfung nach einem bereits bestandenen normalen Code-Review. Dein Zweck ist, falsche PASS-Entscheidungen zu finden.\n\nDu erhältst ORIGINALAUFTRAG, geänderte Pfade, Tests, den Coder-Selbstreview, den ersten Review und den aktuellen finalen Diff.\n\nPrüfe streng, aber nur gegen den Auftrag:\n1. Zerlege den Originalauftrag in seine expliziten fachlichen Anforderungen.\n2. Belege für jede Anforderung einen tatsächlich ausführbaren/erreichbaren Pfad im aktuellen Diff. Eine Datei, View, Funktion oder Partial nur anzulegen reicht nicht, wenn Einbindung oder Aufruf zur Anforderung gehören.\n3. Prüfe bei mehrteiligen Änderungen den Datenfluss vom Einstieg über Aufruf/Include/Handler bis zur verlangten Wirkung, Persistenz oder Ausgabe. Fehlende Verknüpfungen sind FIX_REQUIRED.\n4. Prüfe Scope-Disziplin: Jede im FINALEN DIFF geänderte Datei/Funktion muss für den Auftrag konkret notwendig oder nachvollziehbar verwendet sein. Unbenutzte neue Helfer, Debug-Dateien oder sachfremde Änderungen sind FIX_REQUIRED.\n5. GEÄNDERTE PFADE ist Laufhistorie und kann inzwischen vollständig zurückgesetzte Pfade enthalten. Maßgeblich ist der aktuelle FINALER DIFF.\n6. Erfinde keine neuen Features und verlange keine redundanten Änderungen.\n7. Für FIX_REQUIRED muss jeder Punkt Dateipfad und einen kurzen wörtlichen Beleg aus dem aktuellen Diff nennen. Bei einer fehlenden Verknüpfung nenne die vorhandenen Enden des Pfads und konkret, welche Verbindung fehlt.\n\nAntworte exakt als JSON, ohne Markdown:\n{\"verdict\":\"PASS\",\"summary\":\"kurze Begründung\",\"checks\":[\"Anforderung — Pfad/Beleg\"],\"issues\":[]}\noder\n{\"verdict\":\"FIX_REQUIRED\",\"summary\":\"kurze Begründung\",\"checks\":[\"bereits bestätigte Anforderungen\"],\"issues\":[\"datei — Beleg: \\\"kurzer Ausschnitt\\\" — konkrete fehlende Verbindung oder Scope-Verletzung\"]}\n\nPASS nur, wenn jede explizite Anforderung im aktuellen Diff funktional erreichbar ist und der aktuelle Diff keine unbegründeten Änderungen enthält.\n\"\"\".strip()\n\n\nSUMMARY_REQUEST = \"\"\"\n"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/agent_core.py",
+      "old": "    def _adjudicate_review(self, issues: list[str], summary: str = \"\") -> dict[str, Any]:\n",
+      "new": "    def _run_acceptance_review(self, coder_review: str, first_review: dict[str, Any]) -> dict[str, Any]:\n        \"\"\"Zweite frische Prüfung: Anforderungen, Erreichbarkeit, Datenfluss und Scope.\"\"\"\n        if self.reviewer_client is None:\n            return {\"verdict\": \"PASS\", \"summary\": \"Zweite Akzeptanzprüfung deaktiviert.\", \"issues\": [], \"checks\": []}\n\n        patch = workspace_patch_text(self.state.workspace, sorted(self.state.files_changed))\n        if len(patch) > MAX_REVIEW_DIFF_CHARS:\n            patch = truncate(patch, MAX_REVIEW_DIFF_CHARS)\n        prompt = (\n            \"ORIGINALAUFTRAG:\\n\" + redact(self.state.task)\n            + \"\\n\\nGEÄNDERTE PFADE (Laufhistorie):\\n\" + \"\\n\".join(sorted(self.state.files_changed))\n            + \"\\n\\nERFOLGREICHE/VERWENDETE PRÜFBEFEHLE:\\n\"\n            + (\"\\n\".join(redact(x) for x in self.state.test_commands) or \"(keine)\")\n            + \"\\n\\nCODER-SELBSTREVIEW:\\n\" + redact(coder_review)\n            + \"\\n\\nERSTER UNABHÄNGIGER REVIEW:\\n\" + redact(str(first_review.get(\"summary\", \"\")))\n            + \"\\n\\nFINALER DIFF:\\n\" + redact(patch)\n        )\n        messages = [\n            {\"role\": \"system\", \"content\": ACCEPTANCE_REVIEW_SYSTEM_PROMPT},\n            {\"role\": \"user\", \"content\": prompt},\n        ]\n        last_error = \"\"\n        for _attempt in range(1, 3):\n            raw = self.reviewer_client.complete(messages, max_tokens=ACCEPTANCE_REVIEW_MAX_OUTPUT_TOKENS)\n            try:\n                parsed = self._extract_json(raw)\n                verdict = str(parsed.get(\"verdict\", \"\")).strip().upper()\n                issues_raw = parsed.get(\"issues\", [])\n                checks_raw = parsed.get(\"checks\", [])\n                issues = [shorten(redact(str(item)), 700) for item in issues_raw] if isinstance(issues_raw, list) else []\n                checks = [shorten(redact(str(item)), 700) for item in checks_raw] if isinstance(checks_raw, list) else []\n                summary = shorten(redact(str(parsed.get(\"summary\", \"\"))), 1400)\n                if verdict not in (\"PASS\", \"FIX_REQUIRED\"):\n                    raise AgentError(\"Akzeptanzprüfung verdict muss PASS oder FIX_REQUIRED sein.\")\n                if verdict == \"FIX_REQUIRED\" and not issues:\n                    issues = [summary or \"Akzeptanzprüfung fordert Korrekturen ohne Einzelpunkt.\"]\n                return {\"verdict\": verdict, \"summary\": summary, \"issues\": issues, \"checks\": checks}\n            except Exception as exc:\n                last_error = str(exc)\n                messages.append({\"role\": \"assistant\", \"content\": raw[:2000]})\n                messages.append({\"role\": \"user\", \"content\": \"Antwortformat ungültig. Antworte ausschließlich mit dem geforderten JSON-Objekt.\"})\n        raise AgentError(\"Zweite Akzeptanzprüfung lieferte kein gültiges Ergebnis: \" + last_error)\n\n    def _adjudicate_review(self, issues: list[str], summary: str = \"\") -> dict[str, Any]:\n"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/agent_core.py",
+      "old": "                independent_review = self._run_independent_review(review)\n                if independent_review[\"verdict\"] == \"FIX_REQUIRED\":\n",
+      "new": "                initial_review = self._run_independent_review(review)\n                independent_review = initial_review\n                if initial_review[\"verdict\"] == \"PASS\":\n                    acceptance_review = self._run_acceptance_review(review, initial_review)\n                    self.logger.emit(\n                        \"review\",\n                        \"Zweite Akzeptanzprüfung abgeschlossen.\",\n                        verdict=acceptance_review.get(\"verdict\", \"\"),\n                        issues=acceptance_review.get(\"issues\", []),\n                        checks=acceptance_review.get(\"checks\", []),\n                        summary=acceptance_review.get(\"summary\", \"\"),\n                    )\n                    independent_review = acceptance_review\n                if independent_review[\"verdict\"] == \"FIX_REQUIRED\":\n"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/agent_core.py",
+      "old": "                    \"Unabhängiger Review bestanden.\",\n",
+      "new": "                    \"Unabhängige Abschlussprüfungen bestanden.\",\n"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": ".hermclaw/patch.json",
+      "old": "{\n  \"schema\": 1,\n  \"patch_id\": \"agent-core-v0.2.9\",\n  \"ready\": true,\n  \"target_branch\": \"redesign/autonomous-agent\",\n  \"base_sha\": \"bbe5b2f1e674327ea456a5fb315a91994142237f\",\n  \"profile\": \"agent-core\",\n  \"deploy_to_225\": true\n}\n",
+      "new": "{\n  \"schema\": 1,\n  \"patch_id\": \"agent-core-v0.2.10\",\n  \"ready\": false,\n  \"target_branch\": \"redesign/autonomous-agent\",\n  \"base_sha\": \"73b16a4add361d8ef7ab4534b766a22ecdd9788d\",\n  \"profile\": \"agent-core\",\n  \"deploy_to_225\": true\n}\n"
+    }
+  ]
+}
