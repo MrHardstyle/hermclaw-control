@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "head-v0210",
+  "action": "get_branch_head",
+  "request_sha": "2a519695351e9aa9764cf4f1277134f00f559c6a",
+  "result": {
+    "branch": "redesign/autonomous-agent",
+    "commit": "334ae6316f6138fc558b72abf767e9428708b130",
+    "short_id": "334ae631",
+    "title": "Agent Core v0.2.10: handle reverted history paths",
+    "committed_date": "2026-10-05T10:30:12.000+00:00"
+  }
+}
