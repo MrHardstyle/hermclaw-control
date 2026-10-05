@@ -1,0 +1,6 @@
+{
+  "ok": false,
+  "request_id": "v0217-commit-probe",
+  "error_type": "ProtocolError",
+  "error": "commit_files benötigt actions."
+}
