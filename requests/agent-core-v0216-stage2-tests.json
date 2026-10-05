@@ -1,0 +1,22 @@
+{
+  "request_id": "agent-core-v0216-stage2-tests",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/patch-agent-core-v0216",
+  "start_sha": "c890eedaab0679187efd19d581824671cc6bc450",
+  "commit_message": "Agent Core v0.2.16: test non-overridable acceptance gate",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/tests/test_agent_core.py",
+      "old": "        self.assertEqual(result[\"verdict\"], \"FIX_REQUIRED\")\n        self.assertTrue(any(\"Acceptance-Nachweis ungültig\" in issue for issue in result[\"issues\"]))\n",
+      "new": "        self.assertEqual(result[\"verdict\"], \"FIX_REQUIRED\")\n        self.assertEqual(result[\"gate\"], \"ACCEPTANCE_EVIDENCE_INVALID\")\n        self.assertTrue(any(\"Acceptance-Nachweis ungültig\" in issue for issue in result[\"issues\"]))\n"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/tests/test_agent_core.py",
+      "old": "    @needs_git\n    def test_acceptance_pass_with_exact_diff_evidence_is_accepted(self):\n",
+      "new": "    @needs_shell\n    def test_acceptance_evidence_gate_cannot_be_overruled_by_final_adjudicator(self):\n        root, workspace, state, logger, sources = self.make_runtime()\n        state.task = \"Erzeuge answer.py mit answer() == 43.\"\n        coder = ScriptedClient([\n            tool(\"write_file\", {\"path\": \"answer.py\", \"content\": \"def answer():\\n    return 42\\n\"}),\n            tool(\"shell\", {\"command\": \"python3 -m py_compile answer.py\"}),\n            tool(\"git_diff\", {}),\n            FINISH,\n        ])\n        reviewer = ScriptedClient([\n            json.dumps({\n                \"verdict\": \"PASS\",\n                \"summary\": \"Der erste Review behauptet Vollständigkeit.\",\n                \"issues\": [],\n            }),\n            json.dumps({\n                \"verdict\": \"PASS\",\n                \"summary\": \"Die Anforderung sei erfüllt.\",\n                \"checks\": [{\n                    \"requirement\": \"answer() muss 43 zurückgeben.\",\n                    \"path\": \"answer.py\",\n                    \"evidence\": \"return 43\",\n                    \"reason\": \"Der geforderte Rückgabewert sei sichtbar.\",\n                }],\n                \"issues\": [],\n            }),\n            json.dumps({\n                \"verdict\": \"PASS\",\n                \"summary\": \"Dieser Schiedsrichter-Aufruf darf nie stattfinden.\",\n                \"issues\": [],\n            }),\n        ])\n        controller = AgentController(\n            coder,\n            state,\n            logger,\n            sources,\n            max_turns=6,\n            reviewer_client=reviewer,\n            max_review_cycles=1,\n        )\n\n        with self.assertRaises(AgentError) as ctx:\n            controller.run()\n\n        self.assertIn(\"ACCEPTANCE_EVIDENCE_INVALID_AFTER_RETRIES\", str(ctx.exception))\n        self.assertEqual(len(reviewer.requests), 2)\n        events = (root / \"events.jsonl\").read_text(encoding=\"utf-8\")\n        self.assertIn(\"ACCEPTANCE_EVIDENCE_INVALID_AFTER_RETRIES\", events)\n        self.assertIn(\"finaler LLM-Schiedsrichter darf es nicht überstimmen\", events)\n        self.assertNotIn(\"Finale Review-Schiedsrichter-Prüfung abgeschlossen\", events)\n\n    @needs_git\n    def test_acceptance_pass_with_exact_diff_evidence_is_accepted(self):\n"
+    }
+  ]
+}
