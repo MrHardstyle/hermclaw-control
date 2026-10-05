@@ -1,0 +1,16 @@
+{
+  "request_id": "agent-core-v0213-ready",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/patch-agent-core-v0213",
+  "start_sha": "4d426bb80f00502f6631734c50b4475986d8d280",
+  "commit_message": "Agent Core v0.2.13 ready",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": ".hermclaw/patch.json",
+      "old": "{\n  \"schema\": 1,\n  \"patch_id\": \"agent-core-v0.2.13\",\n  \"ready\": false,\n  \"target_branch\": \"redesign/autonomous-agent\",\n  \"base_sha\": \"5c0a38625ac35c6b43dc0e0b6f6452e1b93e0b85\",\n  \"profile\": \"agent-core\",\n  \"deploy_to_225\": true\n}\n",
+      "new": "{\n  \"schema\": 1,\n  \"patch_id\": \"agent-core-v0.2.13\",\n  \"ready\": true,\n  \"target_branch\": \"redesign/autonomous-agent\",\n  \"base_sha\": \"5c0a38625ac35c6b43dc0e0b6f6452e1b93e0b85\",\n  \"profile\": \"agent-core\",\n  \"deploy_to_225\": true\n}\n"
+    }
+  ]
+}
