@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "request_id": "agent-core-v0214-stage3-tests",
+  "action": "edit_files",
+  "request_sha": "700d4cab5d09bde9f6b2818812396f8a3d1758e9",
+  "result": {
+    "id": "eb1745d29725d4646de273bf5a2bf967a985c4d9",
+    "short_id": "eb1745d2",
+    "title": "Agent Core v0.2.14 stage 3: test acceptance evidence validation",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/eb1745d29725d4646de273bf5a2bf967a985c4d9",
+    "edit_summary": {
+      "operations": 6,
+      "files": [
+        "agent_core/tests/test_agent_core.py"
+      ],
+      "base": "384dec2a2e17515ec25122e7d3581d0372be2762",
+      "branch_existed": true
+    }
+  }
+}
