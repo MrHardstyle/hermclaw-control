@@ -1,0 +1,16 @@
+{
+  "request_id": "agent-core-v0210-stage2b",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/patch-agent-core-v0210",
+  "start_sha": "9a3a9a9d3cfc5f198609f6e0b92f61f01856a20e",
+  "commit_message": "Agent Core v0.2.10 add integration acceptance test",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/tests/test_agent_core.py",
+      "old": "    @needs_shell\n    def test_final_review_adjudication_can_dismiss_stale_false_positive(self):\n",
+      "new": "    @needs_shell\n    def test_acceptance_review_catches_missing_integration_then_passes(self):\n        root, workspace, state, logger, sources = self.make_runtime()\n        state.task = \"Erzeuge helper.py mit render() == 'ok' und app.py, dessen run() tatsächlich helper.render() aufruft.\"\n        coder = ScriptedClient([\n            tool(\"write_file\", {\"path\": \"helper.py\", \"content\": \"def render():\\n    return 'ok'\\n\"}),\n            tool(\"write_file\", {\"path\": \"app.py\", \"content\": \"def run():\\n    return 'ok'\\n\"}),\n            tool(\"shell\", {\"command\": \"python3 -m py_compile app.py helper.py\"}),\n            tool(\"git_diff\", {}),\n            FINISH,\n            tool(\"replace_text\", {\n                \"path\": \"app.py\",\n                \"old\": \"def run():\\n    return 'ok'\\n\",\n                \"new\": \"from helper import render\\n\\ndef run():\\n    return render()\\n\",\n            }),\n            tool(\"shell\", {\"command\": \"python3 -m py_compile app.py helper.py\"}),\n            tool(\"git_diff\", {}),\n            FINISH,\n        ])\n        reviewer = ScriptedClient([\n            json.dumps({\"verdict\": \"PASS\", \"summary\": \"Beide Dateien sind vorhanden.\", \"issues\": []}),\n            json.dumps({\n                \"verdict\": \"FIX_REQUIRED\",\n                \"summary\": \"Die geforderte Integration ist nicht erreichbar.\",\n                \"checks\": [\"helper.py enthält render().\"],\n                \"issues\": [\"app.py — Beleg: \\\"def run(): return 'ok'\\\" — run() ruft helper.render() nicht auf.\"],\n            }),\n            json.dumps({\"verdict\": \"PASS\", \"summary\": \"Der Diff erfüllt den Auftrag.\", \"issues\": []}),\n            json.dumps({\n                \"verdict\": \"PASS\",\n                \"summary\": \"app.run() importiert und ruft render() nun sichtbar auf.\",\n                \"checks\": [\"app.py — Beleg: \\\"return render()\\\" — ausführbarer Pfad hergestellt.\"],\n                \"issues\": [],\n            }),\n        ])\n        controller = AgentController(\n            coder, state, logger, sources, max_turns=12,\n            reviewer_client=reviewer, max_review_cycles=3,\n        )\n        result = controller.run()\n        self.assertIn(\"return render()\", (workspace / \"app.py\").read_text(encoding=\"utf-8\"))\n        self.assertEqual(result[\"independent_review\"][\"verdict\"], \"PASS\")\n        self.assertEqual(len(reviewer.requests), 4)\n        events = (root / \"events.jsonl\").read_text(encoding=\"utf-8\")\n        self.assertIn(\"Zweite Akzeptanzprüfung\", events)\n\n    @needs_shell\n    def test_final_review_adjudication_can_dismiss_stale_false_positive(self):\n"
+    }
+  ]
+}
