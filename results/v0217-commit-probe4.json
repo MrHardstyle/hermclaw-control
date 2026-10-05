@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "v0217-commit-probe4",
+  "action": "commit_files",
+  "request_sha": "65b435b996fe2c191b47873dd31bbc2ccc424465",
+  "result": {
+    "id": "af0a6faa6efd8a3bfd87e5e4d97c7f92d6b56760",
+    "short_id": "af0a6faa",
+    "title": "probe4",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/af0a6faa6efd8a3bfd87e5e4d97c7f92d6b56760"
+  }
+}
