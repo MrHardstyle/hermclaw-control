@@ -1,0 +1,15 @@
+{
+  "request_id": "agent-core-v0218-manifest",
+  "action": "commit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/patch-agent-core-v0217",
+  "target_branch": "chatgpt/patch-agent-core-v0217",
+  "commit_message": "Agent Core v0.2.18 manifest",
+  "actions": [
+    {
+      "action": "update",
+      "file_path": ".hermclaw/patch.json",
+      "content": "{\n  \"schema\": 1,\n  \"patch_id\": \"agent-core-v0.2.18\",\n  \"ready\": false,\n  \"target_branch\": \"redesign/autonomous-agent\",\n  \"base_sha\": \"323fd727b6c9ed8f7866322452eb3abbad6ae0c2\",\n  \"profile\": \"agent-core\",\n  \"deploy_to_225\": true\n}\n"
+    }
+  ]
+}
