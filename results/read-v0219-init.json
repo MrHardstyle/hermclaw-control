@@ -1,0 +1,6 @@
+{
+  "ok": false,
+  "request_id": "read-v0219-init",
+  "error_type": "HTTPError",
+  "error": "404 Client Error: Not Found for url: http://192.168.178.226/api/v4/projects/local-ai%2Fhermclaw/repository/files/agent_core%2F__init__.py?ref=chatgpt%2Fpatch-agent-core-v0219"
+}
