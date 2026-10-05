@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "request_id": "agent-core-v0216-stage2-tests",
+  "action": "edit_files",
+  "request_sha": "c2cc789f9f021e8df7ec8269d80d6554417ca85a",
+  "result": {
+    "id": "50ef3d757a8e990ee10ea9e8e28ef2b01127dade",
+    "short_id": "50ef3d75",
+    "title": "Agent Core v0.2.16: test non-overridable acceptance gate",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/50ef3d757a8e990ee10ea9e8e28ef2b01127dade",
+    "edit_summary": {
+      "operations": 2,
+      "files": [
+        "agent_core/tests/test_agent_core.py"
+      ],
+      "base": "c890eedaab0679187efd19d581824671cc6bc450",
+      "branch_existed": true
+    }
+  }
+}
