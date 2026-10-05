@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "request_id": "agent-core-v0215-stage3-tests",
+  "action": "edit_files",
+  "request_sha": "ab7496db21964c04508d8fdba3445017517c0b93",
+  "result": {
+    "id": "aba0e83e1328b3acbaaf04655c543b042fc28533",
+    "short_id": "aba0e83e",
+    "title": "Agent Core v0.2.15 stage 3: test truncated reviewer recovery",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/aba0e83e1328b3acbaaf04655c543b042fc28533",
+    "edit_summary": {
+      "operations": 2,
+      "files": [
+        "agent_core/tests/test_agent_core.py"
+      ],
+      "base": "d251beb6167947f544bef2657f3e3d27ee1b4ec9",
+      "branch_existed": true
+    }
+  }
+}
