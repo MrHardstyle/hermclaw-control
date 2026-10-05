@@ -1,0 +1,34 @@
+{
+  "request_id": "agent-core-v0220-stage1",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/patch-agent-core-v0220",
+  "start_sha": "988f5cb5487e6bc866a2feef6d72d88bd6254d56",
+  "commit_message": "Agent Core v0.2.20 stage 1: harden acceptance prompt and numeric evidence",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/agent_core.py",
+      "old": "VERSION = \"0.2.19\"",
+      "new": "VERSION = \"0.2.20\""
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/agent_core.py",
+      "old": "12. Bei verlangter Normalisierung/Rücksetzung genügt kein switch-default, Kommentar oder äquivalentes Nebenverhalten. Der Beleg muss die tatsächliche Zuweisung/Normalisierung des Eingabewerts oder einen eindeutig äquivalenten Normalisierungsaufruf zeigen.",
+      "new": "12. Bei verlangter Normalisierung/Rücksetzung genügt kein switch-default, Kommentar oder äquivalentes Nebenverhalten. Der Beleg muss die tatsächliche Zuweisung/Normalisierung des Eingabewerts oder einen eindeutig äquivalenten Normalisierungsaufruf zeigen.\n13. Enthält eine Anforderung einen konkreten Grenzwert oder eine Zahl (z. B. maximal 120 Zeichen, Limit 1–500), muss der Evidence-Ausschnitt genau diesen Zahlenwert bzw. die entsprechende Begrenzungsoperation sichtbar belegen. Ein bloßes trim(), strlen() oder maxlength ohne serverseitige Begrenzung reicht nicht.\n14. Wird ein normalisierter Eingabewert sowohl für Backend-Verhalten als auch für Formularzustand/Ausgabe verwendet, muss derselbe normalisierte Wert beide Pfade erreichen. Eine lokale Zuweisung nur innerhalb einer Hilfsfunktion normalisiert den Wert im aufrufenden Formular nicht."
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/agent_core.py",
+      "old": "    @staticmethod\n    def _validate_acceptance_checks(\n",
+      "new": "    @staticmethod\n    def _acceptance_numeric_constraints(requirement: str) -> list[str]:\n        \"\"\"Extrahiert explizite Zahlen nur aus Anforderungen mit erkennbarer Grenz-/Wertsemantik.\"\"\"\n        text = \" \".join(str(requirement or \"\").lower().split())\n        constrained = re.search(\n            r\"\\b(?:max(?:imal)?|höchstens|mindestens|limit|begrenz|zeichen|bytes?|kb|mb|gb|sekunden?|minuten?|stunden?|tage?|prozent)\\b|(?:=|<=|>=|<|>)\\s*\\d\",\n            text,\n        )\n        if not constrained:\n            return []\n        return re.findall(r\"(?<![\\w.])\\d+(?:[.,]\\d+)?(?![\\w.])\", text)\n\n    @staticmethod\n    def _validate_acceptance_checks(\n"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/agent_core.py",
+      "old": "            if AgentController._acceptance_reason_contradicts_satisfied(reason):\n                problems.append(\n                    f\"Check {index} ist selbstwidersprüchlich: satisfied=true, aber die Begründung \"\n                    f\"nennt eine Lücke (Anforderung: {shorten(redact(requirement), 180)}; \"\n                    f\"reason: {shorten(redact(reason), 220)}).\"\n                )\n                continue\n            if len(evidence) < 4:\n",
+      "new": "            if AgentController._acceptance_reason_contradicts_satisfied(reason):\n                problems.append(\n                    f\"Check {index} ist selbstwidersprüchlich: satisfied=true, aber die Begründung \"\n                    f\"nennt eine Lücke (Anforderung: {shorten(redact(requirement), 180)}; \"\n                    f\"reason: {shorten(redact(reason), 220)}).\"\n                )\n                continue\n            required_numbers = AgentController._acceptance_numeric_constraints(requirement)\n            missing_numbers = [number for number in required_numbers if number not in evidence]\n            if missing_numbers:\n                problems.append(\n                    f\"Check {index} belegt konkrete Zahlen/Grenzwerte nicht im Evidence-Ausschnitt: \"\n                    f\"{', '.join(missing_numbers)} (Anforderung: {shorten(redact(requirement), 180)}).\"\n                )\n                continue\n            if len(evidence) < 4:\n"
+    }
+  ]
+}
