@@ -1,0 +1,16 @@
+{
+  "request_id": "agent-core-v0210-stage2c",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/patch-agent-core-v0210",
+  "start_sha": "6304bfbef6d82198875e27c1673180f8ee07dbcf",
+  "commit_message": "Agent Core v0.2.10 add scope acceptance test",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/tests/test_agent_core.py",
+      "old": "    @needs_shell\n    def test_final_review_adjudication_can_dismiss_stale_false_positive(self):\n",
+      "new": "    @needs_shell\n    def test_acceptance_review_rejects_unrelated_current_diff_then_accepts_revert(self):\n        root, workspace, state, logger, sources = self.make_runtime()\n        state.task = \"Erzeuge ausschließlich answer.py mit answer() == 43.\"\n        coder = ScriptedClient([\n            tool(\"write_file\", {\"path\": \"answer.py\", \"content\": \"def answer():\\n    return 43\\n\"}),\n            tool(\"write_file\", {\"path\": \"debug_notes.txt\", \"content\": \"temporary\\n\"}),\n            tool(\"shell\", {\"command\": \"python3 -m py_compile answer.py\"}),\n            tool(\"git_diff\", {}),\n            FINISH,\n            tool(\"shell\", {\"command\": \"rm debug_notes.txt\"}),\n            tool(\"shell\", {\"command\": \"python3 -m py_compile answer.py\"}),\n            tool(\"git_diff\", {}),\n            FINISH,\n        ])\n        reviewer = ScriptedClient([\n            json.dumps({\"verdict\": \"PASS\", \"summary\": \"answer.py erfüllt die Funktion.\", \"issues\": []}),\n            json.dumps({\n                \"verdict\": \"FIX_REQUIRED\",\n                \"summary\": \"Der aktuelle Diff enthält eine sachfremde Datei.\",\n                \"checks\": [\"answer.py enthält return 43.\"],\n                \"issues\": [\"debug_notes.txt — Beleg: \\\"temporary\\\" — Datei ist für den Auftrag nicht notwendig.\"],\n            }),\n            json.dumps({\"verdict\": \"PASS\", \"summary\": \"Die fachliche Anforderung ist erfüllt.\", \"issues\": []}),\n            json.dumps({\n                \"verdict\": \"PASS\",\n                \"summary\": \"Im finalen Diff bleibt nur die verlangte Implementierung.\",\n                \"checks\": [\"answer.py — Beleg: \\\"return 43\\\".\"],\n                \"issues\": [],\n            }),\n        ])\n        controller = AgentController(\n            coder, state, logger, sources, max_turns=12,\n            reviewer_client=reviewer, max_review_cycles=3,\n        )\n        result = controller.run()\n        self.assertFalse((workspace / \"debug_notes.txt\").exists())\n        self.assertEqual(result[\"independent_review\"][\"verdict\"], \"PASS\")\n        self.assertEqual(len(reviewer.requests), 4)\n\n    @needs_shell\n    def test_final_review_adjudication_can_dismiss_stale_false_positive(self):\n"
+    }
+  ]
+}
