@@ -1,0 +1,16 @@
+{
+  "request_id": "agent-core-v0211-fix-newline-serialization",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/patch-agent-core-v0211-r1",
+  "start_sha": "c0a3c7c6fb72c28a1bb411d60ceff16c09fb0017",
+  "commit_message": "Agent Core v0.2.11: fix newline serialization",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/agent_core.py",
+      "old": "REVIEW_MAX_OUTPUT_TOKENS = int(os.environ.get(\"HERMCLAW_REVIEW_MAX_OUTPUT_TOKENS\", \"1400\"))\\nREVIEW_ADJUDICATION_MAX_OUTPUT_TOKENS = int(os.environ.get(\"HERMCLAW_REVIEW_ADJUDICATION_MAX_OUTPUT_TOKENS\", \"1600\"))\\nACCEPTANCE_REVIEW_MAX_OUTPUT_TOKENS = int(os.environ.get(\"HERMCLAW_ACCEPTANCE_REVIEW_MAX_OUTPUT_TOKENS\", \"1800\"))\\nREVIEW_FORMAT_REPAIR_MAX_OUTPUT_TOKENS = int(os.environ.get(\"HERMCLAW_REVIEW_FORMAT_REPAIR_MAX_OUTPUT_TOKENS\", \"1800\"))\\nREVIEW_RAW_DIAGNOSTIC_CHARS = int(os.environ.get(\"HERMCLAW_REVIEW_RAW_DIAGNOSTIC_CHARS\", \"8000\"))\\nMAX_REVIEW_DIFF_CHARS = 60000\\n",
+      "new": "REVIEW_MAX_OUTPUT_TOKENS = int(os.environ.get(\"HERMCLAW_REVIEW_MAX_OUTPUT_TOKENS\", \"1400\"))\nREVIEW_ADJUDICATION_MAX_OUTPUT_TOKENS = int(os.environ.get(\"HERMCLAW_REVIEW_ADJUDICATION_MAX_OUTPUT_TOKENS\", \"1600\"))\nACCEPTANCE_REVIEW_MAX_OUTPUT_TOKENS = int(os.environ.get(\"HERMCLAW_ACCEPTANCE_REVIEW_MAX_OUTPUT_TOKENS\", \"1800\"))\nREVIEW_FORMAT_REPAIR_MAX_OUTPUT_TOKENS = int(os.environ.get(\"HERMCLAW_REVIEW_FORMAT_REPAIR_MAX_OUTPUT_TOKENS\", \"1800\"))\nREVIEW_RAW_DIAGNOSTIC_CHARS = int(os.environ.get(\"HERMCLAW_REVIEW_RAW_DIAGNOSTIC_CHARS\", \"8000\"))\nMAX_REVIEW_DIFF_CHARS = 60000\n"
+    }
+  ]
+}
