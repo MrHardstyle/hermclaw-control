@@ -1,0 +1,5 @@
+{
+  "request_id": "bridge-v024-gitlab-check",
+  "action": "get_project",
+  "project": "local-ai/hermclaw"
+}
