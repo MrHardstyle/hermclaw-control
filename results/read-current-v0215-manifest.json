@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "request_id": "read-current-v0215-manifest",
+  "action": "read_file",
+  "request_sha": "9cef8fe26882da8b38c0b2e8eea11b541e187f3c",
+  "result": {
+    "file_path": ".hermclaw/patch.json",
+    "ref": "redesign/autonomous-agent",
+    "blob_id": "4109eddac93cc947d1c72fd13edc4e990ef73880",
+    "last_commit_id": "a93549e3f146f487e4132759b83eba7625c29fdc",
+    "encoding": "utf-8",
+    "content": "{\n  \"schema\": 1,\n  \"patch_id\": \"agent-core-v0.2.15\",\n  \"ready\": true,\n  \"target_branch\": \"redesign/autonomous-agent\",\n  \"base_sha\": \"98974c941e64d1acb7274b188f6bbb8404937742\",\n  \"profile\": \"agent-core\",\n  \"deploy_to_225\": true\n}\n"
+  }
+}
