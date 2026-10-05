@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "request_id": "agent-core-v0214-stage1",
+  "action": "edit_files",
+  "request_sha": "b64f57e9285348c0b7b8eac8b5b068db940e6530",
+  "result": {
+    "id": "58ed2d11fcfb5c443546130f3fc3468510201b6e",
+    "short_id": "58ed2d11",
+    "title": "Agent Core v0.2.14 stage 1: require evidenced acceptance checks",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/58ed2d11fcfb5c443546130f3fc3468510201b6e",
+    "edit_summary": {
+      "operations": 3,
+      "files": [
+        "agent_core/agent_core.py",
+        ".hermclaw/patch.json"
+      ],
+      "base": "970fa8c453768b28376d8b5d99b4cd731a460ece",
+      "branch_existed": true
+    }
+  }
+}
