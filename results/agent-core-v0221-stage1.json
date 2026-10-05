@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "request_id": "agent-core-v0221-stage1",
+  "action": "edit_files",
+  "request_sha": "7fe128016f67ba34ee3435c85292e27c9de86cc6",
+  "result": {
+    "id": "023e5d8a193ee167e23b211ed8b31678597c1b94",
+    "short_id": "023e5d8a",
+    "title": "Agent Core v0.2.21: recheck final acceptance false negatives",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/023e5d8a193ee167e23b211ed8b31678597c1b94",
+    "edit_summary": {
+      "operations": 3,
+      "files": [
+        "agent_core/agent_core.py"
+      ],
+      "base": "c79d7226dfa75933ecd30f1c782bf68b1d608f68",
+      "branch_existed": true
+    }
+  }
+}
