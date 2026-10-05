@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "request_id": "agent-core-v0215-stage2",
+  "action": "edit_files",
+  "request_sha": "c814006adac5606b0cc008341da2754acf1ced06",
+  "result": {
+    "id": "d251beb6167947f544bef2657f3e3d27ee1b4ec9",
+    "short_id": "d251beb6",
+    "title": "Agent Core v0.2.15 stage 2: retry truncated reviews with larger budget",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/d251beb6167947f544bef2657f3e3d27ee1b4ec9",
+    "edit_summary": {
+      "operations": 2,
+      "files": [
+        "agent_core/agent_core.py"
+      ],
+      "base": "9b51f213715727abab7086dc6fc3d461639a6246",
+      "branch_existed": true
+    }
+  }
+}
