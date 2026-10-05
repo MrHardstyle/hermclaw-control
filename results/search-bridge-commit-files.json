@@ -1,0 +1,6 @@
+{
+  "ok": false,
+  "request_id": "search-bridge-commit-files",
+  "error_type": "ProtocolError",
+  "error": "Unbekannte action: 'search_files'"
+}
