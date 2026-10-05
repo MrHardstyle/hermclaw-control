@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "head-agent-core-next",
+  "action": "get_branch_head",
+  "request_sha": "0be69fa54ccbd2fc2d91b4fe32b0c0452fb0ae0f",
+  "result": {
+    "branch": "redesign/autonomous-agent",
+    "commit": "73b16a4add361d8ef7ab4534b766a22ecdd9788d",
+    "short_id": "73b16a4a",
+    "title": "Agent Core v0.2.9: adjudicate disputed final review findings",
+    "committed_date": "2026-10-05T08:16:27.000+00:00"
+  }
+}
