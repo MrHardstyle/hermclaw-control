@@ -1,0 +1,46 @@
+{
+  "request_id": "agent-core-v0214-stage3-tests",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/patch-agent-core-v0214",
+  "start_sha": "384dec2a2e17515ec25122e7d3581d0372be2762",
+  "commit_message": "Agent Core v0.2.14 stage 3: test acceptance evidence validation",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/tests/test_agent_core.py",
+      "old": "\"checks\": [\"answer.py — return 43 ist im finalen Pfad sichtbar.\"]",
+      "new": "\"checks\": [{\n                    \"requirement\": \"answer() muss 43 zurückgeben.\",\n                    \"path\": \"answer.py\",\n                    \"evidence\": \"return 43\",\n                    \"reason\": \"Der Rückgabewert ist im finalen Diff direkt sichtbar.\"\n                }]"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/tests/test_agent_core.py",
+      "old": "\"checks\": [\"helper.py enthält render().\"]",
+      "new": "\"checks\": [{\n                    \"requirement\": \"helper.py muss render() bereitstellen.\",\n                    \"path\": \"helper.py\",\n                    \"evidence\": \"def render():\",\n                    \"reason\": \"Die geforderte Funktion ist im Diff vorhanden.\"\n                }]"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/tests/test_agent_core.py",
+      "old": "\"checks\": [\"app.py — Beleg: \\\"return render()\\\" — ausführbarer Pfad hergestellt.\"]",
+      "new": "\"checks\": [{\n                    \"requirement\": \"app.run() muss helper.render() tatsächlich aufrufen.\",\n                    \"path\": \"app.py\",\n                    \"evidence\": \"return render()\",\n                    \"reason\": \"Der ausführbare Pfad ruft render() direkt auf.\"\n                }]"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/tests/test_agent_core.py",
+      "old": "\"checks\": [\"answer.py enthält return 43.\"]",
+      "new": "\"checks\": [{\n                    \"requirement\": \"answer.py muss answer() == 43 implementieren.\",\n                    \"path\": \"answer.py\",\n                    \"evidence\": \"return 43\",\n                    \"reason\": \"Die verlangte Implementierung ist im Diff vorhanden.\"\n                }]"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/tests/test_agent_core.py",
+      "old": "\"checks\": [\"answer.py — Beleg: \\\"return 43\\\".\"]",
+      "new": "\"checks\": [{\n                    \"requirement\": \"Im finalen Diff darf nur die verlangte answer.py-Implementierung verbleiben.\",\n                    \"path\": \"answer.py\",\n                    \"evidence\": \"return 43\",\n                    \"reason\": \"Die verlangte Implementierung ist im finalen Diff vorhanden.\"\n                }]"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/tests/test_agent_core.py",
+      "old": "    @needs_shell\n    def test_acceptance_review_catches_missing_integration_then_passes(self):\n",
+      "new": "    @needs_git\n    def test_acceptance_pass_with_missing_diff_evidence_becomes_fix_required(self):\n        root, workspace, state, logger, sources = self.make_runtime()\n        state.task = \"Erzeuge answer.py mit answer() == 43.\"\n        (workspace / \"answer.py\").write_text(\"def answer():\\n    return 42\\n\", encoding=\"utf-8\")\n        state.files_changed.add(\"answer.py\")\n\n        reviewer = ScriptedClient([\n            json.dumps({\n                \"verdict\": \"PASS\",\n                \"summary\": \"Die Anforderung sei erfüllt.\",\n                \"checks\": [{\n                    \"requirement\": \"answer() muss 43 zurückgeben.\",\n                    \"path\": \"answer.py\",\n                    \"evidence\": \"return 43\",\n                    \"reason\": \"Der geforderte Rückgabewert sei sichtbar.\",\n                }],\n                \"issues\": [],\n            }),\n        ])\n        controller = AgentController(\n            ScriptedClient([]),\n            state,\n            logger,\n            sources,\n            reviewer_client=reviewer,\n        )\n\n        result = controller._run_acceptance_review(\n            \"Coder behauptet vollständige Umsetzung.\",\n            {\"summary\": \"Erster Review meldet PASS.\"},\n        )\n\n        self.assertEqual(result[\"verdict\"], \"FIX_REQUIRED\")\n        self.assertTrue(any(\"Acceptance-Nachweis ungültig\" in issue for issue in result[\"issues\"]))\n        events = (root / \"events.jsonl\").read_text(encoding=\"utf-8\")\n        self.assertIn(\"ACCEPTANCE_EVIDENCE_INVALID\", events)\n        self.assertIn(\"return 43\", events)\n\n    @needs_git\n    def test_acceptance_pass_with_exact_diff_evidence_is_accepted(self):\n        root, workspace, state, logger, sources = self.make_runtime()\n        state.task = \"Erzeuge answer.py mit answer() == 43.\"\n        (workspace / \"answer.py\").write_text(\"def answer():\\n    return 43\\n\", encoding=\"utf-8\")\n        state.files_changed.add(\"answer.py\")\n\n        reviewer = ScriptedClient([\n            json.dumps({\n                \"verdict\": \"PASS\",\n                \"summary\": \"Die Anforderung ist belegt.\",\n                \"checks\": [{\n                    \"requirement\": \"answer() muss 43 zurückgeben.\",\n                    \"path\": \"answer.py\",\n                    \"evidence\": \"return 43\",\n                    \"reason\": \"Der geforderte Rückgabewert ist im finalen Diff direkt sichtbar.\",\n                }],\n                \"issues\": [],\n            }),\n        ])\n        controller = AgentController(\n            ScriptedClient([]),\n            state,\n            logger,\n            sources,\n            reviewer_client=reviewer,\n        )\n\n        result = controller._run_acceptance_review(\n            \"Coder-Selbstreview.\",\n            {\"summary\": \"Erster Review meldet PASS.\"},\n        )\n\n        self.assertEqual(result[\"verdict\"], \"PASS\")\n        self.assertEqual(result[\"checks\"][0][\"evidence\"], \"return 43\")\n\n    @needs_shell\n    def test_acceptance_review_catches_missing_integration_then_passes(self):\n"
+    }
+  ]
+}
