@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "request_id": "read-v13c-result",
+  "action": "read_file",
+  "request_sha": "d700a2c11f6be7a531ff491aa6bfd7fe5072dfcd",
+  "result": {
+    "file_path": ".hermclaw/runs/stability-v13c-wartungsfenster/result.json",
+    "ref": "agent-runs/stability-v13c-wartungsfenster",
+    "blob_id": "a0e7469121cca4efc56099456fad8e3eb2e418de",
+    "last_commit_id": "3011d3d77f8cae9bd6f1294d5640aa161eb7353e",
+    "encoding": "utf-8",
+    "content": "{\n  \"version\": \"0.2.12\",\n  \"completed_at\": \"2026-10-05T14:14:56+00:00\",\n  \"ok\": false,\n  \"job_id\": \"stability-v13c-wartungsfenster\",\n  \"branch\": \"ai/job-stability-v13c-wartungsfenster-stability-test-v13-wartungsfenster-zweck-d\",\n  \"error_type\": \"AgentError\",\n  \"error\": \"Drei ungültige Modellaktionen in Folge.\"\n}\n"
+  }
+}
