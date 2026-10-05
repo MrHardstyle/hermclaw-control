@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "agent-core-v0218-core-b64",
+  "action": "commit_files",
+  "request_sha": "d828bc5af828e40655bd1dacc4a3d4d6ec3ddb79",
+  "result": {
+    "id": "b938c65eff272a455a1548a4a3707211422edb09",
+    "short_id": "b938c65e",
+    "title": "Agent Core v0.2.18 core: review final changed-file state",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/b938c65eff272a455a1548a4a3707211422edb09"
+  }
+}
