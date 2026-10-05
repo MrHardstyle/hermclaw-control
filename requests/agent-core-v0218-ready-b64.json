@@ -1,0 +1,16 @@
+{
+  "request_id": "agent-core-v0218-ready-b64",
+  "action": "commit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/patch-agent-core-v0217",
+  "target_branch": "chatgpt/patch-agent-core-v0217",
+  "commit_message": "Agent Core v0.2.18 ready",
+  "actions": [
+    {
+      "action": "update",
+      "file_path": ".hermclaw/patch.json",
+      "content": "ewogICJzY2hlbWEiOiAxLAogICJwYXRjaF9pZCI6ICJhZ2VudC1jb3JlLXYwLjIuMTgiLAogICJyZWFkeSI6IHRydWUsCiAgInRhcmdldF9icmFuY2giOiAicmVkZXNpZ24vYXV0b25vbW91cy1hZ2VudCIsCiAgImJhc2Vfc2hhIjogIjMyM2ZkNzI3YjZjOWVkOGY3ODY2MzIyNDUyZWIzYWJiYWQ2YWUwYzIiLAogICJwcm9maWxlIjogImFnZW50LWNvcmUiLAogICJkZXBsb3lfdG9fMjI1IjogdHJ1ZQp9Cg==",
+      "encoding": "base64"
+    }
+  ]
+}
