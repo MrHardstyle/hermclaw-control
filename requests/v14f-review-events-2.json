@@ -1,0 +1,7 @@
+{
+  "request_id": "v14f-review-events-2",
+  "action": "read_file",
+  "project": "local-ai/hermclaw",
+  "ref": "agent-runs/stability-v14f-benutzerfilter",
+  "path": ".hermclaw/runs/stability-v14f-benutzerfilter/events.jsonl"
+}
