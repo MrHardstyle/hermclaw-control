@@ -1,0 +1,6 @@
+{
+  "ok": false,
+  "request_id": "bridge-v024-edit-smoke",
+  "error_type": "HTTPError",
+  "error": "403 Client Error: Forbidden for url: http://192.168.178.226/api/v4/projects/local-ai%2Fhermclaw/repository/branches/chatgpt%2Fbridge-v024-smoke"
+}
