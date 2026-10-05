@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "request_id": "agent-core-v0212-adjudication-evidence-20261005",
+  "action": "edit_files",
+  "request_sha": "93ecb8a6e040f9639f3dc7391527243dc7decf75",
+  "result": {
+    "id": "91e371925a2dd7a5d9f319571557e7faddbd0d7e",
+    "short_id": "91e37192",
+    "title": "Agent Core v0.2.12: validate adjudication evidence against final diff",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/91e371925a2dd7a5d9f319571557e7faddbd0d7e",
+    "edit_summary": {
+      "operations": 5,
+      "files": [
+        "agent_core/agent_core.py",
+        "agent_core/tests/test_agent_core.py",
+        ".hermclaw/patch.json"
+      ],
+      "base": "66de3ca044be2ad9c06a7d1683a7ad1925fa8934",
+      "branch_existed": false
+    }
+  }
+}
