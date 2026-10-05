@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "request_id": "agent-core-v0213-balanced-action-json",
+  "action": "edit_files",
+  "request_sha": "d1d53f0e5374fb94fe437b9063a6a924707ca6d5",
+  "result": {
+    "id": "4d426bb80f00502f6631734c50b4475986d8d280",
+    "short_id": "4d426bb8",
+    "title": "Agent Core v0.2.13: recover balanced JSON action from noisy output",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/4d426bb80f00502f6631734c50b4475986d8d280",
+    "edit_summary": {
+      "operations": 4,
+      "files": [
+        "agent_core/agent_core.py",
+        "agent_core/tests/test_agent_core.py",
+        ".hermclaw/patch.json"
+      ],
+      "base": "5c0a38625ac35c6b43dc0e0b6f6452e1b93e0b85",
+      "branch_existed": true
+    }
+  }
+}
