@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "agent-core-v028-adaptive-output-recovery-20261005",
+  "action": "commit_files",
+  "request_sha": "c7247cedf34024a940a314a0e438e5c7f310266e",
+  "result": {
+    "id": "bbe5b2f1e674327ea456a5fb315a91994142237f",
+    "short_id": "bbe5b2f1",
+    "title": "Agent Core v0.2.8: adapt output budget after truncation",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/bbe5b2f1e674327ea456a5fb315a91994142237f"
+  }
+}
