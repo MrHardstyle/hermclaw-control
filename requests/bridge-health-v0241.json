@@ -1,6 +1,28 @@
 {
   "request_id": "bridge-health-v0241",
-  "action": "get_commit_diff",
+  "action": "edit_files",
   "project": "local-ai/hermclaw",
-  "sha": "8516a48ce13801a7908239ba276bf359fbd79f5b"
+  "branch": "chatgpt/v12e2-final-fix",
+  "start_sha": "8516a48ce13801a7908239ba276bf359fbd79f5b",
+  "commit_message": "V12E2: load note subview and remove unrelated helper",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": "nav/work_interne_notizen.php",
+      "old": "// Lade Notizen für Übersicht\n$notizen = interne_notizen_liste();",
+      "new": "// Lade Notizen für Übersicht\n$notizen = interne_notizen_liste();\n\n// Die Ansicht wurde oben gegen eine feste Allowlist geprüft.\nrequire __DIR__ . '/work_interne_notizen/' . $notizen_ansicht . '.php';"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "inc/funktionen_benutzer.php",
+      "old": "function benutzer_gruppe_id_nach_bezeichnung(string $bezeichnung): ?int\n{\n    $db = datenbank_verbindung();\n    if (!$db) {\n        return null;\n    }\n\n    $abfrage = $db->prepare('SELECT id FROM benutzer_gruppen WHERE bezeichnung = :bezeichnung LIMIT 1');\n    $abfrage->execute(['bezeichnung' => $bezeichnung]);\n    $ergebnis = $abfrage->fetch();\n\n    return is_array($ergebnis) ? (int)$ergebnis['id'] : null;\n}\n\n",
+      "new": ""
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "sql/migrations/2026_10_05_interne_notizen.sql",
+      "old": "WHERE r.`key` LIKE 'interne_notizen_%' AND NOT EXISTS (\n    SELECT 1 FROM benutzer_gruppen_rechte bgr\n    WHERE bgr.benutzer_gruppe_id = bg.id AND bgr.recht_id = r.id\n);",
+      "new": "WHERE r.`key` IN (\n    'interne_notizen_anzeigen',\n    'interne_notizen_erstellen',\n    'interne_notizen_bearbeiten',\n    'interne_notizen_loeschen'\n) AND NOT EXISTS (\n    SELECT 1 FROM benutzer_gruppen_rechte bgr\n    WHERE bgr.benutzer_gruppe_id = bg.id AND bgr.recht_id = r.id\n);"
+    }
+  ]
 }
