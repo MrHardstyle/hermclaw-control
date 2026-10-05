@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "bridge-v024-gitlab-check",
+  "action": "get_project",
+  "request_sha": "a72094f6e1c6640b2aef1909fba14a09bb371462",
+  "result": {
+    "id": 1,
+    "path_with_namespace": "local-ai/hermclaw",
+    "default_branch": "main",
+    "visibility": "private",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw"
+  }
+}
