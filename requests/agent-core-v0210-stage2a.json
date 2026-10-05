@@ -1,0 +1,22 @@
+{
+  "request_id": "agent-core-v0210-stage2a",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/patch-agent-core-v0210",
+  "start_sha": "7ed1d22e2b85bac5eb232563842c72c566156cbf",
+  "commit_message": "Agent Core v0.2.10 update review test",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/tests/test_agent_core.py",
+      "old": "            json.dumps({\n                \"verdict\": \"PASS\",\n                \"summary\": \"Der Diff erfüllt jetzt den Auftrag.\",\n                \"issues\": [],\n            }),\n        ])",
+      "new": "            json.dumps({\n                \"verdict\": \"PASS\",\n                \"summary\": \"Der Diff erfüllt jetzt den Auftrag.\",\n                \"issues\": [],\n            }),\n            json.dumps({\n                \"verdict\": \"PASS\",\n                \"summary\": \"Akzeptanzpfad und Scope sind vollständig.\",\n                \"checks\": [\"answer.py — return 43 ist im finalen Pfad sichtbar.\"],\n                \"issues\": [],\n            }),\n        ])"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/tests/test_agent_core.py",
+      "old": "        self.assertIn(\"return 43\", (workspace / \"answer.py\").read_text(encoding=\"utf-8\"))\n        self.assertEqual(result[\"independent_review\"][\"verdict\"], \"PASS\")\n        self.assertEqual(len(reviewer.requests), 2)\n        self.assertTrue(any(\"unabhängiger Review fordert Korrekturen\" in turn.digest for turn in controller.history))",
+      "new": "        self.assertIn(\"return 43\", (workspace / \"answer.py\").read_text(encoding=\"utf-8\"))\n        self.assertEqual(result[\"independent_review\"][\"verdict\"], \"PASS\")\n        self.assertEqual(len(reviewer.requests), 3)\n        self.assertIn(\"ausführbaren/erreichbaren Pfad\", prompt_text(reviewer.requests[2]))\n        self.assertTrue(any(\"unabhängiger Review fordert Korrekturen\" in turn.digest for turn in controller.history))"
+    }
+  ]
+}
