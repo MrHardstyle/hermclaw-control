@@ -1,6 +1,0 @@
-{
-  "ok": false,
-  "request_id": "bridge-health-v0241",
-  "error_type": "KeyError",
-  "error": "'sha'"
-}
