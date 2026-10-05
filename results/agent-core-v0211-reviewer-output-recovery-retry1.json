@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "request_id": "agent-core-v0211-reviewer-output-recovery-retry1",
+  "action": "edit_files",
+  "request_sha": "79b0921edfa6829f8d238aff448108bfc5dd67aa",
+  "result": {
+    "id": "bf68376ec01ba7d0bc942303522b6445c4977d6a",
+    "short_id": "bf68376e",
+    "title": "Agent Core v0.2.11: harden reviewer structured-output recovery",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/bf68376ec01ba7d0bc942303522b6445c4977d6a",
+    "edit_summary": {
+      "operations": 9,
+      "files": [
+        "agent_core/agent_core.py",
+        "agent_core/tests/test_agent_core.py",
+        ".hermclaw/patch.json"
+      ],
+      "base": "334ae6316f6138fc558b72abf767e9428708b130",
+      "branch_existed": false
+    }
+  }
+}
