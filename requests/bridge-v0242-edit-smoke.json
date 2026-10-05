@@ -1,0 +1,15 @@
+{
+  "request_id": "bridge-v0242-edit-smoke",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/bridge-v0242-smoke",
+  "start_sha": "bbe5b2f1e674327ea456a5fb315a91994142237f",
+  "commit_message": "Bridge v0.2.4.2 delta smoke test",
+  "edits": [
+    {
+      "operation": "create",
+      "file_path": ".hermclaw/smoke/bridge-v0242.txt",
+      "content": "bridge-v0.2.4.2 edit_files OK\n"
+    }
+  ]
+}
