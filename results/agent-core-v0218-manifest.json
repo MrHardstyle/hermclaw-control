@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "agent-core-v0218-manifest",
+  "action": "commit_files",
+  "request_sha": "9534601996e7bff7e6de9e81a492649b6673350d",
+  "result": {
+    "id": "75e77a0c31339786f36e57db7eee31462e4df3a9",
+    "short_id": "75e77a0c",
+    "title": "Agent Core v0.2.18 manifest",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/75e77a0c31339786f36e57db7eee31462e4df3a9"
+  }
+}
