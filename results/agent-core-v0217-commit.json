@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "agent-core-v0217-commit",
+  "action": "commit_files",
+  "request_sha": "e88ab389fdd150e945dfa860a4e953927194516b",
+  "result": {
+    "id": "e0e06467c95d9563a157b415b08c0c00c29694fe",
+    "short_id": "e0e06467",
+    "title": "Agent Core v0.2.17: normalize acceptance evidence against current diff",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/e0e06467c95d9563a157b415b08c0c00c29694fe"
+  }
+}
