@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "request_id": "agent-core-v029-delta-20261005",
+  "action": "edit_files",
+  "request_sha": "f55d0524b7d6239ae91d9297df450c974817da8b",
+  "result": {
+    "id": "73b16a4add361d8ef7ab4534b766a22ecdd9788d",
+    "short_id": "73b16a4a",
+    "title": "Agent Core v0.2.9: adjudicate disputed final review findings",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/73b16a4add361d8ef7ab4534b766a22ecdd9788d",
+    "edit_summary": {
+      "operations": 7,
+      "files": [
+        "agent_core/agent_core.py",
+        "agent_core/tests/test_agent_core.py",
+        ".hermclaw/patch.json"
+      ],
+      "base": "bbe5b2f1e674327ea456a5fb315a91994142237f",
+      "branch_existed": false
+    }
+  }
+}
