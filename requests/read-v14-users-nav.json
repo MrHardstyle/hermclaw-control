@@ -1,0 +1,7 @@
+{
+  "request_id": "read-v14-users-nav",
+  "action": "read_file",
+  "project": "local-ai/hermclaw",
+  "ref": "redesign/autonomous-agent",
+  "path": "nav/settings_benutzer.php"
+}
