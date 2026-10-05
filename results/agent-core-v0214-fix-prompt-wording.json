@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "request_id": "agent-core-v0214-fix-prompt-wording",
+  "action": "edit_files",
+  "request_sha": "1b07d3234305421fa98bbd02f0135ae94b6b199c",
+  "result": {
+    "id": "98974c941e64d1acb7274b188f6bbb8404937742",
+    "short_id": "98974c94",
+    "title": "Agent Core v0.2.14: preserve acceptance path wording",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/98974c941e64d1acb7274b188f6bbb8404937742",
+    "edit_summary": {
+      "operations": 1,
+      "files": [
+        "agent_core/agent_core.py"
+      ],
+      "base": "b49fa872a1e8f56055eccfeafa9c4d4baa3e9f9a",
+      "branch_existed": true
+    }
+  }
+}
