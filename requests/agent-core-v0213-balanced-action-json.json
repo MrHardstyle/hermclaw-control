@@ -1,0 +1,34 @@
+{
+  "request_id": "agent-core-v0213-balanced-action-json",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/patch-agent-core-v0213",
+  "start_sha": "5c0a38625ac35c6b43dc0e0b6f6452e1b93e0b85",
+  "commit_message": "Agent Core v0.2.13: recover balanced JSON action from noisy output",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/agent_core.py",
+      "old": "VERSION = \"0.2.12\"",
+      "new": "VERSION = \"0.2.13\""
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/agent_core.py",
+      "old": "    @staticmethod\n    def _extract_json(raw: str) -> dict[str, Any]:\n        \"\"\"Parse one model action, tolerating literal control chars inside JSON strings.\n\n        Some local models emit multiline source code in ``write_file.args.content``\n        with literal newlines instead of JSON ``\\n`` escapes. Python's strict JSON\n        parser rejects that otherwise structurally valid action. We first keep\n        strict parsing, then retry only with ``strict=False``; no structural\n        repair or guessing is performed.\n        \"\"\"\n        raw = raw.strip()\n        if raw.startswith(\"```\"):\n            raw = re.sub(r\"^```(?:json)?\\s*|\\s*```$\", \"\", raw, flags=re.I | re.S).strip()\n\n        def load_object(candidate: str) -> dict[str, Any] | None:\n            for strict in (True, False):\n                try:\n                    obj = json.loads(candidate, strict=strict)\n                except json.JSONDecodeError:\n                    continue\n                if isinstance(obj, dict):\n                    return obj\n            return None\n\n        obj = load_object(raw)\n        if obj is not None:\n            return obj\n        start = raw.find(\"{\")\n        end = raw.rfind(\"}\")\n        if start >= 0 and end > start:\n            obj = load_object(raw[start : end + 1])\n            if obj is not None:\n                return obj\n        raise AgentError(\"Modellantwort enthält kein gültiges JSON-Objekt.\")\n\n",
+      "new": "    @staticmethod\n    def _extract_json(raw: str) -> dict[str, Any]:\n        \"\"\"Parse one complete JSON object from otherwise noisy model output.\n\n        Local models sometimes emit literal newlines inside JSON strings and may\n        append prose, markdown fences or an extra closing brace after an otherwise\n        complete action. Keep strict/lenient JSON parsing, then scan balanced\n        objects while respecting quoted strings and escapes. No semantic repair or\n        guessing is performed.\n        \"\"\"\n        raw = raw.strip()\n        if raw.startswith(\"```\"):\n            raw = re.sub(r\"^```(?:json)?\\s*|\\s*```$\", \"\", raw, flags=re.I | re.S).strip()\n\n        def load_object(candidate: str) -> dict[str, Any] | None:\n            for strict in (True, False):\n                try:\n                    obj = json.loads(candidate, strict=strict)\n                except json.JSONDecodeError:\n                    continue\n                if isinstance(obj, dict):\n                    return obj\n            return None\n\n        obj = load_object(raw)\n        if obj is not None:\n            return obj\n\n        depth = 0\n        start: int | None = None\n        in_string = False\n        escaped = False\n\n        for idx, char in enumerate(raw):\n            if in_string:\n                if escaped:\n                    escaped = False\n                elif char == \"\\\\\":\n                    escaped = True\n                elif char == '\"':\n                    in_string = False\n                continue\n\n            if char == '\"':\n                in_string = True\n                continue\n            if char == \"{\":\n                if depth == 0:\n                    start = idx\n                depth += 1\n                continue\n            if char == \"}\" and depth:\n                depth -= 1\n                if depth == 0 and start is not None:\n                    obj = load_object(raw[start : idx + 1])\n                    if obj is not None:\n                        return obj\n                    start = None\n\n        raise AgentError(\"Modellantwort enthält kein gültiges JSON-Objekt.\")\n\n"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/tests/test_agent_core.py",
+      "old": "    def test_cut_off_retry_temporarily_expands_output_budget(self):\n",
+      "new": "    def test_extract_json_recovers_complete_action_before_extra_brace_and_fence(self):\n        raw = (\n            '{\\n'\n            '    \"action\": \"tool\",\\n'\n            '    \"status\": \"Prüfe PHP-Syntax aller geänderten Dateien\",\\n'\n            '    \"tool\": \"shell\",\\n'\n            '    \"args\": {\\n'\n            '        \"command\": \"find . -name \\'*.php\\' -path \\'./inc/ansichten/wartungsfenster/*\\' -exec php -l\\n'\n            '{} \\\\\\\\;\"\\n'\n            '    }\\n'\n            '}\\n'\n            '}\\n'\n            '```'\n        )\n        parsed = AgentController._extract_json(raw)\n        self.assertEqual(parsed[\"action\"], \"tool\")\n        self.assertEqual(parsed[\"tool\"], \"shell\")\n        self.assertIn(\"php -l\", parsed[\"args\"][\"command\"])\n        self.assertIn(\"{} \\\\;\", parsed[\"args\"][\"command\"])\n\n    def test_cut_off_retry_temporarily_expands_output_budget(self):\n"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": ".hermclaw/patch.json",
+      "old": "{\n  \"schema\": 1,\n  \"patch_id\": \"agent-core-v0.2.12\",\n  \"ready\": true,\n  \"target_branch\": \"redesign/autonomous-agent\",\n  \"base_sha\": \"66de3ca044be2ad9c06a7d1683a7ad1925fa8934\",\n  \"profile\": \"agent-core\",\n  \"deploy_to_225\": true\n}\n",
+      "new": "{\n  \"schema\": 1,\n  \"patch_id\": \"agent-core-v0.2.13\",\n  \"ready\": false,\n  \"target_branch\": \"redesign/autonomous-agent\",\n  \"base_sha\": \"5c0a38625ac35c6b43dc0e0b6f6452e1b93e0b85\",\n  \"profile\": \"agent-core\",\n  \"deploy_to_225\": true\n}\n"
+    }
+  ]
+}
