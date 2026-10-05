@@ -1,0 +1,6 @@
+{
+  "request_id": "bridge-v024-existing-branch-check",
+  "action": "get_branch",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/task-interne-notizen-v12d2"
+}
