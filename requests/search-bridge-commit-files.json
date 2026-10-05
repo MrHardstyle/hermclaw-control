@@ -1,0 +1,7 @@
+{
+  "request_id": "search-bridge-commit-files",
+  "action": "search_files",
+  "project": "local-ai/hermclaw",
+  "ref": "redesign/autonomous-agent",
+  "query": "commit_files"
+}
