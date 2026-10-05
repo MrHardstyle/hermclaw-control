@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "agent-core-v0221-tests",
+  "action": "commit_files",
+  "request_sha": "d9e9ee6e3bb557e7090613af3f5bf7b7d630b4cc",
+  "result": {
+    "id": "c3e9787671fca251459e2af32f9b29b5a685aec8",
+    "short_id": "c3e97876",
+    "title": "Agent Core v0.2.21 tests: false-negative acceptance recheck",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/c3e9787671fca251459e2af32f9b29b5a685aec8"
+  }
+}
