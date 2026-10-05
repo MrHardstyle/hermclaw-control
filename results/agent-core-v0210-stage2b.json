@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "request_id": "agent-core-v0210-stage2b",
+  "action": "edit_files",
+  "request_sha": "f7e4c34898e32f80fd1ba1daadd96252456974a4",
+  "result": {
+    "id": "6304bfbef6d82198875e27c1673180f8ee07dbcf",
+    "short_id": "6304bfbe",
+    "title": "Agent Core v0.2.10 add integration acceptance test",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/6304bfbef6d82198875e27c1673180f8ee07dbcf",
+    "edit_summary": {
+      "operations": 1,
+      "files": [
+        "agent_core/tests/test_agent_core.py"
+      ],
+      "base": "9a3a9a9d3cfc5f198609f6e0b92f61f01856a20e",
+      "branch_existed": true
+    }
+  }
+}
