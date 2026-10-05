@@ -1,0 +1,40 @@
+{
+  "request_id": "agent-core-v0215-stage1",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/patch-agent-core-v0215",
+  "start_sha": "98974c941e64d1acb7274b188f6bbb8404937742",
+  "commit_message": "Agent Core v0.2.15 stage 1: compact acceptance evidence",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/agent_core.py",
+      "old": "VERSION = \"0.2.14\"",
+      "new": "VERSION = \"0.2.15\""
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/agent_core.py",
+      "old": "ACCEPTANCE_REVIEW_MAX_OUTPUT_TOKENS = int(os.environ.get(\"HERMCLAW_ACCEPTANCE_REVIEW_MAX_OUTPUT_TOKENS\", \"1800\"))\nREVIEW_FORMAT_REPAIR_MAX_OUTPUT_TOKENS = int(os.environ.get(\"HERMCLAW_REVIEW_FORMAT_REPAIR_MAX_OUTPUT_TOKENS\", \"1800\"))",
+      "new": "ACCEPTANCE_REVIEW_MAX_OUTPUT_TOKENS = int(os.environ.get(\"HERMCLAW_ACCEPTANCE_REVIEW_MAX_OUTPUT_TOKENS\", \"2200\"))\nREVIEW_LENGTH_RETRY_MAX_OUTPUT_TOKENS = int(os.environ.get(\"HERMCLAW_REVIEW_LENGTH_RETRY_MAX_OUTPUT_TOKENS\", \"4096\"))\nREVIEW_FORMAT_REPAIR_MAX_OUTPUT_TOKENS = int(os.environ.get(\"HERMCLAW_REVIEW_FORMAT_REPAIR_MAX_OUTPUT_TOKENS\", \"1800\"))"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/agent_core.py",
+      "old": "4. Belege dürfen NICHT aus Zeilennummern, Paraphrasen oder behaupteten Dateiinhalten bestehen. evidence muss wörtlich im FINALEN DIFF vorkommen.",
+      "new": "4. Belege dürfen NICHT aus Zeilennummern, Paraphrasen oder behaupteten Dateiinhalten bestehen. evidence muss wörtlich im FINALEN DIFF vorkommen. Halte evidence extrem kurz: höchstens 180 Zeichen und nur den kleinsten eindeutigen zusammenhängenden Ausschnitt, der die Anforderung belegt. Kopiere niemals ganze Formulare, Funktionen oder größere Blöcke."
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/agent_core.py",
+      "old": "Jeder Eintrag in checks MUSS ein Objekt mit genau diesen fachlichen Feldern sein:\n{\"requirement\":\"kurze konkrete Anforderung aus dem Originalauftrag\",\"path\":\"datei.php\",\"evidence\":\"exakter zusammenhängender Ausschnitt aus dem FINALEN DIFF\",\"reason\":\"warum genau dieser Ausschnitt die Anforderung funktional belegt\"}",
+      "new": "Jeder Eintrag in checks MUSS ein kompaktes Objekt mit genau diesen fachlichen Feldern sein. requirement höchstens 120 Zeichen, evidence höchstens 180 Zeichen, reason höchstens 160 Zeichen:\n{\"requirement\":\"kurze konkrete Anforderung\",\"path\":\"datei.php\",\"evidence\":\"kleinster exakter Diff-Ausschnitt\",\"reason\":\"kurze Begründung\"}\nHalte auch summary unter 240 Zeichen. Keine Pretty-Print-Erklärungen außerhalb des JSON."
+    },
+    {
+      "operation": "replace_text",
+      "file_path": ".hermclaw/patch.json",
+      "old": "{\n  \"schema\": 1,\n  \"patch_id\": \"agent-core-v0.2.14\",\n  \"ready\": true,\n  \"target_branch\": \"redesign/autonomous-agent\",\n  \"base_sha\": \"970fa8c453768b28376d8b5d99b4cd731a460ece\",\n  \"profile\": \"agent-core\",\n  \"deploy_to_225\": true\n}\n",
+      "new": "{\n  \"schema\": 1,\n  \"patch_id\": \"agent-core-v0.2.15\",\n  \"ready\": false,\n  \"target_branch\": \"redesign/autonomous-agent\",\n  \"base_sha\": \"98974c941e64d1acb7274b188f6bbb8404937742\",\n  \"profile\": \"agent-core\",\n  \"deploy_to_225\": true\n}\n"
+    }
+  ]
+}
