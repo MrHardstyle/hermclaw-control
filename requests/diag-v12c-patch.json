@@ -1,0 +1,7 @@
+{
+  "request_id": "diag-v12c-patch",
+  "action": "read_file",
+  "project": "local-ai/hermclaw",
+  "ref": "agent-runs/interne-notizen-v12c",
+  "path": ".hermclaw/runs/interne-notizen-v12c/working-tree.patch"
+}
