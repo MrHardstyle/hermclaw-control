@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "request_id": "read-v0217-manifest",
+  "action": "read_file",
+  "request_sha": "d926b41d789cd6f59c1884384b40b04dc142380c",
+  "result": {
+    "file_path": ".hermclaw/patch.json",
+    "ref": "chatgpt/patch-agent-core-v0217",
+    "blob_id": "49502b735e1e3d6eb397892c55763d32ddf3bb44",
+    "last_commit_id": "20665840c35ecd1d0fc849101177e2adfbca49fc",
+    "encoding": "utf-8",
+    "content": "{\n  \"schema\": 1,\n  \"patch_id\": \"agent-core-v0.2.16\",\n  \"ready\": true,\n  \"target_branch\": \"redesign/autonomous-agent\",\n  \"base_sha\": \"a93549e3f146f487e4132759b83eba7625c29fdc\",\n  \"profile\": \"agent-core\",\n  \"deploy_to_225\": true\n}\n"
+  }
+}
