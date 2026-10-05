@@ -1,0 +1,16 @@
+{
+  "request_id": "agent-core-v0214-fix-prompt-wording",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/patch-agent-core-v0214",
+  "start_sha": "b49fa872a1e8f56055eccfeafa9c4d4baa3e9f9a",
+  "commit_message": "Agent Core v0.2.14: preserve acceptance path wording",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/agent_core.py",
+      "old": "2. Belege JEDE als erfüllt bewertete Anforderung mit einem exakten, zusammenhängenden Code-/Textausschnitt aus dem aktuellen FINALEN DIFF.",
+      "new": "2. Belege für JEDE als erfüllt bewertete Anforderung einen tatsächlich ausführbaren/erreichbaren Pfad mit einem exakten, zusammenhängenden Code-/Textausschnitt aus dem aktuellen FINALEN DIFF."
+    }
+  ]
+}
