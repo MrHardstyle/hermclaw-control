@@ -1,0 +1,22 @@
+{
+  "request_id": "agent-core-v0215-stage3-tests",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/patch-agent-core-v0215",
+  "start_sha": "d251beb6167947f544bef2657f3e3d27ee1b4ec9",
+  "commit_message": "Agent Core v0.2.15 stage 3: test truncated reviewer recovery",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/tests/test_agent_core.py",
+      "old": "    @needs_shell\n    def test_independent_reviewer_invalid_after_repair_raises_typed_error(self):\n",
+      "new": "    @needs_shell\n    def test_review_length_retry_reuses_full_context_with_larger_budget(self):\n        root, workspace, state, logger, sources = self.make_runtime()\n        reviewer = ScriptedClient(\n            [\n                '{\"verdict\":\"PASS\",\"summary\":\"abgeschnitten\"',\n                json.dumps({\n                    \"verdict\": \"PASS\",\n                    \"summary\": \"Vollständig nach größerem Ausgabelimit.\",\n                    \"issues\": [],\n                }),\n            ],\n            finish_reasons=[\"length\", \"stop\"],\n        )\n        controller = AgentController(\n            ScriptedClient([]),\n            state,\n            logger,\n            sources,\n            reviewer_client=reviewer,\n        )\n        messages = [\n            {\"role\": \"system\", \"content\": \"REVIEW SYSTEM\"},\n            {\"role\": \"user\", \"content\": \"ORIGINALAUFTRAG und FINALER DIFF\"},\n        ]\n\n        parsed = controller._review_json_call(\n            messages,\n            1800,\n            stage=\"acceptance_review\",\n        )\n\n        self.assertEqual(parsed[\"verdict\"], \"PASS\")\n        self.assertEqual(len(reviewer.requests), 2)\n        self.assertEqual(reviewer.max_tokens_requests[0], 1800)\n        self.assertGreater(reviewer.max_tokens_requests[1], 1800)\n        self.assertEqual(prompt_text(reviewer.requests[0]), prompt_text(reviewer.requests[1]))\n        self.assertNotIn(\"ausschließlich das Ausgabeformat\", prompt_text(reviewer.requests[1]))\n\n        events = (root / \"events.jsonl\").read_text(encoding=\"utf-8\")\n        self.assertIn(\"REVIEW_OUTPUT_TRUNCATED\", events)\n        self.assertIn(\"größerem Ausgabelimit\", events)\n\n    @needs_shell\n    def test_review_second_length_failure_raises_truncated_without_format_repair(self):\n        root, workspace, state, logger, sources = self.make_runtime()\n        reviewer = ScriptedClient(\n            [\n                '{\"verdict\":\"PASS\",\"summary\":\"abgeschnitten\"',\n                '{\"verdict\":\"PASS\",\"summary\":\"immer noch abgeschnitten\"',\n            ],\n            finish_reasons=[\"length\", \"length\"],\n        )\n        controller = AgentController(\n            ScriptedClient([]),\n            state,\n            logger,\n            sources,\n            reviewer_client=reviewer,\n        )\n\n        with self.assertRaises(AgentError) as ctx:\n            controller._review_json_call(\n                [\n                    {\"role\": \"system\", \"content\": \"REVIEW SYSTEM\"},\n                    {\"role\": \"user\", \"content\": \"ORIGINALAUFTRAG und FINALER DIFF\"},\n                ],\n                1800,\n                stage=\"acceptance_review\",\n            )\n\n        self.assertIn(\"REVIEW_OUTPUT_TRUNCATED\", str(ctx.exception))\n        self.assertEqual(len(reviewer.requests), 2)\n        self.assertTrue(all(\n            \"ausschließlich das Ausgabeformat\" not in prompt_text(request)\n            for request in reviewer.requests\n        ))\n\n    @needs_shell\n    def test_independent_reviewer_invalid_after_repair_raises_typed_error(self):\n"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/tests/test_agent_core.py",
+      "old": "        self.assertIn(\"ausführbaren/erreichbaren Pfad\", prompt_text(reviewer.requests[2]))\n",
+      "new": "        self.assertIn(\"ausführbaren/erreichbaren Pfad\", prompt_text(reviewer.requests[2]))\n        self.assertIn(\"höchstens 180 Zeichen\", prompt_text(reviewer.requests[2]))\n"
+    }
+  ]
+}
