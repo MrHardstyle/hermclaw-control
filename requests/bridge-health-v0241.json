@@ -1,5 +1,5 @@
 {
-  "request_id": "task-v12e1-create-r2",
+  "request_id": "bridge-health-v0241",
   "action": "edit_files",
   "project": "local-ai/hermclaw",
   "branch": "chatgpt/task-interne-notizen-v12e1",
@@ -9,7 +9,7 @@
     {
       "operation": "create",
       "file_path": ".hermclaw/tasks/interne-notizen-v12e1.txt",
-      "content": "V12E1 – GEZIELTE NACHKORREKTUR INTERNE NOTIZEN\n\nArbeite auf Basis:\nai/job-interne-notizen-v12e-hermclaw-v12d2-interne-notizen-vertikaler\n\nÄndere ausschließlich die vorhandene Funktion „Interne Notizen“. Keine unrelated Änderungen.\n\n1. Unteransichten:\nIn nav/work_interne_notizen.php nur uebersicht, erstellen oder bearbeiten zulassen und genau die passende Datei aus nav/work_interne_notizen/ laden. Unbekannte ansicht auf uebersicht zurücksetzen. Keine beliebigen dynamischen Pfade.\n\n2. Titel:\nBeim Erstellen und Bearbeiten serverseitig trimmen, leeren Titel ablehnen und mehr als 255 Zeichen ablehnen. Nicht nur HTML maxlength verwenden.\n\n3. Erstellen-Ansicht:\nnav/work_interne_notizen/erstellen.php muss interne_notizen_erstellen prüfen. Ohne Recht auf Hauptseite mit meldung=nicht_berechtigt umleiten.\n\n4. Administrator-Rechte:\nMigration darf keine feste benutzer_gruppe_id=1 verwenden. Administrator-Gruppe über benutzer_gruppen.bezeichnung='Administrator' auflösen und die vier interne_notizen_* Rechte idempotent zuweisen.\n\nDanach:\n- php -l auf allen geänderten PHP-Dateien\n- git diff --check\n- vollständigen git_diff prüfen\n- keine Debug-Dateien\n- finish + unabhängigen Review\n\n"
+      "content": "V12E1 – GEZIELTE NACHKORREKTUR INTERNE NOTIZEN\n\nArbeite auf Basis:\nai/job-interne-notizen-v12e-hermclaw-v12d2-interne-notizen-vertikaler\n\nÄndere ausschließlich die vorhandene Funktion „Interne Notizen“. Keine unrelated Änderungen.\n\n1. Unteransichten:\nIn nav/work_interne_notizen.php nur uebersicht, erstellen oder bearbeiten zulassen und genau die passende Datei aus nav/work_interne_notizen/ laden. Unbekannte ansicht auf uebersicht zurücksetzen. Keine beliebigen dynamischen Pfade.\n\n2. Titel:\nBeim Erstellen UND Bearbeiten serverseitig trimmen, leeren Titel ablehnen und mehr als 255 Zeichen ablehnen. Nicht nur HTML maxlength verwenden.\n\n3. Erstellen-Ansicht:\nnav/work_interne_notizen/erstellen.php muss interne_notizen_erstellen prüfen. Ohne Recht auf Hauptseite mit meldung=nicht_berechtigt umleiten.\n\n4. Administrator-Rechte:\nMigration darf keine feste benutzer_gruppe_id=1 verwenden. Administrator-Gruppe über benutzer_gruppen.bezeichnung='Administrator' auflösen und die vier Rechte interne_notizen_anzeigen, interne_notizen_erstellen, interne_notizen_bearbeiten und interne_notizen_loeschen idempotent zuweisen.\n\nDanach:\n- php -l auf allen geänderten PHP-Dateien\n- git diff --check\n- vollständigen git_diff prüfen\n- keine Debug-Dateien\n- keine unrelated Änderungen\n- finish und unabhängigen Review durchlaufen lassen\n\nWichtig: Nicht die Funktion neu bauen, sondern nur diese vier Punkte gezielt korrigieren.\n\n"
     }
   ]
 }
