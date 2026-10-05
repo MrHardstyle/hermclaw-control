@@ -1,0 +1,40 @@
+{
+  "request_id": "agent-core-v0210-reverted-path-fix",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/patch-agent-core-v0210",
+  "start_sha": "4b8f0be84c4041998946385271ac5dc6a7b65fae",
+  "commit_message": "Agent Core v0.2.10: handle reverted history paths",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/agent_core.py",
+      "old": "def check_workspace_diff(workspace: Path, paths: list[str] | None = None) -> tuple[bool, str]:\n",
+      "new": "def _selected_git_paths(workspace: Path, paths: list[str]) -> list[str]:\n    \"\"\"Keep existing paths plus tracked deletions; drop create-then-revert history paths.\"\"\"\n    selected = sorted({str(path).strip().replace(\"\\\\\", \"/\") for path in paths if str(path).strip()})\n    if not selected:\n        return []\n\n    kept = {\n        rel for rel in selected\n        if (workspace / rel).exists() or (workspace / rel).is_symlink()\n    }\n    missing = [rel for rel in selected if rel not in kept]\n    if missing:\n        tracked = subprocess.run(\n            [\"git\", \"ls-tree\", \"-r\", \"--name-only\", \"HEAD\", \"--\", *missing],\n            cwd=workspace,\n            text=True,\n            capture_output=True,\n            timeout=30,\n        )\n        if tracked.returncode == 0:\n            kept.update(line.strip() for line in tracked.stdout.splitlines() if line.strip())\n    return sorted(kept)\n\n\ndef check_workspace_diff(workspace: Path, paths: list[str] | None = None) -> tuple[bool, str]:\n"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/agent_core.py",
+      "old": "        selected = sorted({str(path).strip().replace(\"\\\\\", \"/\") for path in (paths or []) if str(path).strip()})\n        add_args = [\"git\", \"add\", \"-A\", \"--\", *(selected or [\".\"])]\n        add = subprocess.run(\n            add_args, cwd=workspace, text=True, capture_output=True, timeout=60, env=env\n        )\n        if add.returncode != 0:\n            return False, add.stdout + add.stderr\n",
+      "new": "        if paths is None:\n            add_args = [\"git\", \"add\", \"-A\", \"--\", \".\"]\n        else:\n            selected = _selected_git_paths(workspace, paths)\n            add_args = [\"git\", \"add\", \"-A\", \"--\", *selected] if selected else None\n        if add_args is not None:\n            add = subprocess.run(\n                add_args, cwd=workspace, text=True, capture_output=True, timeout=60, env=env\n            )\n            if add.returncode != 0:\n                return False, add.stdout + add.stderr\n"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/agent_core.py",
+      "old": "        selected = sorted({str(path).strip().replace(\"\\\\\", \"/\") for path in paths if str(path).strip()})\n        if selected:\n            add = subprocess.run(\n",
+      "new": "        selected = _selected_git_paths(workspace, paths)\n        if selected:\n            add = subprocess.run(\n"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/agent_core.py",
+      "old": "        paths = sorted({str(path).strip().replace(\"\\\\\", \"/\") for path in files_changed if str(path).strip()})\n        if not paths:\n",
+      "new": "        paths = _selected_git_paths(workspace, files_changed)\n        if not paths:\n"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/tests/test_agent_core.py",
+      "old": "    @needs_shell\n    def test_scripted_autonomous_loop(self):\n",
+      "new": "    @needs_git\n    def test_reverted_untracked_history_path_does_not_break_diff_or_finalize(self):\n        root, workspace, state, logger, sources = self.make_runtime()\n        temp = workspace / \"temporary.txt\"\n        temp.write_text(\"temporary\\n\", encoding=\"utf-8\")\n        temp.unlink()\n\n        ok, output = check_workspace_diff(workspace, [\"temporary.txt\"])\n        self.assertTrue(ok, output)\n\n        result = finalize_git(\n            workspace,\n            \"ai/test\",\n            \"should not commit\",\n            False,\n            logger,\n            [\"temporary.txt\"],\n        )\n        self.assertFalse(result[\"committed\"])\n\n    @needs_shell\n    def test_scripted_autonomous_loop(self):\n"
+    }
+  ]
+}
