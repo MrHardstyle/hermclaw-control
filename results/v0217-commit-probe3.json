@@ -1,0 +1,6 @@
+{
+  "ok": false,
+  "request_id": "v0217-commit-probe3",
+  "error_type": "HTTPError",
+  "error": "400 Client Error: Bad Request for url: http://192.168.178.226/api/v4/projects/local-ai%2Fhermclaw/repository/commits"
+}
