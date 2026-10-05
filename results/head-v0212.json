@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "head-v0212",
+  "action": "get_branch_head",
+  "request_sha": "0ce76ddf12e3596a0ad5a0661be6c5fb41bdb042",
+  "result": {
+    "branch": "redesign/autonomous-agent",
+    "commit": "5c0a38625ac35c6b43dc0e0b6f6452e1b93e0b85",
+    "short_id": "5c0a3862",
+    "title": "Agent Core v0.2.12 ready",
+    "committed_date": "2026-10-05T13:58:06.000+00:00"
+  }
+}
