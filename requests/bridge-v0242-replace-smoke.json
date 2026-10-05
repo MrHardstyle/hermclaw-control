@@ -1,0 +1,16 @@
+{
+  "request_id": "bridge-v0242-replace-smoke",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/bridge-v0242-smoke",
+  "start_sha": "5ed7aa15359289049d287bd0f2619b5102761038",
+  "commit_message": "Bridge v0.2.4.2 replace_text smoke test",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": ".hermclaw/smoke/bridge-v0242.txt",
+      "old": "bridge-v0.2.4.2 edit_files OK\n",
+      "new": "bridge-v0.2.4.2 replace_text OK\n"
+    }
+  ]
+}
