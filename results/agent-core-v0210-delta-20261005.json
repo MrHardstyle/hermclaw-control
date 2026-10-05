@@ -1,0 +1,6 @@
+{
+  "ok": false,
+  "request_id": "agent-core-v0210-delta-20261005",
+  "error_type": "ValueError",
+  "error": "replace_text erwartet exakt 1 Treffer in agent_core/agent_core.py, gefunden: 0."
+}
