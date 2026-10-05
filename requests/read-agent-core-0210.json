@@ -1,0 +1,7 @@
+{
+  "request_id": "read-agent-core-0210",
+  "action": "read_file",
+  "project": "local-ai/hermclaw",
+  "ref": "redesign/autonomous-agent",
+  "path": "agent_core/agent_core.py"
+}
