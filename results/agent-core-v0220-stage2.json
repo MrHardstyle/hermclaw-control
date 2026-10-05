@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "request_id": "agent-core-v0220-stage2",
+  "action": "edit_files",
+  "request_sha": "52d1e18fc7cd923d002dd10b5cc22d0ab48230e6",
+  "result": {
+    "id": "85c61e39f39cc2b396343478c4ef252534a4ef1c",
+    "short_id": "85c61e39",
+    "title": "Agent Core v0.2.20 stage 2: make validated acceptance failures non-overridable",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/85c61e39f39cc2b396343478c4ef252534a4ef1c",
+    "edit_summary": {
+      "operations": 3,
+      "files": [
+        "agent_core/agent_core.py"
+      ],
+      "base": "4b53525dc473d9c0aebe65b3583e17bc2b5628bf",
+      "branch_existed": true
+    }
+  }
+}
