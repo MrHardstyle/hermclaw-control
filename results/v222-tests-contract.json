@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "v222-tests-contract",
+  "action": "commit_files",
+  "request_sha": "edda4563c23d9a7ea7a36811f8dcfa36655f145b",
+  "result": {
+    "id": "43f05b31e0ad5eebaf1adb146f222a17da374903",
+    "short_id": "43f05b31",
+    "title": "Agent Core v0.2.22 tests: acceptance coverage and verification",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/43f05b31e0ad5eebaf1adb146f222a17da374903"
+  }
+}
