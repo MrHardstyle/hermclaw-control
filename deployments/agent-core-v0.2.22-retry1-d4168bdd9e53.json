@@ -1,6 +1,7 @@
 {
   "patch_id": "agent-core-v0.2.22-retry1",
   "sha": "d4168bdd9e530c07fd7eb372656d262174df3ea0",
-  "status": "VALIDATING",
-  "branch": "chatgpt/patch-agent-core-v0223"
+  "status": "FAILED",
+  "branch": "chatgpt/patch-agent-core-v0223",
+  "error": "Base-SHA abweichend: Patch=aa91db8d7da9ec2a7a7fc321ab99dbed65506b25, Ziel aktuell=d4168bdd9e530c07fd7eb372656d262174df3ea0"
 }
