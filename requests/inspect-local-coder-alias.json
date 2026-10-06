@@ -1,0 +1,7 @@
+{
+  "request_id": "inspect-local-coder-alias",
+  "action": "read_file",
+  "project": "local-ai/hermclaw",
+  "ref": "redesign/autonomous-agent",
+  "path": "config/litellm_config.yaml"
+}
