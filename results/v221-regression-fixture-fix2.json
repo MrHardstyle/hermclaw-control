@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "request_id": "v221-regression-fixture-fix2",
+  "action": "edit_files",
+  "request_sha": "54f7e7c121ffbc7f0c065b1ab6c33179a39408ec",
+  "result": {
+    "id": "aa91db8d7da9ec2a7a7fc321ab99dbed65506b25",
+    "short_id": "aa91db8d",
+    "title": "Agent Core v0.2.21 regression fixture",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/aa91db8d7da9ec2a7a7fc321ab99dbed65506b25",
+    "edit_summary": {
+      "operations": 2,
+      "files": [
+        "agent_core/tests/test_acceptance_gate_v0220.py"
+      ],
+      "base": "6125d2df8addbb86da3834b4e536333655de65b3",
+      "branch_existed": true
+    }
+  }
+}
