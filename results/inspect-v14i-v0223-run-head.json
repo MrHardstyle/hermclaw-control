@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "inspect-v14i-v0223-run-head",
+  "action": "get_branch_head",
+  "request_sha": "a342c4cc0db00fe5b469abce6b057ea6080941ca",
+  "result": {
+    "branch": "agent-runs/stability-v14i-v0223-benutzerfilter",
+    "commit": "94ef699d74d6474db6e0eb10bbd8a8f744afebe7",
+    "short_id": "94ef699d",
+    "title": "Hermclaw run protocol: stability-v14i-v0223-benutzerfilter",
+    "committed_date": "2026-10-06T11:03:06.000+00:00"
+  }
+}
