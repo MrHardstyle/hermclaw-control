@@ -1,0 +1,6 @@
+{
+  "request_id": "v14i-output-head",
+  "action": "get_branch_head",
+  "project": "local-ai/hermclaw",
+  "branch": "ai/job-stability-v14i-benutzerfilter-auftrag-v14i-acceptance-false-negative-reg"
+}
