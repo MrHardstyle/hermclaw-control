@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "v14i-add-task-file",
+  "action": "commit_files",
+  "request_sha": "b946f4391629cac9d5da6664309c7153626b1864",
+  "result": {
+    "id": "8746f9ecd790c7b29e41f227f528283d2e469283",
+    "short_id": "8746f9ec",
+    "title": "Add V14I stability regression task",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/8746f9ecd790c7b29e41f227f528283d2e469283"
+  }
+}
