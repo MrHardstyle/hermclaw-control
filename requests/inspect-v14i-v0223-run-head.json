@@ -1,0 +1,6 @@
+{
+  "request_id": "inspect-v14i-v0223-run-head",
+  "action": "get_branch_head",
+  "project": "local-ai/hermclaw",
+  "branch": "agent-runs/stability-v14i-v0223-benutzerfilter"
+}
