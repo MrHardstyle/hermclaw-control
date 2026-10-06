@@ -1,0 +1,22 @@
+{
+  "request_id": "v221-regression-fixture-fix2",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/patch-agent-core-v0221",
+  "start_sha": "6125d2df8addbb86da3834b4e536333655de65b3",
+  "commit_message": "Agent Core v0.2.21 regression fixture",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/tests/test_acceptance_gate_v0220.py",
+      "old": "        self.assertEqual(len(reviewer.requests), 2)",
+      "new": "        self.assertEqual(len(reviewer.requests), 3)"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/tests/test_acceptance_gate_v0220.py",
+      "old": "            }),\n        ])\n        controller = AgentController(",
+      "new": "            }),\n            json.dumps({\n                \"verdict\": \"FIX_REQUIRED\",\n                \"summary\": \"Focused recheck confirms the requirement is still missing.\",\n                \"checks\": [{\n                    \"requirement\": \"Gefilterter Leerzustand braucht passende Meldung.\",\n                    \"satisfied\": False,\n                    \"path\": \"view.py\",\n                    \"evidence\": \"Noch keine Benutzer vorhanden.\",\n                    \"reason\": \"The filtered empty-state message is still missing.\",\n                }],\n                \"issues\": [],\n            }),\n        ])\n        controller = AgentController("
+    }
+  ]
+}
