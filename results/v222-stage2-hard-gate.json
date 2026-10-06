@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "request_id": "v222-stage2-hard-gate",
+  "action": "edit_files",
+  "request_sha": "20c323b0926f76cd1c87dc46dc1bdc828431c3c6",
+  "result": {
+    "id": "72a1838c61c7abe9cd13738ea9e9a89f5a1e1a53",
+    "short_id": "72a1838c",
+    "title": "Agent Core v0.2.22: enforce requirement and verification coverage",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/72a1838c61c7abe9cd13738ea9e9a89f5a1e1a53",
+    "edit_summary": {
+      "operations": 5,
+      "files": [
+        "agent_core/agent_core.py"
+      ],
+      "base": "3c52eb503c7584ca9e8ece7213985136880b4f48",
+      "branch_existed": true
+    }
+  }
+}
