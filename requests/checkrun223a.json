@@ -1,0 +1,7 @@
+{
+  "request_id": "checkrun223a",
+  "action": "read_file",
+  "project": "local-ai/hermclaw",
+  "ref": "agent-runs/stability-v14i-v0223-benutzerfilter",
+  "path": ".hermclaw/runs/stability-v14i-v0223-benutzerfilter/result.json"
+}
