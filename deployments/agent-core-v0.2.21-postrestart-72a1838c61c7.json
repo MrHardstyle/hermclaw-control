@@ -1,0 +1,6 @@
+{
+  "patch_id": "agent-core-v0.2.21-postrestart",
+  "sha": "72a1838c61c7abe9cd13738ea9e9a89f5a1e1a53",
+  "status": "VALIDATING",
+  "branch": "chatgpt/patch-agent-core-v0222"
+}
