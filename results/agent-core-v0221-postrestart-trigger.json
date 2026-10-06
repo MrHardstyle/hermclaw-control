@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "agent-core-v0221-postrestart-trigger",
+  "action": "commit_files",
+  "request_sha": "3a9bf7c1f18c15c473203fb1eade505287fc0113",
+  "result": {
+    "id": "6125d2df8addbb86da3834b4e536333655de65b3",
+    "short_id": "6125d2df",
+    "title": "Agent Core v0.2.21 ready after watcher restart",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/6125d2df8addbb86da3834b4e536333655de65b3"
+  }
+}
