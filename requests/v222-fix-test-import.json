@@ -1,0 +1,16 @@
+{
+  "request_id": "v222-fix-test-import",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/patch-agent-core-v0222",
+  "start_sha": "b16308d0ada45b3a8045887293598ce621f2df14",
+  "commit_message": "Agent Core v0.2.22 tests: fix module bootstrap",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/tests/test_acceptance_contract_v0222.py",
+      "old": "import unittest\n\nfrom agent_core import AgentController\n",
+      "new": "import unittest\nfrom pathlib import Path\nimport sys\n\nHERE = Path(__file__).resolve().parents[1]\nsys.path.insert(0, str(HERE))\n\nfrom agent_core import AgentController\n"
+    }
+  ]
+}
