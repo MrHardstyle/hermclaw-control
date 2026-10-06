@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "agent-core-v0221-retry-verify",
+  "action": "get_branch_head",
+  "request_sha": "a5e082c6aac7066847d000bc6788f3eaddec56a1",
+  "result": {
+    "branch": "redesign/autonomous-agent",
+    "commit": "c79d7226dfa75933ecd30f1c782bf68b1d608f68",
+    "short_id": "c79d7226",
+    "title": "Agent Core v0.2.20 ready",
+    "committed_date": "2026-10-05T22:13:27.000+00:00"
+  }
+}
