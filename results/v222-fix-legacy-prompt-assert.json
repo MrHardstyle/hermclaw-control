@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "request_id": "v222-fix-legacy-prompt-assert",
+  "action": "edit_files",
+  "request_sha": "cb2d621079e3a9b0c64dbe9f31a156968d689099",
+  "result": {
+    "id": "d4168bdd9e530c07fd7eb372656d262174df3ea0",
+    "short_id": "d4168bdd",
+    "title": "Agent Core v0.2.22 tests: align reviewer prompt assertion",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/d4168bdd9e530c07fd7eb372656d262174df3ea0",
+    "edit_summary": {
+      "operations": 1,
+      "files": [
+        "agent_core/tests/test_agent_core.py"
+      ],
+      "base": "e64de3b00840aa3651f5867470f57391b5887499",
+      "branch_existed": true
+    }
+  }
+}
