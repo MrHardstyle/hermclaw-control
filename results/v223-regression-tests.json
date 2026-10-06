@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "v223-regression-tests",
+  "action": "commit_files",
+  "request_sha": "73e59a96fe4f0e090c3d8140536b244a873c4802",
+  "result": {
+    "id": "fcf44121b81fa7ab8d7113d974281f33d742384d",
+    "short_id": "fcf44121",
+    "title": "Agent Core v0.2.23 tests: ad-hoc verification lifecycle",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/fcf44121b81fa7ab8d7113d974281f33d742384d"
+  }
+}
