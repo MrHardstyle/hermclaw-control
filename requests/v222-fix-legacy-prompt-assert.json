@@ -1,0 +1,16 @@
+{
+  "request_id": "v222-fix-legacy-prompt-assert",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/patch-agent-core-v0222",
+  "start_sha": "e64de3b00840aa3651f5867470f57391b5887499",
+  "commit_message": "Agent Core v0.2.22 tests: align reviewer prompt assertion",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": "agent_core/tests/test_agent_core.py",
+      "old": "        self.assertIn(\"höchstens 180 Zeichen\", prompt_text(reviewer.requests[2]))",
+      "new": "        self.assertIn(\"KANONISCHE CODE-ANFORDERUNGEN\", prompt_text(reviewer.requests[2]))\n        self.assertIn(\"TATSÄCHLICH ERFOLGREICHE PRÜFUNGEN\", prompt_text(reviewer.requests[2]))"
+    }
+  ]
+}
