@@ -1,0 +1,7 @@
+{
+  "request_id": "v14i-create-task-branch",
+  "action": "create_branch",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/task-stability-v14i-benutzerfilter-retest",
+  "ref": "aa91db8d7da9ec2a7a7fc321ab99dbed65506b25"
+}
