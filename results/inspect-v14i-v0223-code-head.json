@@ -1,0 +1,6 @@
+{
+  "ok": false,
+  "request_id": "inspect-v14i-v0223-code-head",
+  "error_type": "ValueError",
+  "error": "Branch enthält keinen Commit oder existiert nicht: ai/job-stability-v14i-v0223-benutzerfilter-auftrag-v14i-acceptance-false-negative-reg"
+}
