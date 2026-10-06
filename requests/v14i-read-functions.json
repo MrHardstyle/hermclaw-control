@@ -1,0 +1,7 @@
+{
+  "request_id": "v14i-read-functions",
+  "action": "read_file",
+  "project": "local-ai/hermclaw",
+  "ref": "ai/job-stability-v14i-benutzerfilter-auftrag-v14i-acceptance-false-negative-reg",
+  "path": "inc/funktionen_benutzer.php"
+}
