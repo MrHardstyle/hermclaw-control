@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "request_id": "v222-stage1-contract-b",
+  "action": "edit_files",
+  "request_sha": "8e41f12626cd17020bf827e587dc41f408ef7712",
+  "result": {
+    "id": "3c52eb503c7584ca9e8ece7213985136880b4f48",
+    "short_id": "3c52eb50",
+    "title": "Agent Core v0.2.22: acceptance contract primitives",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/3c52eb503c7584ca9e8ece7213985136880b4f48",
+    "edit_summary": {
+      "operations": 6,
+      "files": [
+        "agent_core/agent_core.py"
+      ],
+      "base": "aa91db8d7da9ec2a7a7fc321ab99dbed65506b25",
+      "branch_existed": true
+    }
+  }
+}
