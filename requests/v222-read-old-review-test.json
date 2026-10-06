@@ -1,0 +1,7 @@
+{
+  "request_id": "v222-read-old-review-test",
+  "action": "read_file",
+  "project": "local-ai/hermclaw",
+  "ref": "chatgpt/patch-agent-core-v0222",
+  "path": "agent_core/tests/test_agent_core.py"
+}
