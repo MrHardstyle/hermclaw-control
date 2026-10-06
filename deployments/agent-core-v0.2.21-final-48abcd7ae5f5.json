@@ -1,6 +1,7 @@
 {
   "patch_id": "agent-core-v0.2.21-final",
   "sha": "48abcd7ae5f5832bba1f93c68380e96b335adc66",
-  "status": "VALIDATING",
-  "branch": "chatgpt/patch-agent-core-v0221"
+  "status": "FAILED",
+  "branch": "chatgpt/patch-agent-core-v0221",
+  "error": "Base-SHA abweichend: Patch=c79d7226dfa75933ecd30f1c782bf68b1d608f68, Ziel aktuell=aa91db8d7da9ec2a7a7fc321ab99dbed65506b25"
 }
