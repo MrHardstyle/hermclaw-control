@@ -1,11 +1,7 @@
 {
   "patch_id": "agent-core-v0.2.22",
   "sha": "fd8e908408e76d14fba7bb38daca3f35b3d15a0f",
-  "status": "TESTING",
+  "status": "FAILED",
   "branch": "chatgpt/patch-agent-core-v0222",
-  "changed_files": [
-    ".hermclaw/patch.json",
-    "agent_core/agent_core.py",
-    "agent_core/tests/test_acceptance_contract_v0222.py"
-  ]
+  "error": "Command '['python3', '-m', 'unittest', 'discover', '-s', 'agent_core/tests', '-v']' returned non-zero exit status 1."
 }
