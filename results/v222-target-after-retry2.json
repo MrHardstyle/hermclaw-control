@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "v222-target-after-retry2",
+  "action": "get_branch_head",
+  "request_sha": "49b07c009bcd3ac2d4cd67d410fe4bc0d505af4c",
+  "result": {
+    "branch": "redesign/autonomous-agent",
+    "commit": "d4168bdd9e530c07fd7eb372656d262174df3ea0",
+    "short_id": "d4168bdd",
+    "title": "Agent Core v0.2.22 tests: align reviewer prompt assertion",
+    "committed_date": "2026-10-06T08:12:12.000+00:00"
+  }
+}
