@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "request_id": "checkrun223a",
+  "action": "read_file",
+  "request_sha": "ac959e25d7615ad7277be1801aeaafab7528ed7d",
+  "result": {
+    "file_path": ".hermclaw/runs/stability-v14i-v0223-benutzerfilter/result.json",
+    "ref": "agent-runs/stability-v14i-v0223-benutzerfilter",
+    "blob_id": "ea01abed99a4ee87417dab8e3a1410e004139d84",
+    "last_commit_id": "94ef699d74d6474db6e0eb10bbd8a8f744afebe7",
+    "encoding": "utf-8",
+    "content": "{\n  \"version\": \"0.2.23\",\n  \"completed_at\": \"2026-10-06T11:03:02+00:00\",\n  \"ok\": false,\n  \"job_id\": \"stability-v14i-v0223-benutzerfilter\",\n  \"branch\": \"ai/job-stability-v14i-v0223-benutzerfilter-auftrag-v14i-acceptance-false-negative-reg\",\n  \"error_type\": \"AgentError\",\n  \"error\": \"Maximale Agentenrunden erreicht (60).\"\n}\n"
+  }
+}
