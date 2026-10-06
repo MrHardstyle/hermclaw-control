@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "agent-core-v0221-retrigger",
+  "action": "commit_files",
+  "request_sha": "c2905812a398e8ab5f14d881b9f4da04589e8603",
+  "result": {
+    "id": "7b93acd1a806bce42093ef9fd71515c8c0f2f706",
+    "short_id": "7b93acd1",
+    "title": "Agent Core v0.2.21 ready retry",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/7b93acd1a806bce42093ef9fd71515c8c0f2f706"
+  }
+}
