@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "v222-head",
+  "action": "get_branch_head",
+  "request_sha": "060f1e4bd35ad1c4ffb92e84cba59cc873cbe690",
+  "result": {
+    "branch": "redesign/autonomous-agent",
+    "commit": "aa91db8d7da9ec2a7a7fc321ab99dbed65506b25",
+    "short_id": "aa91db8d",
+    "title": "Agent Core v0.2.21 regression fixture",
+    "committed_date": "2026-10-06T07:15:56.000+00:00"
+  }
+}
