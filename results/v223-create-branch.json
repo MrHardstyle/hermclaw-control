@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "request_id": "v223-create-branch",
+  "action": "create_branch",
+  "request_sha": "2dc455666bf086648fdbe8514d6e49a5692c4738",
+  "result": {
+    "name": "chatgpt/patch-agent-core-v0223",
+    "commit": "d4168bdd9e530c07fd7eb372656d262174df3ea0"
+  }
+}
