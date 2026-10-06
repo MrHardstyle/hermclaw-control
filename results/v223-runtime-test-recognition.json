@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "request_id": "v223-runtime-test-recognition",
+  "action": "edit_files",
+  "request_sha": "32da43b565c73218b7775a9c0ea0a572afd21511",
+  "result": {
+    "id": "8ab4b0a544fe739946ab4371186468bad4abced0",
+    "short_id": "8ab4b0a5",
+    "title": "Agent Core v0.2.23: recognize real ad-hoc behavior tests",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/8ab4b0a544fe739946ab4371186468bad4abced0",
+    "edit_summary": {
+      "operations": 2,
+      "files": [
+        "agent_core/agent_core.py"
+      ],
+      "base": "d4168bdd9e530c07fd7eb372656d262174df3ea0",
+      "branch_existed": true
+    }
+  }
+}
