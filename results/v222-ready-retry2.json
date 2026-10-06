@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "v222-ready-retry2",
+  "action": "commit_files",
+  "request_sha": "47cbeab8544b6b917bfd87cdbeac91d2a05e8c81",
+  "result": {
+    "id": "9a6d9fbf7f0acca3413f935e9acd5bc9568aefd4",
+    "short_id": "9a6d9fbf",
+    "title": "Agent Core v0.2.22 ready retry 2",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/9a6d9fbf7f0acca3413f935e9acd5bc9568aefd4"
+  }
+}
