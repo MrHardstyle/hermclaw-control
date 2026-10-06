@@ -1,0 +1,6 @@
+{
+  "request_id": "agent-core-v0221-after-watcher-restart",
+  "action": "get_branch_head",
+  "project": "local-ai/hermclaw",
+  "branch": "redesign/autonomous-agent"
+}
