@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "v221-ready-after-fixture-fix",
+  "action": "commit_files",
+  "request_sha": "a72b24b74bdc4fe8fcf1977f5a1e3a0a0d71f2a7",
+  "result": {
+    "id": "48abcd7ae5f5832bba1f93c68380e96b335adc66",
+    "short_id": "48abcd7a",
+    "title": "Agent Core v0.2.21 ready after regression fix",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/48abcd7ae5f5832bba1f93c68380e96b335adc66"
+  }
+}
