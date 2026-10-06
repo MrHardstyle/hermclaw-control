@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "v14i-output-head",
+  "action": "get_branch_head",
+  "request_sha": "99509ce03a2bd9dcd9b2cc7e1260fe44d25c3d6c",
+  "result": {
+    "branch": "ai/job-stability-v14i-benutzerfilter-auftrag-v14i-acceptance-false-negative-reg",
+    "commit": "d546d9ea44bee897015221f78d9777fa15afd588",
+    "short_id": "d546d9ea",
+    "title": "V14I - Implementiere serverseitige Suchfunktion für Benutzer mit 120-Zeichen-Begrenzung und differenziertem Leerzustand",
+    "committed_date": "2026-10-06T07:41:34.000+00:00"
+  }
+}
