@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "v224-reasoning-recovery-postapply-head-20261007",
+  "action": "get_branch_head",
+  "request_sha": "238055821f4ebf9dbb7e7c2451e50a13befc59e4",
+  "result": {
+    "branch": "redesign/autonomous-agent",
+    "commit": "cff695cfdbe7da33c075c92eab97b5ef2e9e8531",
+    "short_id": "cff695cf",
+    "title": "Agent Core v0.2.24 ready",
+    "committed_date": "2026-10-07T11:45:18.000+00:00"
+  }
+}
