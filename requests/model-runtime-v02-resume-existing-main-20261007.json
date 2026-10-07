@@ -1,0 +1,28 @@
+{
+  "request_id": "model-runtime-v02-resume-existing-main-20261007",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/model-runtime-v01",
+  "start_sha": "8c91f841405afa62343371328a477af490da0aa2",
+  "commit_message": "Model runtime: resume outer review from salvaged Main result",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/run_after_handoff.sh",
+      "old": "PIPELINE_RESULT=\"${HERMCLAW_PIPELINE_RESULT:-/tmp/hermclaw-pipeline-result.json}\"",
+      "new": "PIPELINE_RESULT=\"${HERMCLAW_PIPELINE_RESULT:-/tmp/hermclaw-pipeline-result.json}\"\nRESUME_META=\"${HERMCLAW_RESUME_META:-}\""
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/run_after_handoff.sh",
+      "old": "LAST_HEAVY=\"\"\n\nwhile true; do",
+      "new": "LAST_HEAVY=\"\"\nRESUME_PENDING=0\n\nif [[ -n \"$RESUME_META\" ]]; then\n  if [[ ! -s \"$RESUME_META\" ]]; then\n    echo \"FEHLER: Resume-Metadaten fehlen: $RESUME_META\"\n    exit 42\n  fi\n  RESUME_PENDING=1\n  echo \"[PIPELINE] Resume-Metadaten erkannt: $RESUME_META\"\nfi\n\nwhile true; do"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/run_after_handoff.sh",
+      "old": "  echo\n  echo \"============================================================\"\n  echo \"===== PIPELINE MAIN RUN ${ITERATION} =====\"\n  echo \"============================================================\"\n\n  HERMCLAW_HANDOFF_JSON=\"$HANDOFF_JSON\" \\\n  HERMCLAW_BASE_BRANCH=\"$CURRENT_BASE\" \\\n  HERMCLAW_JOB_ID=\"$JOB_ID\" \\\n  HERMCLAW_TASK_FILE=\"$TASK_FILE\" \\\n  HERMCLAW_RUN_META=\"$RUN_META\" \\\n  HERMCLAW_RUN_LOG=\"$RUN_LOG\" \\\n    bash \"$ROOT/model_runtime/run_main_from_handoff.sh\"\n\n  RESULT_BRANCH=\"$(python3 - \"$RUN_META\" <<'PY'\nimport json, sys\nobj=json.load(open(sys.argv[1], encoding='utf-8'))\nprint(obj['branch'])\nPY\n)\"",
+      "new": "  echo\n  echo \"============================================================\"\n\n  if [[ \"$RESUME_PENDING\" == \"1\" ]]; then\n    echo \"===== PIPELINE RESUME / BESTEHENDES MAIN-ERGEBNIS =====\"\n    echo \"============================================================\"\n    RUN_META=\"$RESUME_META\"\n    RESULT_BRANCH=\"$(python3 - \"$RUN_META\" <<'PY'\nimport json, sys\nobj=json.load(open(sys.argv[1], encoding='utf-8'))\nprint(obj['branch'])\nPY\n)\"\n    RESUME_PENDING=0\n    echo \"[PIPELINE] Resume-Branch: $RESULT_BRANCH\"\n  else\n    echo \"===== PIPELINE MAIN RUN ${ITERATION} =====\"\n    echo \"============================================================\"\n\n    HERMCLAW_HANDOFF_JSON=\"$HANDOFF_JSON\" \\\n    HERMCLAW_BASE_BRANCH=\"$CURRENT_BASE\" \\\n    HERMCLAW_JOB_ID=\"$JOB_ID\" \\\n    HERMCLAW_TASK_FILE=\"$TASK_FILE\" \\\n    HERMCLAW_RUN_META=\"$RUN_META\" \\\n    HERMCLAW_RUN_LOG=\"$RUN_LOG\" \\\n      bash \"$ROOT/model_runtime/run_main_from_handoff.sh\"\n\n    RESULT_BRANCH=\"$(python3 - \"$RUN_META\" <<'PY'\nimport json, sys\nobj=json.load(open(sys.argv[1], encoding='utf-8'))\nprint(obj['branch'])\nPY\n)\"\n  fi"
+    }
+  ]
+}
