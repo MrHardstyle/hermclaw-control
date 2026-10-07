@@ -1,0 +1,22 @@
+{
+  "request_id": "model-runtime-v02-handoff-sanitize-20261007",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/model-runtime-v01",
+  "start_sha": "4e5b923133f2d3df1161756bc167ce8e31417ba2",
+  "commit_message": "Model runtime: remove contradictory model constraints from handoff",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/fast_handoff.py",
+      "old": "CANONICAL_CONSTRAINTS = [\n    \"bestehende Statusfilter erhalten\",\n    \"Berechtigungslogik erhalten\",\n    \"keine unnötige globale Validierungsänderung\",\n    \"Bei nativen PDO-Prepares keine mehrfach verwendeten Named Placeholder in einem Statement.\",\n]",
+      "new": "CANONICAL_CONSTRAINTS = [\n    \"bestehende Statusfilter erhalten\",\n    \"Berechtigungslogik erhalten\",\n    \"keine unnötige globale Validierungsänderung\",\n    \"Bei nativen PDO-Prepares keine mehrfach verwendeten Named Placeholder in einem Statement.\",\n    \"Keine wiederholte Projektsuche nach einem vorhandenen Suchfeld; nach einmaliger Prüfung der Ziel-Datei bei Fehlen direkt implementieren.\",\n]"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/fast_handoff.py",
+      "old": "def canonicalize(handoff: dict) -> dict:\n    result = dict(handoff)\n    result[\"acceptance_profile\"] = \"benutzerfilter-v1\"\n    result[\"requested_changes\"] = _merge_unique(\n        CANONICAL_CHANGES,\n        list(result.get(\"requested_changes\", [])),\n    )\n    result[\"constraints\"] = _merge_unique(\n        CANONICAL_CONSTRAINTS,\n        list(result.get(\"constraints\", [])),\n    )\n    result[\"tests\"] = _merge_unique(\n        CANONICAL_TESTS,\n        list(result.get(\"tests\", [])),\n    )\n    result[\"forbidden_paths\"] = _merge_unique(\n        CANONICAL_FORBIDDEN,\n        list(result.get(\"forbidden_paths\", [])),\n    )\n    return result",
+      "new": "def _sanitize_model_constraints(values: list) -> list[str]:\n    cleaned: list[str] = []\n    for item in values:\n        value = str(item).strip()\n        if not value:\n            continue\n        normalized = (\n            value.lower()\n            .replace(\"ä\", \"ae\")\n            .replace(\"ö\", \"oe\")\n            .replace(\"ü\", \"ue\")\n        )\n        contradicts_required_change = (\n            \"benutzer_array\" in normalized\n            and (\n                \"nicht veraendern\" in normalized\n                or \"nicht aendern\" in normalized\n                or \"unveraendert\" in normalized\n            )\n        )\n        if contradicts_required_change:\n            continue\n        cleaned.append(value)\n    return cleaned\n\n\ndef canonicalize(handoff: dict) -> dict:\n    result = dict(handoff)\n    result[\"acceptance_profile\"] = \"benutzerfilter-v1\"\n    result[\"requested_changes\"] = _merge_unique(\n        CANONICAL_CHANGES,\n        list(result.get(\"requested_changes\", [])),\n    )\n    model_constraints = _sanitize_model_constraints(\n        list(result.get(\"constraints\", []))\n    )\n    result[\"constraints\"] = _merge_unique(\n        CANONICAL_CONSTRAINTS,\n        model_constraints,\n    )\n    result[\"tests\"] = _merge_unique(\n        CANONICAL_TESTS,\n        list(result.get(\"tests\", [])),\n    )\n    result[\"forbidden_paths\"] = _merge_unique(\n        CANONICAL_FORBIDDEN,\n        list(result.get(\"forbidden_paths\", [])),\n    )\n    return result"
+    }
+  ]
+}
