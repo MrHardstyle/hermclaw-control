@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v01-fast7-head-20261007",
+  "action": "get_branch_head",
+  "request_sha": "1e7d405b2605d8aa228b9b5e707f9c82821475ba",
+  "result": {
+    "branch": "chatgpt/model-runtime-v01",
+    "commit": "a45d05a70dba190fbcb1a20361565c8028cb952f",
+    "short_id": "a45d05a7",
+    "title": "Model runtime: add FastCoder discovery task and runner",
+    "committed_date": "2026-10-07T15:18:37.000+00:00"
+  }
+}
