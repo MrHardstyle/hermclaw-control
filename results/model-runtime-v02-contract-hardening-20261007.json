@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v02-contract-hardening-20261007",
+  "action": "commit_files",
+  "request_sha": "7d810c3e8f4a38c47251192782fd64ffad14d7b6",
+  "result": {
+    "id": "065f9cc10d85e8eea86d58613d118e6e3a45be77",
+    "short_id": "065f9cc1",
+    "title": "Model runtime: harden Benutzerfilter handoff contract",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/065f9cc10d85e8eea86d58613d118e6e3a45be77"
+  }
+}
