@@ -1,0 +1,6 @@
+{
+  "ok": false,
+  "request_id": "main-task-syntax-hotfix-20261007",
+  "error_type": "ValueError",
+  "error": "replace_text erwartet exakt 1 Treffer in model_runtime/main_task.py, gefunden: 0."
+}
