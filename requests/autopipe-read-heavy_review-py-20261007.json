@@ -1,0 +1,7 @@
+{
+  "request_id": "autopipe-read-heavy_review-py-20261007",
+  "action": "read_file",
+  "project": "local-ai/hermclaw",
+  "ref": "chatgpt/model-runtime-v01",
+  "path": "model_runtime/heavy_review.py"
+}
