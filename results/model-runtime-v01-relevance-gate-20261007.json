@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v01-relevance-gate-20261007",
+  "action": "commit_files",
+  "request_sha": "bb32041eaf2a8f9e5a89226c457302c005838cea",
+  "result": {
+    "id": "9617f858d5a7093f0075606bf04f636c56820b7f",
+    "short_id": "9617f858",
+    "title": "Model runtime: gate discovery handoff by user-context relevance",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/9617f858d5a7093f0075606bf04f636c56820b7f"
+  }
+}
