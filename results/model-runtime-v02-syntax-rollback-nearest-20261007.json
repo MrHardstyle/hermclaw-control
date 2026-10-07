@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v02-syntax-rollback-nearest-20261007",
+  "action": "commit_files",
+  "request_sha": "1e6c4a0867aef3358528e626c327098b3cd778dd",
+  "result": {
+    "id": "fc941fa8707cb530a26b8657b818c6b925fce3c6",
+    "short_id": "fc941fa8",
+    "title": "Model runtime: rollback syntax failures to nearest valid ancestor",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/fc941fa8707cb530a26b8657b818c6b925fce3c6"
+  }
+}
