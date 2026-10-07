@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v01-files-20261007",
+  "action": "commit_files",
+  "request_sha": "fc7f9c40ad1454dda6291604153ca444d7e913eb",
+  "result": {
+    "id": "59938caf2112cf038519c7e9f5b820b68aafea2c",
+    "short_id": "59938caf",
+    "title": "Add model runtime routing and Ollama residency manager",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/59938caf2112cf038519c7e9f5b820b68aafea2c"
+  }
+}
