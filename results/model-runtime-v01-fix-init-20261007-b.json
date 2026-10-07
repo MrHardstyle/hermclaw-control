@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v01-fix-init-20261007-b",
+  "action": "get_project",
+  "request_sha": "0e83b95ce493241d0d9ba44ad0cea1ade3894ad1",
+  "result": {
+    "id": 1,
+    "path_with_namespace": "local-ai/hermclaw",
+    "default_branch": "main",
+    "visibility": "private",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw"
+  }
+}
