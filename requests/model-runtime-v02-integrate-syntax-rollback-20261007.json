@@ -1,0 +1,28 @@
+{
+  "request_id": "model-runtime-v02-integrate-syntax-rollback-20261007",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/model-runtime-v01",
+  "start_sha": "fc941fa8707cb530a26b8657b818c6b925fce3c6",
+  "commit_message": "Model runtime: retry after deterministic syntax rollback",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/run_after_handoff.sh",
+      "old": "MAX_CORRECTIONS=\"${HERMCLAW_MAX_CORRECTIONS:-1}\"",
+      "new": "MAX_CORRECTIONS=\"${HERMCLAW_MAX_CORRECTIONS:-2}\""
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/run_after_handoff.sh",
+      "old": "  SANITIZE_JSON=\"/tmp/hermclaw-sanitize-${JOB_ID}.json\"\n",
+      "new": "  SANITIZE_JSON=\"/tmp/hermclaw-sanitize-${JOB_ID}.json\"\n  SYNTAX_ROLLBACK_JSON=\"/tmp/hermclaw-syntax-rollback-${JOB_ID}.json\"\n"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/run_after_handoff.sh",
+      "old": "  LAST_VERIFY=\"$VERIFY_JSON\"\n\n  if [[ ! -s \"$VERIFY_JSON\" ]]; then\n    echo \"FEHLER: Verifier hat keinen Report erzeugt.\"\n    exit 43\n  fi\n\n  if [[ $VERIFY_RC -ne 0 ]]; then\n",
+      "new": "  LAST_VERIFY=\"$VERIFY_JSON\"\n\n  if [[ ! -s \"$VERIFY_JSON\" ]]; then\n    echo \"FEHLER: Verifier hat keinen Report erzeugt.\"\n    exit 43\n  fi\n\n  if [[ $VERIFY_RC -ne 0 ]]; then\n    SYNTAX_BLOCKERS=\"$(python3 - \"$VERIFY_JSON\" <<'PY'\nimport json, sys\nobj=json.load(open(sys.argv[1], encoding='utf-8'))\nprint(sum(1 for item in obj.get('blockers', []) if item.get('code') == 'SYNTAX_CHECK_FAILED'))\nPY\n)\"\n\n    if [[ \"$SYNTAX_BLOCKERS\" != \"0\" ]]; then\n      echo\n      echo \"===== DETERMINISTISCHER SYNTAX-ROLLBACK =====\"\n      python3 -m model_runtime.rollback_syntax_failures \\\n        --repo \"$VERIFY_DIR\" \\\n        --base-ref \"$VERIFY_BASE_COMMIT\" \\\n        --handoff \"$HANDOFF_JSON\" \\\n        --verifier \"$VERIFY_JSON\" \\\n        --output \"$SYNTAX_ROLLBACK_JSON\"\n\n      ROLLBACK_CHANGED=\"$(python3 - \"$SYNTAX_ROLLBACK_JSON\" <<'PY'\nimport json, sys\nobj=json.load(open(sys.argv[1], encoding='utf-8'))\nprint('1' if obj.get('changed') else '0')\nPY\n)\"\n\n      if [[ \"$ROLLBACK_CHANGED\" == \"1\" ]]; then\n        echo \"[PIPELINE] Syntax-defekte Ziel-Datei wurde auf den nächsten gültigen Vorgänger zurückgesetzt; Verifier läuft erneut.\"\n        set +e\n        python3 -m model_runtime.deterministic_verifier \\\n          --repo \"$VERIFY_DIR\" \\\n          --base-ref \"$VERIFY_BASE_COMMIT\" \\\n          --handoff \"$HANDOFF_JSON\" \\\n          --output \"$VERIFY_JSON\" \\\n          --diff-output \"$DIFF_FILE\"\n        VERIFY_RC=$?\n        set -e\n      fi\n    fi\n  fi\n\n  if [[ $VERIFY_RC -ne 0 ]]; then\n"
+    }
+  ]
+}
