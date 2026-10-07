@@ -1,0 +1,6 @@
+{
+  "ok": false,
+  "request_id": "salvage-cli-20261007",
+  "error_type": "HTTPError",
+  "error": "404 Client Error: Not Found for url: http://192.168.178.226/api/v4/projects/local-ai%2Fhermclaw/repository/files/agent_core%2Fcli.py?ref=redesign%2Fautonomous-agent"
+}
