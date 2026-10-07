@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "request_id": "salvage-read-main-runner-latest-20261007",
+  "action": "read_file",
+  "request_sha": "38017eb8189d70574aa84e5660cfae5374704629",
+  "result": {
+    "file_path": "model_runtime/run_main_from_handoff.sh",
+    "ref": "chatgpt/model-runtime-v01",
+    "blob_id": "9dff0b8e59f7014dbafed6f64a605e65916a43cb",
+    "last_commit_id": "d5574766bf935eb099137bfc31f3ad00bceb671a",
+    "encoding": "utf-8",
+    "content": "#!/usr/bin/env bash\nset -euo pipefail\n\nROOT=\"$(cd \"$(dirname \"${BASH_SOURCE[0]}\")/..\" && pwd)\"\nHANDOFF_JSON=\"${HERMCLAW_HANDOFF_JSON:-/tmp/hermclaw-benutzerfilter-handoff.json}\"\nMODEL_ALIAS=\"${HERMCLAW_MAIN_ALIAS:-local-coder-qwen3coder30-24k}\"\nAGENT_BIN=\"${HERMCLAW_AGENT_BIN:-/home/kiworker/noob2claw_runtime/bin/hermclaw-agent}\"\nBASE_BRANCH=\"${HERMCLAW_BASE_BRANCH:-redesign/autonomous-agent}\"\nJOB_ID=\"${HERMCLAW_JOB_ID:-routing-v02-main-$(date +%Y%m%d-%H%M%S)}\"\nTASK_FILE=\"${HERMCLAW_TASK_FILE:-}\"\nRUN_LOG=\"${HERMCLAW_RUN_LOG:-/tmp/hermclaw-${JOB_ID}.log}\"\nRUN_META=\"${HERMCLAW_RUN_META:-/tmp/hermclaw-main-run.json}\"\nFALLBACK_RESULT=\"/home/kiworker/noob2claw_runtime/agent-jobs/job-${JOB_ID}/result.json\"\n\ncd \"$ROOT\"\n\nif [[ ! -s \"$HANDOFF_JSON\" ]]; then\n  echo \"FEHLER: Handoff fehlt: $HANDOFF_JSON\"\n  exit 30\nfi\n\nif [[ -n \"$TASK_FILE\" ]]; then\n  if [[ ! -s \"$TASK_FILE\" ]]; then\n    echo \"FEHLER: Task-Override fehlt: $TASK_FILE\"\n    exit 31\n  fi\n  TASK=\"$(cat \"$TASK_FILE\")\"\nelse\n  TASK=\"$(python3 -m model_runtime.main_task --handoff \"$HANDOFF_JSON\")\"\nfi\n\necho \"===== MAIN TASK =====\"\nprintf \"%s\\n\" \"$TASK\"\n\necho\necho \"===== MAIN-CODER MODELL VORBEREITEN =====\"\npython3 -m model_runtime.model_manager prepare main\n\necho\necho \"===== GELADENE MODELLE =====\"\npython3 -m model_runtime.model_manager status\n\necho\necho \"===== START MAIN CODER / 30B / 24K =====\"\necho \"[PIPELINE] base: $BASE_BRANCH\"\necho \"[PIPELINE] job:  $JOB_ID\"\n\nset +e\n\"$AGENT_BIN\" run \\\n  --repo git@hermclaw-gitlab:local-ai/hermclaw.git \\\n  --base \"$BASE_BRANCH\" \\\n  --job-id \"$JOB_ID\" \\\n  --model \"$MODEL_ALIAS\" \\\n  --context-tokens 24576 \\\n  --max-output-tokens 4096 \\\n  --task \"$TASK\" \\\n  --push 2>&1 | tee \"$RUN_LOG\"\nAGENT_RC=${PIPESTATUS[0]}\nset -e\n\nif [[ $AGENT_RC -ne 0 ]]; then\n  echo \"FEHLER: Main-Coder beendet mit Exit-Code $AGENT_RC\"\n  exit \"$AGENT_RC\"\nfi\n\npython3 -m model_runtime.extract_agent_result \\\n  --log \"$RUN_LOG\" \\\n  --fallback-result \"$FALLBACK_RESULT\" \\\n  --output \"$RUN_META\"\n\necho \"[PIPELINE] Main-Ergebnis: $RUN_META\"\n"
+  }
+}
