@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v02-heavy-ollama-fallback-v2-20261007",
+  "action": "commit_files",
+  "request_sha": "551294ad23b538f06e5dcad65472b916850cdfb6",
+  "result": {
+    "id": "3e1ce47f8bb50bbd9a608b39bdcf4b8b7bf9316c",
+    "short_id": "3e1ce47f",
+    "title": "Model runtime: add direct Ollama JSON fallback for Heavy review",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/3e1ce47f8bb50bbd9a608b39bdcf4b8b7bf9316c"
+  }
+}
