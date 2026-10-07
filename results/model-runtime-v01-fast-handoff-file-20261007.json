@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v01-fast-handoff-file-20261007",
+  "action": "commit_files",
+  "request_sha": "83caee901a8bc6256b9d6c45c9e1ba6f46ac9ee4",
+  "result": {
+    "id": "aefc54d857c484fb8610521d079eb378e3c60570",
+    "short_id": "aefc54d8",
+    "title": "Model runtime: add validated Fast-to-Main handoff builder",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/aefc54d857c484fb8610521d079eb378e3c60570"
+  }
+}
