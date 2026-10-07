@@ -1,0 +1,15 @@
+{
+  "request_id": "model-runtime-v02-normalize-handoff-20261007",
+  "action": "commit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/model-runtime-v01",
+  "target_branch": "chatgpt/model-runtime-v01",
+  "commit_message": "Model runtime: normalize existing handoff contracts",
+  "actions": [
+    {
+      "action": "create",
+      "file_path": "model_runtime/normalize_handoff.py",
+      "content": "from __future__ import annotations\n\nimport argparse\nimport json\nfrom pathlib import Path\n\nfrom .fast_handoff import canonicalize\n\n\ndef main() -> int:\n    parser = argparse.ArgumentParser(\n        description=\"Ergänzt deterministische Pflichtkriterien in ein bestehendes Handoff.\"\n    )\n    parser.add_argument(\"--input\", required=True)\n    parser.add_argument(\"--output\", required=True)\n    args = parser.parse_args()\n\n    source = Path(args.input)\n    handoff = json.loads(source.read_text(encoding=\"utf-8\"))\n    normalized = canonicalize(handoff)\n    Path(args.output).write_text(\n        json.dumps(normalized, ensure_ascii=False, indent=2) + \"\\n\",\n        encoding=\"utf-8\",\n    )\n    print(\n        \"[HANDOFF] Vertrag normalisiert: \"\n        f\"{normalized.get('acceptance_profile')}\"\n    )\n    return 0\n\n\nif __name__ == \"__main__\":\n    raise SystemExit(main())\n"
+    }
+  ]
+}
