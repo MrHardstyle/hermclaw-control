@@ -1,0 +1,15 @@
+{
+  "request_id": "model-runtime-v01-detdisc-runner-20261007",
+  "action": "commit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/model-runtime-v01",
+  "target_branch": "chatgpt/model-runtime-v01",
+  "commit_message": "Model runtime: add deterministic discovery runner",
+  "actions": [
+    {
+      "action": "create",
+      "file_path": "model_runtime/run_deterministic_discovery.sh",
+      "content": "#!/usr/bin/env bash\nset -euo pipefail\n\nROOT=\"$(cd \"$(dirname \"${BASH_SOURCE[0]}\")/..\" && pwd)\"\nTARGET_DIR=\"${HERMCLAW_DISCOVERY_TARGET:-/tmp/hermclaw-detdisc-target}\"\nDISCOVERY_JSON=\"${HERMCLAW_DISCOVERY_JSON:-/tmp/hermclaw-benutzerfilter-discovery.json}\"\nHANDOFF_JSON=\"${HERMCLAW_HANDOFF_JSON:-/tmp/hermclaw-benutzerfilter-handoff.json}\"\nMODEL_ALIAS=\"${HERMCLAW_FAST_ALIAS:-local-coder-qwen3-fast-12k}\"\nLITELLM_URL=\"${HERMCLAW_LITELLM_URL:-http://127.0.0.1:4000/v1/chat/completions}\"\n\ncd \"$ROOT\"\n\necho \"===== CLEAN TARGET CHECKOUT =====\"\nrm -rf \"$TARGET_DIR\"\ngit clone --quiet --single-branch --branch redesign/autonomous-agent \\\n  git@hermclaw-gitlab:local-ai/hermclaw.git \"$TARGET_DIR\"\necho \"[GIT] Zielbestand: $(git -C \"$TARGET_DIR\" rev-parse --short HEAD)\"\n\necho\necho \"===== DETERMINISTISCHE DISCOVERY =====\"\npython3 -m model_runtime.deterministic_discovery \\\n  --root \"$TARGET_DIR\" \\\n  --output \"$DISCOVERY_JSON\"\n\necho\necho \"===== FAST MODELL VORBEREITEN =====\"\npython3 -m model_runtime.model_manager prepare fast\n\necho\necho \"===== FAST->MAIN HANDOFF =====\"\npython3 -m model_runtime.fast_handoff \\\n  --discovery \"$DISCOVERY_JSON\" \\\n  --output \"$HANDOFF_JSON\" \\\n  --endpoint \"$LITELLM_URL\" \\\n  --model \"$MODEL_ALIAS\"\n\necho\necho \"===== HANDOFF =====\"\ncat \"$HANDOFF_JSON\"\n\necho\necho \"===== NÄCHSTER SCHRITT =====\"\necho \"Wenn target_paths plausibel sind:\"\necho \"  cd $ROOT\"\necho \"  python3 -m model_runtime.model_manager prepare main\"\necho\necho \"Handoff-Datei:\"\necho \"  $HANDOFF_JSON\"\n"
+    }
+  ]
+}
