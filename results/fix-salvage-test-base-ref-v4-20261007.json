@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "request_id": "fix-salvage-test-base-ref-v4-20261007",
+  "action": "edit_files",
+  "request_sha": "47279398057e4d6feebfb4dcc62319bcf8c7e1a4",
+  "result": {
+    "id": "605118ed4644c4d6a5d547dba6a2dee70d4dc54b",
+    "short_id": "605118ed",
+    "title": "Fix salvage unit test base reference",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/605118ed4644c4d6a5d547dba6a2dee70d4dc54b",
+    "edit_summary": {
+      "operations": 2,
+      "files": [
+        "model_runtime/tests/test_salvage_agent_workspace.py"
+      ],
+      "base": "eda54540683ea1d3b9907ed449da9ed84f790ab2",
+      "branch_existed": true
+    }
+  }
+}
