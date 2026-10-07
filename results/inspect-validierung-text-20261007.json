@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "request_id": "inspect-validierung-text-20261007",
+  "action": "read_file",
+  "request_sha": "4aefdb16d9d0e2d74ce013dd6e7659394e2b9838",
+  "result": {
+    "file_path": "inc/funktionen_validierung.php",
+    "ref": "redesign/autonomous-agent",
+    "blob_id": "08e2327462625bbd44b786de74981410be49b157",
+    "last_commit_id": "f18aeda257dd016e6a84a301300767f91a6fc7ce",
+    "encoding": "utf-8",
+    "content": "<?php\ndeclare(strict_types=1);\n\nfunction validierung_text(string $wert, int $maximal = 255): string\n{\n    $wert = trim($wert);\n    if (function_exists('mb_substr')) {\n        return mb_substr($wert, 0, $maximal);\n    }\n    return substr($wert, 0, $maximal);\n}\n\nfunction validierung_email(string $email): string\n{\n    $email = validierung_text($email, 255);\n    return filter_var($email, FILTER_VALIDATE_EMAIL) ? $email : '';\n}\n\nfunction ausgabe(string $wert): string\n{\n    return htmlspecialchars($wert, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');\n}\n\nfunction request_ip_adresse(): string\n{\n    $remote = validierung_text((string)($_SERVER['REMOTE_ADDR'] ?? ''), 80);\n    $vertrauenswuerdige_proxies = ['127.0.0.1', '::1', '192.168.178.2'];\n\n    if (in_array($remote, $vertrauenswuerdige_proxies, true)) {\n        $weitergeleitet = (string)($_SERVER['HTTP_X_FORWARDED_FOR'] ?? '');\n        $kandidaten = array_map('trim', explode(',', $weitergeleitet));\n        foreach ($kandidaten as $kandidat) {\n            if (filter_var($kandidat, FILTER_VALIDATE_IP)) {\n                return validierung_text($kandidat, 80);\n            }\n        }\n    }\n\n    return $remote;\n}\n"
+  }
+}
