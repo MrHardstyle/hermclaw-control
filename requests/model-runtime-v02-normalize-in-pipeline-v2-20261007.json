@@ -1,0 +1,16 @@
+{
+  "request_id": "model-runtime-v02-normalize-in-pipeline-v2-20261007",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/model-runtime-v01",
+  "start_sha": "b5913123b97500ca746167f9b051c5bc6fc08f60",
+  "commit_message": "Model runtime: normalize handoff before automatic review pipeline",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/run_after_handoff.sh",
+      "old": "if [[ ! -s \"$HANDOFF_JSON\" ]]; then\n  echo \"FEHLER: Handoff fehlt: $HANDOFF_JSON\"\n  exit 40\nfi\n\nif [[ -d \"$DISCOVERY_TARGET/.git\" ]]; then",
+      "new": "if [[ ! -s \"$HANDOFF_JSON\" ]]; then\n  echo \"FEHLER: Handoff fehlt: $HANDOFF_JSON\"\n  exit 40\nfi\n\necho \"===== HANDOFF-VERTRAG NORMALISIEREN =====\"\npython3 -m model_runtime.normalize_handoff \\\n  --input \"$HANDOFF_JSON\" \\\n  --output \"$HANDOFF_JSON\"\n\nif [[ -d \"$DISCOVERY_TARGET/.git\" ]]; then"
+    }
+  ]
+}
