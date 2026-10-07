@@ -1,0 +1,6 @@
+{
+  "request_id": "v224-reasoning-recovery-core-diff-20261007",
+  "action": "get_commit_diff",
+  "project": "local-ai/hermclaw",
+  "sha": "0b37d8e5375fee22f2c702f14a062e8d8f26b6dd"
+}
