@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "inspect-success-run-head-20261007",
+  "action": "get_branch_head",
+  "request_sha": "0902675a974dfc49fda93fed9cf720feb44bf70f",
+  "result": {
+    "branch": "ai/job-routing-v01-main-benutzerfilter-20261007-181244-main-coder-auftrag-gezielte-implementierun",
+    "commit": "80c138b9427abb6cb55f9ab318e639166f51982b",
+    "short_id": "80c138b9",
+    "title": "Implementiere serverseitige Suche mit 120-Zeichen-Trimmen und UI-Statusunterscheidung in Benutzerliste",
+    "committed_date": "2026-10-07T18:32:51.000+00:00"
+  }
+}
