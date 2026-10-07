@@ -1,0 +1,5 @@
+{
+  "request_id": "model-runtime-v01-fix-init-20261007-b",
+  "action": "get_project",
+  "project": "local-ai/hermclaw"
+}
