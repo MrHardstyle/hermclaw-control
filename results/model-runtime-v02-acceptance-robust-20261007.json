@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v02-acceptance-robust-20261007",
+  "action": "commit_files",
+  "request_sha": "f0f7cf6b564b6c7944fa0841e378f801bf1e3866",
+  "result": {
+    "id": "eda54540683ea1d3b9907ed449da9ed84f790ab2",
+    "short_id": "eda54540",
+    "title": "Model runtime: make Benutzerfilter acceptance checks PHP-safe",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/eda54540683ea1d3b9907ed449da9ed84f790ab2"
+  }
+}
