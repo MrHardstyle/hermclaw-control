@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "pipeline-head-20261007",
+  "action": "get_branch_head",
+  "request_sha": "344cc1d83096fb8d5656bf2ce73affbb1445d7d6",
+  "result": {
+    "branch": "chatgpt/model-runtime-v01",
+    "commit": "43330a18f88da57ed361a76392ea1c59cf37d382",
+    "short_id": "43330a18",
+    "title": "Fix Main task rendering syntax",
+    "committed_date": "2026-10-07T18:07:08.000+00:00"
+  }
+}
