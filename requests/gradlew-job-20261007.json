@@ -1,0 +1,7 @@
+{
+  "request_id": "gradlew-job-20261007",
+  "action": "read_file",
+  "project": "local-ai/hermclaw",
+  "ref": "ai/job-routing-v02-main-20261007-193441-i0-205778-main-coder-auftrag-gezielte-implementierun",
+  "path": "android_app/gradlew.bat"
+}
