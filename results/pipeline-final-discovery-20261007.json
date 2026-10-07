@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "request_id": "pipeline-final-discovery-20261007",
+  "action": "read_file",
+  "request_sha": "607381fada4847e24a688b38bc5ca669cc2b86a2",
+  "result": {
+    "file_path": "model_runtime/run_deterministic_discovery.sh",
+    "ref": "chatgpt/model-runtime-v01",
+    "blob_id": "2e23c59afbc36016cbef96dda6e39ff2a6957c38",
+    "last_commit_id": "d33677af7c4bde61d7bf97aa1db6394ba5a8aee2",
+    "encoding": "utf-8",
+    "content": "#!/usr/bin/env bash\nset -euo pipefail\n\nROOT=\"$(cd \"$(dirname \"${BASH_SOURCE[0]}\")/..\" && pwd)\"\nTARGET_DIR=\"${HERMCLAW_DISCOVERY_TARGET:-/tmp/hermclaw-detdisc-target}\"\nDISCOVERY_JSON=\"${HERMCLAW_DISCOVERY_JSON:-/tmp/hermclaw-benutzerfilter-discovery.json}\"\nHANDOFF_JSON=\"${HERMCLAW_HANDOFF_JSON:-/tmp/hermclaw-benutzerfilter-handoff.json}\"\nMODEL_ALIAS=\"${HERMCLAW_FAST_ALIAS:-local-coder-qwen3-fast-12k}\"\nLITELLM_URL=\"${HERMCLAW_LITELLM_URL:-http://127.0.0.1:4000/v1/chat/completions}\"\nAUTO_CONTINUE=\"${HERMCLAW_AUTO_CONTINUE:-1}\"\n\ncd \"$ROOT\"\n\necho \"===== CLEAN TARGET CHECKOUT =====\"\nrm -rf \"$TARGET_DIR\"\ngit clone --quiet --single-branch --branch redesign/autonomous-agent \\\n  git@hermclaw-gitlab:local-ai/hermclaw.git \"$TARGET_DIR\"\necho \"[GIT] Zielbestand: $(git -C \"$TARGET_DIR\" rev-parse --short HEAD)\"\n\necho\necho \"===== DETERMINISTISCHE DISCOVERY =====\"\npython3 -m model_runtime.deterministic_discovery \\\n  --root \"$TARGET_DIR\" \\\n  --output \"$DISCOVERY_JSON\"\n\necho\necho \"===== FAST MODELL VORBEREITEN =====\"\npython3 -m model_runtime.model_manager prepare fast\n\necho\necho \"===== FAST->MAIN HANDOFF =====\"\npython3 -m model_runtime.fast_handoff \\\n  --discovery \"$DISCOVERY_JSON\" \\\n  --output \"$HANDOFF_JSON\" \\\n  --endpoint \"$LITELLM_URL\" \\\n  --model \"$MODEL_ALIAS\"\n\necho\necho \"===== HANDOFF =====\"\ncat \"$HANDOFF_JSON\"\n\nif [[ \"$AUTO_CONTINUE\" == \"0\" ]]; then\n  echo\n  echo \"[PIPELINE] HERMCLAW_AUTO_CONTINUE=0: Stop nach Handoff für Diagnose.\"\n  exit 0\nfi\n\necho\necho \"===== AUTO-CONTINUE NACH HANDOFF =====\"\nHERMCLAW_DISCOVERY_TARGET=\"$TARGET_DIR\" \\\nHERMCLAW_HANDOFF_JSON=\"$HANDOFF_JSON\" \\\nHERMCLAW_LITELLM_URL=\"$LITELLM_URL\" \\\n  exec bash \"$ROOT/model_runtime/run_after_handoff.sh\"\n"
+  }
+}
