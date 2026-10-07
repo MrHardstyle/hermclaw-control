@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "syntax-repair-head-20261007",
+  "action": "get_branch_head",
+  "request_sha": "ebf6093b50fbb7a706bb68a069e3ca9411ba5035",
+  "result": {
+    "branch": "chatgpt/model-runtime-v01",
+    "commit": "b710f20ef41ea92c40ce04d1b3f132b9c7838780",
+    "short_id": "b710f20e",
+    "title": "Model runtime: avoid duplicate verifier issues in correction prompt",
+    "committed_date": "2026-10-07T21:02:30.000+00:00"
+  }
+}
