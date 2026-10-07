@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v02-failclosed-hardening-20261007",
+  "action": "commit_files",
+  "request_sha": "28e25b46c2bf3df8d36830eac65b0f4d3644bd12",
+  "result": {
+    "id": "7cc779e80b0fcb140eda7a91f372bafb1682376b",
+    "short_id": "7cc779e8",
+    "title": "Model runtime: harden verifier and fail-closed Heavy handling",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/7cc779e80b0fcb140eda7a91f372bafb1682376b"
+  }
+}
