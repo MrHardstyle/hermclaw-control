@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "request_id": "detdisc-read-api-benutzer-20261007",
+  "action": "read_file",
+  "request_sha": "1942ae9241e1a1fa0744e5d9080bf2f319d8630d",
+  "result": {
+    "file_path": "api/benutzer.php",
+    "ref": "redesign/autonomous-agent",
+    "blob_id": "29f5f7127aa13526646d4ea49fdf651023ea70ed",
+    "last_commit_id": "f18aeda257dd016e6a84a301300767f91a6fc7ce",
+    "encoding": "utf-8",
+    "content": "<?php\ndeclare(strict_types=1);\n\nhttp_response_code(403);\nheader('Content-Type: application/json; charset=utf-8');\necho json_encode(['ok' => false, 'fehler' => 'API-Zugriff erfolgt ueber /api.php'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);\n"
+  }
+}
