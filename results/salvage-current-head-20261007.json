@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "salvage-current-head-20261007",
+  "action": "get_branch_head",
+  "request_sha": "a210a0400bae302535b77c9074e8f26320e2bf83",
+  "result": {
+    "branch": "chatgpt/model-runtime-v01",
+    "commit": "6f5955869f5e77fbc5ce76921e7da80d7e8b1c59",
+    "short_id": "6f595586",
+    "title": "Model runtime: normalize handoff before automatic review pipeline",
+    "committed_date": "2026-10-07T19:26:06.000+00:00"
+  }
+}
