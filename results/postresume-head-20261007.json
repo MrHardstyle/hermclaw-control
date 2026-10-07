@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "postresume-head-20261007",
+  "action": "get_branch_head",
+  "request_sha": "b698feaa4da1e58d8c440f672827048318d2e5ab",
+  "result": {
+    "branch": "chatgpt/model-runtime-v01",
+    "commit": "223d5a959368351c8ae77642a88fe55ec727de05",
+    "short_id": "223d5a95",
+    "title": "Model runtime: resume outer review from salvaged Main result",
+    "committed_date": "2026-10-07T20:17:09.000+00:00"
+  }
+}
