@@ -1,0 +1,15 @@
+{
+  "request_id": "model-runtime-v02-correction-dedupe-20261007",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/model-runtime-v01",
+  "commit_message": "Model runtime: avoid duplicate verifier issues in correction prompt",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/review_correction_task.py",
+      "old": "def render(handoff: dict, verifier: dict, heavy: dict) -> str:\n    issues = heavy.get(\"issues\", [])\n    blockers = verifier.get(\"blockers\", [])",
+      "new": "def render(handoff: dict, verifier: dict, heavy: dict) -> str:\n    heavy_source = str(heavy.get(\"_generated_by\", \"\"))\n    issues = [] if heavy_source == \"deterministic_verifier\" else heavy.get(\"issues\", [])\n    blockers = verifier.get(\"blockers\", [])"
+    }
+  ]
+}
