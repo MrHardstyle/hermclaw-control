@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "v224-reasoning-recovery-tests-20261007",
+  "action": "commit_files",
+  "request_sha": "76314d265564f4d2a32cad3586c8eb6c45a68972",
+  "result": {
+    "id": "a9f57223635a00e6b18366078b2e5964562a018d",
+    "short_id": "a9f57223",
+    "title": "Agent Core v0.2.24 tests: reasoning-only recovery",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/a9f57223635a00e6b18366078b2e5964562a018d"
+  }
+}
