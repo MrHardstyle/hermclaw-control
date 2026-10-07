@@ -1,0 +1,46 @@
+{
+  "request_id": "model-runtime-v02-heavy-ollama-fallback-20261007",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/model-runtime-v01",
+  "start_sha": "32853a49aab14e019ccb3d8db57d7ddabbec7a0b",
+  "commit_message": "Model runtime: add direct Ollama JSON fallback for Heavy review",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/heavy_review.py",
+      "old": "DEFAULT_MODEL = os.environ.get(\n    \"HERMCLAW_HEAVY_ALIAS\",\n    \"local-coder-qwen38-24k\",\n)\n",
+      "new": "DEFAULT_MODEL = os.environ.get(\n    \"HERMCLAW_HEAVY_ALIAS\",\n    \"local-coder-qwen38-24k\",\n)\nDEFAULT_OLLAMA_URL = os.environ.get(\n    \"HERMCLAW_HEAVY_OLLAMA_URL\",\n    \"http://192.168.178.224:11434\",\n).rstrip(\"/\")\nDEFAULT_OLLAMA_MODEL = os.environ.get(\n    \"HERMCLAW_HEAVY_OLLAMA_MODEL\",\n    \"qwen3.8:27b\",\n)\n"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/heavy_review.py",
+      "old": "        \"temperature\": 0,\n        \"max_tokens\": max_tokens,\n    }\n",
+      "new": "        \"temperature\": 0,\n        \"max_tokens\": max_tokens,\n        \"response_format\": {\"type\": \"json_object\"},\n    }\n"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/heavy_review.py",
+      "old": "def review(\n    handoff: dict[str, Any],\n    verifier: dict[str, Any],\n    diff: str,\n    endpoint: str,\n    model: str,\n    timeout: int = 600,\n) -> dict[str, Any]:\n",
+      "new": "def _request_ollama_json(\n    *,\n    ollama_url: str,\n    ollama_model: str,\n    prompt: str,\n    timeout: int,\n) -> dict[str, Any]:\n    payload = {\n        \"model\": ollama_model,\n        \"messages\": [\n            {\n                \"role\": \"system\",\n                \"content\": (\n                    \"Du bist ein strenger unabhängiger Code-Reviewer. \"\n                    \"Antworte ausschließlich als valides JSON-Objekt.\"\n                ),\n            },\n            {\n                \"role\": \"user\",\n                \"content\": (\n                    prompt\n                    + \"\\n\\nDIREKTER JSON-FALLBACK: Gib jetzt ausschließlich \"\n                    + \"das finale JSON-Objekt aus. Keine Analyse, kein Markdown.\"\n                ),\n            },\n        ],\n        \"stream\": False,\n        \"think\": False,\n        \"format\": \"json\",\n        \"keep_alive\": \"5m\",\n        \"options\": {\n            \"temperature\": 0,\n            \"num_ctx\": 24576,\n            \"num_predict\": 1800,\n        },\n    }\n    request = urllib.request.Request(\n        ollama_url.rstrip(\"/\") + \"/api/chat\",\n        data=json.dumps(payload).encode(\"utf-8\"),\n        headers={\"Content-Type\": \"application/json\"},\n        method=\"POST\",\n    )\n    with urllib.request.urlopen(request, timeout=timeout) as response:\n        raw = json.loads(response.read().decode(\"utf-8\"))\n    message = raw.get(\"message\") or {}\n    if not isinstance(message, dict):\n        raise ValueError(\"Ollama-Antwort enthält kein message-Objekt.\")\n    return message\n\n\ndef review(\n    handoff: dict[str, Any],\n    verifier: dict[str, Any],\n    diff: str,\n    endpoint: str,\n    model: str,\n    timeout: int = 600,\n    ollama_url: str = DEFAULT_OLLAMA_URL,\n    ollama_model: str = DEFAULT_OLLAMA_MODEL,\n) -> dict[str, Any]:\n"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/heavy_review.py",
+      "old": "    try:\n        second = _request_message(\n            endpoint=endpoint,\n            model=model,\n            prompt=prompt,\n            timeout=timeout,\n            recovery=True,\n        )\n        result = _parse_message(\n            second,\n            verifier,\n            source=\"heavy_model_recovered\",\n        )\n        result[\"_recovery_reason\"] = first_error\n        return result\n    except Exception as exc:\n        second_error = f\"{type(exc).__name__}: {exc}\"\n        return _fail_closed(\n            f\"Erstaufruf: {first_error}; Recovery: {second_error}\",\n            verifier,\n        )\n",
+      "new": "    try:\n        second = _request_message(\n            endpoint=endpoint,\n            model=model,\n            prompt=prompt,\n            timeout=timeout,\n            recovery=True,\n        )\n        result = _parse_message(\n            second,\n            verifier,\n            source=\"heavy_model_recovered\",\n        )\n        result[\"_recovery_reason\"] = first_error\n        return result\n    except Exception as exc:\n        second_error = f\"{type(exc).__name__}: {exc}\"\n\n    try:\n        direct = _request_ollama_json(\n            ollama_url=ollama_url,\n            ollama_model=ollama_model,\n            prompt=prompt,\n            timeout=timeout,\n        )\n        result = _parse_message(\n            direct,\n            verifier,\n            source=\"heavy_ollama_recovered\",\n        )\n        result[\"_recovery_reason\"] = (\n            f\"LiteLLM Erstaufruf: {first_error}; \"\n            f\"LiteLLM Recovery: {second_error}\"\n        )\n        return result\n    except Exception as exc:\n        direct_error = f\"{type(exc).__name__}: {exc}\"\n        return _fail_closed(\n            f\"LiteLLM Erstaufruf: {first_error}; \"\n            f\"LiteLLM Recovery: {second_error}; \"\n            f\"direktes Ollama: {direct_error}\",\n            verifier,\n        )\n"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/heavy_review.py",
+      "old": "    parser.add_argument(\"--timeout\", type=int, default=600)\n",
+      "new": "    parser.add_argument(\"--timeout\", type=int, default=600)\n    parser.add_argument(\"--ollama-url\", default=DEFAULT_OLLAMA_URL)\n    parser.add_argument(\"--ollama-model\", default=DEFAULT_OLLAMA_MODEL)\n"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/heavy_review.py",
+      "old": "    result = review(handoff, verifier, diff, args.endpoint, args.model, args.timeout)\n",
+      "new": "    result = review(\n        handoff,\n        verifier,\n        diff,\n        args.endpoint,\n        args.model,\n        args.timeout,\n        args.ollama_url,\n        args.ollama_model,\n    )\n"
+    }
+  ]
+}
