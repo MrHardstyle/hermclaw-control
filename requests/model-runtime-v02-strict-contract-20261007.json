@@ -1,0 +1,22 @@
+{
+  "request_id": "model-runtime-v02-strict-contract-20261007",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/model-runtime-v01",
+  "start_sha": "52bc23c5ee2521d13b433f419cadfdf5152afd84",
+  "commit_message": "Model runtime: mark Benutzerfilter handoff as strict and block unexpected paths",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/fast_handoff.py",
+      "old": "    result[\"acceptance_profile\"] = \"benutzerfilter-v1\"\n",
+      "new": "    result[\"acceptance_profile\"] = \"benutzerfilter-v1\"\n    result[\"strict_target_paths\"] = True\n"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/deterministic_verifier.py",
+      "old": "    unexpected = sorted(\n        path\n        for path in changed\n        if target_paths and path not in target_paths\n    )\n    if unexpected:\n        warnings.append(\n            {\n                \"code\": \"UNEXPECTED_PATHS\",\n                \"message\": (\n                    \"Es wurden Pfade außerhalb des \"\n                    \"Handoff-Ziels geändert; Heavy Review \"\n                    \"muss das begründen.\"\n                ),\n                \"paths\": unexpected,\n            }\n        )\n",
+      "new": "    unexpected = sorted(\n        path\n        for path in changed\n        if target_paths and path not in target_paths\n    )\n    if unexpected:\n        unexpected_finding = {\n            \"code\": \"UNEXPECTED_PATHS\",\n            \"message\": (\n                \"Es wurden Pfade außerhalb des Handoff-Ziels geändert.\"\n            ),\n            \"paths\": unexpected,\n        }\n        if handoff.get(\"strict_target_paths\"):\n            blockers.append(unexpected_finding)\n        else:\n            warnings.append(unexpected_finding)\n"
+    }
+  ]
+}
