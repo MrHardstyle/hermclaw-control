@@ -1,0 +1,74 @@
+{
+  "ok": true,
+  "request_id": "salvage-tree-20261007",
+  "action": "list_tree",
+  "request_sha": "a29517e079d2a6d6464310a6602759a5967d213e",
+  "result": [
+    {
+      "id": "668b7525939cfbb89d912c9a16194c3060cff731",
+      "name": "tests",
+      "type": "tree",
+      "path": "agent_core/tests"
+    },
+    {
+      "id": "c5cc1bcdef19dbf9485c1a72ba6aab293015e37c",
+      "name": ".gitignore",
+      "type": "blob",
+      "path": "agent_core/.gitignore"
+    },
+    {
+      "id": "446cf3b10b783141c75f2040b7d2ae593f6b436e",
+      "name": "EVENTS.md",
+      "type": "blob",
+      "path": "agent_core/EVENTS.md"
+    },
+    {
+      "id": "c20e1bb950ed846da0247e93f2a3894e40e229ec",
+      "name": "agent_core.py",
+      "type": "blob",
+      "path": "agent_core/agent_core.py"
+    },
+    {
+      "id": "3f31d5d42058bb1532220db79361b5f8aa8ddffc",
+      "name": "test_acceptance_contract_v0222.py",
+      "type": "blob",
+      "path": "agent_core/tests/test_acceptance_contract_v0222.py"
+    },
+    {
+      "id": "5a3ce7221e6e02c3f1d167f26608562afac7e83e",
+      "name": "test_acceptance_false_negative_v0221.py",
+      "type": "blob",
+      "path": "agent_core/tests/test_acceptance_false_negative_v0221.py"
+    },
+    {
+      "id": "b418ae51c13811927f2a971f80130959ff5007c3",
+      "name": "test_acceptance_final_state_v0218.py",
+      "type": "blob",
+      "path": "agent_core/tests/test_acceptance_final_state_v0218.py"
+    },
+    {
+      "id": "275fd2c007c4357249b9b0ef7d7db70725adae06",
+      "name": "test_acceptance_gate_v0220.py",
+      "type": "blob",
+      "path": "agent_core/tests/test_acceptance_gate_v0220.py"
+    },
+    {
+      "id": "c4e2cba775c048cda0ca17b782066618ba67e7f5",
+      "name": "test_agent_core.py",
+      "type": "blob",
+      "path": "agent_core/tests/test_agent_core.py"
+    },
+    {
+      "id": "98bb0f7769cd6bdf966e239c9c9a67ae5473e4df",
+      "name": "test_reasoning_recovery_v0224.py",
+      "type": "blob",
+      "path": "agent_core/tests/test_reasoning_recovery_v0224.py"
+    },
+    {
+      "id": "a7288e247d7b8dba20e7caaaf9182e50d693ce9e",
+      "name": "test_verification_scripts_v0223.py",
+      "type": "blob",
+      "path": "agent_core/tests/test_verification_scripts_v0223.py"
+    }
+  ]
+}
