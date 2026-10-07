@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v02-normalize-in-pipeline-v2-20261007",
+  "action": "edit_files",
+  "request_sha": "8cd3f4064a59b62bde2f989fbed1239c26a43083",
+  "result": {
+    "id": "6f5955869f5e77fbc5ce76921e7da80d7e8b1c59",
+    "short_id": "6f595586",
+    "title": "Model runtime: normalize handoff before automatic review pipeline",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/6f5955869f5e77fbc5ce76921e7da80d7e8b1c59",
+    "edit_summary": {
+      "operations": 1,
+      "files": [
+        "model_runtime/run_after_handoff.sh"
+      ],
+      "base": "b5913123b97500ca746167f9b051c5bc6fc08f60",
+      "branch_existed": true
+    }
+  }
+}
