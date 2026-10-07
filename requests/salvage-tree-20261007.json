@@ -1,0 +1,8 @@
+{
+  "request_id": "salvage-tree-20261007",
+  "action": "list_tree",
+  "project": "local-ai/hermclaw",
+  "ref": "redesign/autonomous-agent",
+  "path": "agent_core",
+  "recursive": true
+}
