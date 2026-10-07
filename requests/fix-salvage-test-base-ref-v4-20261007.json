@@ -1,0 +1,21 @@
+{
+  "request_id": "fix-salvage-test-base-ref-v4-20261007",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/model-runtime-v01",
+  "commit_message": "Fix salvage unit test base reference",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/tests/test_salvage_agent_workspace.py",
+      "old": "            git(repo, \"commit\", \"-m\", \"base\")",
+      "new": "            git(repo, \"commit\", \"-m\", \"base\")\n            base_sha = git(repo, \"rev-parse\", \"HEAD\")"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/tests/test_salvage_agent_workspace.py",
+      "old": "                \"main...HEAD\",",
+      "new": "                f\"{base_sha}...HEAD\","
+    }
+  ]
+}
