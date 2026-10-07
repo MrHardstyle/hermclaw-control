@@ -1,0 +1,7 @@
+{
+  "request_id": "inspect-success-run-db-20261007",
+  "action": "read_file",
+  "project": "local-ai/hermclaw",
+  "ref": "ai/job-routing-v01-main-benutzerfilter-20261007-181244-main-coder-auftrag-gezielte-implementierun",
+  "path": "inc/datenbank.php"
+}
