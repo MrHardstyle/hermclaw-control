@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "v224-reasoning-recovery-ready-20261007",
+  "action": "commit_files",
+  "request_sha": "969e8d0bf662a2e953b28122ca871728df90b071",
+  "result": {
+    "id": "cff695cfdbe7da33c075c92eab97b5ef2e9e8531",
+    "short_id": "cff695cf",
+    "title": "Agent Core v0.2.24 ready",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/cff695cfdbe7da33c075c92eab97b5ef2e9e8531"
+  }
+}
