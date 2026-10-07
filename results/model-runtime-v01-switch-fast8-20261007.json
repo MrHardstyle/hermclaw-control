@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v01-switch-fast8-20261007",
+  "action": "edit_files",
+  "request_sha": "7afbc53c20ba1cc36905752dd218ef03064a0c04",
+  "result": {
+    "id": "95bafa0db162a10ea8c4177a7525fbacc0f29b6a",
+    "short_id": "95bafa0d",
+    "title": "Model runtime: switch FastCoder to qwen3 8B 12K on .224",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/95bafa0db162a10ea8c4177a7525fbacc0f29b6a",
+    "edit_summary": {
+      "operations": 3,
+      "files": [
+        "model_runtime/profiles.json",
+        "model_runtime/litellm_profiles.yaml.example",
+        "model_runtime/run_fast_discovery.sh"
+      ],
+      "base": "9060b214cfca4a7f917ccd0708c1e23f364603a8",
+      "branch_existed": true
+    }
+  }
+}
