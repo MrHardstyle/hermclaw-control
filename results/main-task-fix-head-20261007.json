@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "main-task-fix-head-20261007",
+  "action": "get_branch_head",
+  "request_sha": "43fe2a499d9e163d5aad06d0eb4aea974d674093",
+  "result": {
+    "branch": "chatgpt/model-runtime-v01",
+    "commit": "9617f858d5a7093f0075606bf04f636c56820b7f",
+    "short_id": "9617f858",
+    "title": "Model runtime: gate discovery handoff by user-context relevance",
+    "committed_date": "2026-10-07T17:34:41.000+00:00"
+  }
+}
