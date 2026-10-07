@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v01-read-test-router-20261007",
+  "action": "read_file",
+  "request_sha": "484e4fe26b9aa66933fc097809fc503cc0dcabed",
+  "result": {
+    "file_path": "model_runtime/tests/test_router.py",
+    "ref": "chatgpt/model-runtime-v01",
+    "blob_id": "3a517e8938477c38d119c186cf2be9d347f3656e",
+    "last_commit_id": "59938caf2112cf038519c7e9f5b820b68aafea2c",
+    "encoding": "utf-8",
+    "content": "import unittest\n\nfrom model_runtime.router import route_task, validate_handoff\n\n\nclass RouterTests(unittest.TestCase):\n    def test_discovery_starts_fast(self):\n        self.assertEqual(route_task(stage=\"discovery\").role, \"fast\")\n\n    def test_main_requires_concrete_paths(self):\n        self.assertEqual(\n            route_task(stage=\"implementation\", target_paths=[\"nav/settings_benutzer.php\"]).role,\n            \"main\",\n        )\n        self.assertEqual(route_task(stage=\"implementation\").role, \"fast\")\n\n    def test_repeated_failure_escalates_heavy(self):\n        self.assertEqual(route_task(stage=\"hard-debug\", failures=2).role, \"heavy\")\n\n    def test_explicit_main_without_paths_is_rejected(self):\n        with self.assertRaises(ValueError):\n            route_task(explicit_role=\"main\")\n\n    def test_handoff_limits_scope(self):\n        with self.assertRaises(ValueError):\n            validate_handoff(\n                \"main\",\n                {\"task\": \"x\", \"target_paths\": [f\"f{i}.php\" for i in range(13)]},\n            )\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n"
+  }
+}
