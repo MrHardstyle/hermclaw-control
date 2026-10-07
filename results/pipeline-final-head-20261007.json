@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "pipeline-final-head-20261007",
+  "action": "get_branch_head",
+  "request_sha": "689fd74849c04650607a024e04ac41bd64df5a53",
+  "result": {
+    "branch": "chatgpt/model-runtime-v01",
+    "commit": "7cc779e80b0fcb140eda7a91f372bafb1682376b",
+    "short_id": "7cc779e8",
+    "title": "Model runtime: harden verifier and fail-closed Heavy handling",
+    "committed_date": "2026-10-07T18:55:09.000+00:00"
+  }
+}
