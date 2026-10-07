@@ -1,0 +1,20 @@
+{
+  "request_id": "model-runtime-v01-detdisc-tests-20261007",
+  "action": "commit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/model-runtime-v01",
+  "target_branch": "chatgpt/model-runtime-v01",
+  "commit_message": "Model runtime: add deterministic discovery tests",
+  "actions": [
+    {
+      "action": "create",
+      "file_path": "model_runtime/tests/test_deterministic_discovery.py",
+      "content": "import tempfile\nimport unittest\nfrom pathlib import Path\n\nfrom model_runtime.deterministic_discovery import discover\n\n\nclass DeterministicDiscoveryTests(unittest.TestCase):\n    def test_benutzerfilter_prefers_real_user_files(self):\n        with tempfile.TemporaryDirectory() as tmp:\n            root = Path(tmp)\n            (root / \".git\").mkdir()\n            (root / \"nav\").mkdir()\n            (root / \"inc\").mkdir()\n            (root / \"docs\").mkdir()\n\n            (root / \"nav\" / \"settings_benutzer.php\").write_text(\n                \"<?php\\n$suche = $_GET[\\'suche\\'] ?? \\'\\';\\n$benutzer_liste = benutzer_array();\\nif ($benutzer_liste === []) { echo \\'Noch keine Benutzer vorhanden.\\'; }\\n\",\n                encoding=\"utf-8\",\n            )\n            (root / \"inc\" / \"funktionen_benutzer.php\").write_text(\n                \"<?php\\nfunction benutzer_array() { return []; }\\n\",\n                encoding=\"utf-8\",\n            )\n            (root / \"docs\" / \"benutzer.md\").write_text(\n                \"benutzer benutzer_array suche filter\",\n                encoding=\"utf-8\",\n            )\n\n            result = discover(root)\n            paths = [item[\"path\"] for item in result[\"candidates\"]]\n\n            self.assertIn(\"nav/settings_benutzer.php\", paths[:2])\n            self.assertIn(\"inc/funktionen_benutzer.php\", paths[:3])\n            self.assertNotIn(\"docs/benutzer.md\", paths)\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n"
+    },
+    {
+      "action": "create",
+      "file_path": "model_runtime/tests/test_fast_handoff.py",
+      "content": "import unittest\n\nfrom model_runtime.fast_handoff import fallback, validate\n\n\nclass FastHandoffTests(unittest.TestCase):\n    def setUp(self):\n        self.discovery = {\n            \"candidates\": [\n                {\n                    \"path\": \"nav/settings_benutzer.php\",\n                    \"score\": 80,\n                    \"pattern_counts\": {\"benutzer_liste\": 2, \"empty_state\": 1},\n                    \"snippets\": [{\"snippet\": \"10: $benutzer_liste = benutzer_array();\"}],\n                },\n                {\n                    \"path\": \"inc/funktionen_benutzer.php\",\n                    \"score\": 60,\n                    \"pattern_counts\": {\"benutzer_array\": 1},\n                    \"snippets\": [{\"snippet\": \"20: function benutzer_array() {\"}],\n                },\n                {\n                    \"path\": \"api/benutzer.php\",\n                    \"score\": 8,\n                    \"pattern_counts\": {},\n                    \"snippets\": [],\n                },\n            ]\n        }\n\n    def test_fallback_uses_only_evidence_candidates(self):\n        handoff = fallback(self.discovery)\n        validate(handoff, self.discovery)\n        self.assertIn(\"nav/settings_benutzer.php\", handoff[\"target_paths\"])\n        self.assertIn(\"inc/funktionen_benutzer.php\", handoff[\"target_paths\"])\n        self.assertNotIn(\"wiki.php\", handoff[\"target_paths\"])\n\n    def test_validate_rejects_invented_path(self):\n        handoff = fallback(self.discovery)\n        handoff[\"target_paths\"].append(\"wiki.php\")\n        with self.assertRaises(ValueError):\n            validate(handoff, self.discovery)\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n"
+    }
+  ]
+}
