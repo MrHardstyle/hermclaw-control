@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "request_id": "autopipe-read-test_deterministic_verifier-py-20261007",
+  "action": "read_file",
+  "request_sha": "5b7a7bf7da3b8ad6125df36ea62d39748c734272",
+  "result": {
+    "file_path": "model_runtime/tests/test_deterministic_verifier.py",
+    "ref": "chatgpt/model-runtime-v01",
+    "blob_id": "de3e9cc02dc89cc00de7d6a12315ec8ce23d6bc0",
+    "last_commit_id": "51aadfc15fca20866800172324c8cfff69f56303",
+    "encoding": "utf-8",
+    "content": "import tempfile\nimport unittest\nfrom pathlib import Path\n\nfrom model_runtime.deterministic_verifier import _duplicate_named_placeholders\n\n\nclass DeterministicVerifierTests(unittest.TestCase):\n    def test_detects_duplicate_named_placeholder(self):\n        with tempfile.TemporaryDirectory() as tmp:\n            path = Path(tmp) / \"x.php\"\n            path.write_text(\n                \"<?php $db->prepare('SELECT * FROM t WHERE a=:suche OR b=:suche');\",\n                encoding=\"utf-8\",\n            )\n            findings = _duplicate_named_placeholders(path)\n            self.assertEqual(findings[0][\"placeholders\"], [\"suche\"])\n\n    def test_unique_placeholders_pass(self):\n        with tempfile.TemporaryDirectory() as tmp:\n            path = Path(tmp) / \"x.php\"\n            path.write_text(\n                \"<?php $db->prepare('SELECT * FROM t WHERE a=:suche_a OR b=:suche_b');\",\n                encoding=\"utf-8\",\n            )\n            self.assertEqual(_duplicate_named_placeholders(path), [])\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n"
+  }
+}
