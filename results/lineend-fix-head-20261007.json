@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "lineend-fix-head-20261007",
+  "action": "get_branch_head",
+  "request_sha": "001843fbcd69271e83863fd93ea7ff2496b4ea61",
+  "result": {
+    "branch": "chatgpt/model-runtime-v01",
+    "commit": "3e1ce47f8bb50bbd9a608b39bdcf4b8b7bf9316c",
+    "short_id": "3e1ce47f",
+    "title": "Model runtime: add direct Ollama JSON fallback for Heavy review",
+    "committed_date": "2026-10-07T20:43:12.000+00:00"
+  }
+}
