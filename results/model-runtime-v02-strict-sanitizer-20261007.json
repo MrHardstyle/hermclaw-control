@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v02-strict-sanitizer-20261007",
+  "action": "commit_files",
+  "request_sha": "db7ae008a4867470821c6a5207db45bf4b3b429a",
+  "result": {
+    "id": "52bc23c5ee2521d13b433f419cadfdf5152afd84",
+    "short_id": "52bc23c5",
+    "title": "Model runtime: sanitize files outside strict handoff targets",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/52bc23c5ee2521d13b433f419cadfdf5152afd84"
+  }
+}
