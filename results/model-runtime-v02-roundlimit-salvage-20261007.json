@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v02-roundlimit-salvage-20261007",
+  "action": "commit_files",
+  "request_sha": "6ad047e89b5b41b16887d598c51c223368805715",
+  "result": {
+    "id": "6ab7d0bf5bd1061e1daf313d6646edb03eecc1d3",
+    "short_id": "6ab7d0bf",
+    "title": "Model runtime: salvage Main workspace after bounded round limit",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/6ab7d0bf5bd1061e1daf313d6646edb03eecc1d3"
+  }
+}
