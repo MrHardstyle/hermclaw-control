@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "postreview-benutzerfilter-fix-commit-20261007",
+  "action": "commit_files",
+  "request_sha": "27bbe2d7bfa487e85072f76c9ff266a09353eca4",
+  "result": {
+    "id": "557d08b93143a88bd0043e87880eb8f25bb12934",
+    "short_id": "557d08b9",
+    "title": "Fix Benutzerfilter normalization and native PDO placeholders",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/557d08b93143a88bd0043e87880eb8f25bb12934"
+  }
+}
