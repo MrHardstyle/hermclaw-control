@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v02-det-first-correction-20261007",
+  "action": "edit_files",
+  "request_sha": "2237d25269762e1a86779e50249558f60bd6a315",
+  "result": {
+    "id": "32853a49aab14e019ccb3d8db57d7ddabbec7a0b",
+    "short_id": "32853a49",
+    "title": "Model runtime: correct deterministic failures before Heavy review",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/32853a49aab14e019ccb3d8db57d7ddabbec7a0b",
+    "edit_summary": {
+      "operations": 3,
+      "files": [
+        "model_runtime/run_after_handoff.sh"
+      ],
+      "base": "59eb3cef19f46d3a5d0ffd623cc18ca16a067a06",
+      "branch_existed": true
+    }
+  }
+}
