@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v02-integrate-syntax-rollback-20261007",
+  "action": "edit_files",
+  "request_sha": "011de2012183d4c5ea0be2445811bb87135daaf4",
+  "result": {
+    "id": "fce8b5969b8a27a321b116700b25be4d8f5b2956",
+    "short_id": "fce8b596",
+    "title": "Model runtime: retry after deterministic syntax rollback",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/fce8b5969b8a27a321b116700b25be4d8f5b2956",
+    "edit_summary": {
+      "operations": 3,
+      "files": [
+        "model_runtime/run_after_handoff.sh"
+      ],
+      "base": "fc941fa8707cb530a26b8657b818c6b925fce3c6",
+      "branch_existed": true
+    }
+  }
+}
