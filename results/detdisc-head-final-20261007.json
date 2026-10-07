@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "detdisc-head-final-20261007",
+  "action": "get_branch_head",
+  "request_sha": "08c7c25f68008a9edc00b932fc10e373236bc7de",
+  "result": {
+    "branch": "chatgpt/model-runtime-v01",
+    "commit": "c437f28128201ba91b07d8a463c5166194148f9a",
+    "short_id": "c437f281",
+    "title": "Model runtime: add deterministic discovery tests",
+    "committed_date": "2026-10-07T17:23:05.000+00:00"
+  }
+}
