@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v02-resume-existing-main-20261007",
+  "action": "edit_files",
+  "request_sha": "95943ad01dcb2669a16581c2abbebd0231fa0f68",
+  "result": {
+    "id": "223d5a959368351c8ae77642a88fe55ec727de05",
+    "short_id": "223d5a95",
+    "title": "Model runtime: resume outer review from salvaged Main result",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/223d5a959368351c8ae77642a88fe55ec727de05",
+    "edit_summary": {
+      "operations": 3,
+      "files": [
+        "model_runtime/run_after_handoff.sh"
+      ],
+      "base": "8c91f841405afa62343371328a477af490da0aa2",
+      "branch_existed": true
+    }
+  }
+}
