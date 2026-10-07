@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v01-read-litellm-fast7-20261007",
+  "action": "read_file",
+  "request_sha": "b18a346267b1a8b465d4f1700385a9e4ea076ae9",
+  "result": {
+    "file_path": "model_runtime/litellm_profiles.yaml.example",
+    "ref": "chatgpt/model-runtime-v01",
+    "blob_id": "987d7896d7f2f627308786a1cd137970becce299",
+    "last_commit_id": "59938caf2112cf038519c7e9f5b820b68aafea2c",
+    "encoding": "utf-8",
+    "content": "# Beispiel-Snippet für /home/kiworker/litellm_gateway/config/config.yaml\n# Nicht automatisch installiert. Die Aliasnamen entsprechen profiles.json.\n\nmodel_list:\n  - model_name: local-coder-fast-16k\n    litellm_params:\n      model: ollama_chat/qwen2.5-coder:14b\n      api_base: http://192.168.178.222:11434\n      num_ctx: 16384\n      keep_alive: 10m\n\n  - model_name: local-coder-qwen3coder30-24k\n    litellm_params:\n      model: ollama_chat/qwen3-coder:30b\n      api_base: http://192.168.178.224:11434\n      num_ctx: 24576\n      keep_alive: 5m\n\n  - model_name: local-coder-qwen38-24k\n    litellm_params:\n      model: ollama_chat/qwen3.8:27b\n      api_base: http://192.168.178.224:11434\n      num_ctx: 24576\n      keep_alive: 5m\n"
+  }
+}
