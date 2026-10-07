@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v02-syntax-rollback-20261007",
+  "action": "commit_files",
+  "request_sha": "175119474a0417f0c02bc9dbdd1c2e33f76c1d07",
+  "result": {
+    "id": "026502af1b96f0b98a222d29dde8e02e1b4992a5",
+    "short_id": "026502af",
+    "title": "Model runtime: rollback syntax-broken target files before retry",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/026502af1b96f0b98a222d29dde8e02e1b4992a5"
+  }
+}
