@@ -1,0 +1,58 @@
+{
+  "request_id": "model-runtime-v01-lock-cli-20261007",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/model-runtime-v01",
+  "start_sha": "59938caf2112cf038519c7e9f5b820b68aafea2c",
+  "commit_message": "Model runtime v0.1: serialize model switching and add routing CLI",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/model_manager.py",
+      "old": "import argparse\nimport dataclasses\nimport json\nimport time\nimport urllib.error\nimport urllib.request",
+      "new": "import argparse\nimport contextlib\nimport dataclasses\nimport fcntl\nimport json\nimport os\nimport time\nimport urllib.error\nimport urllib.request"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/model_manager.py",
+      "old": "DEFAULT_PROFILES = Path(__file__).with_name(\"profiles.json\")",
+      "new": "DEFAULT_PROFILES = Path(__file__).with_name(\"profiles.json\")\nDEFAULT_LOCK_PATH = Path(os.environ.get(\"HERMCLAW_MODEL_RUNTIME_LOCK\", \"/tmp/hermclaw-model-runtime.lock\"))"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/model_manager.py",
+      "old": "        client_factory: Callable[[str], OllamaClient] = OllamaClient,\n    ) -> None:\n        self.profiles = profiles or load_profiles()\n        self.client_factory = client_factory",
+      "new": "        client_factory: Callable[[str], OllamaClient] = OllamaClient,\n        lock_path: Path | str = DEFAULT_LOCK_PATH,\n    ) -> None:\n        self.profiles = profiles or load_profiles()\n        self.client_factory = client_factory\n        self.lock_path = Path(lock_path)\n\n    @contextlib.contextmanager\n    def _lock(self):\n        self.lock_path.parent.mkdir(parents=True, exist_ok=True)\n        with self.lock_path.open(\"a+\", encoding=\"utf-8\") as handle:\n            fcntl.flock(handle.fileno(), fcntl.LOCK_EX)\n            try:\n                yield\n            finally:\n                fcntl.flock(handle.fileno(), fcntl.LOCK_UN)"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/model_manager.py",
+      "old": "    def prepare(self, role: str, *, wait_seconds: int = 120) -> dict[str, Any]:\n        target = self._profile(role)",
+      "new": "    def prepare(self, role: str, *, wait_seconds: int = 120) -> dict[str, Any]:\n        with self._lock():\n            return self._prepare_unlocked(role, wait_seconds=wait_seconds)\n\n    def _prepare_unlocked(self, role: str, *, wait_seconds: int = 120) -> dict[str, Any]:\n        target = self._profile(role)"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/model_manager.py",
+      "old": "    def release(self, role: str) -> dict[str, Any]:\n        profile = self._profile(role)",
+      "new": "    def release(self, role: str) -> dict[str, Any]:\n        with self._lock():\n            return self._release_unlocked(role)\n\n    def _release_unlocked(self, role: str) -> dict[str, Any]:\n        profile = self._profile(role)"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/model_manager.py",
+      "old": "    def release_group(self, group: str) -> dict[str, Any]:\n        released: list[str] = []\n        for profile in self.profiles.values():\n            if profile.exclusive_group != group:\n                continue\n            result = self.release(profile.role)\n            if result[\"unloaded\"]:\n                released.append(profile.model)\n        return {\"group\": group, \"released\": released}",
+      "new": "    def release_group(self, group: str) -> dict[str, Any]:\n        with self._lock():\n            released: list[str] = []\n            for profile in self.profiles.values():\n                if profile.exclusive_group != group:\n                    continue\n                result = self._release_unlocked(profile.role)\n                if result[\"unloaded\"]:\n                    released.append(profile.model)\n            return {\"group\": group, \"released\": released}"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/router.py",
+      "old": "import dataclasses\nfrom typing import Iterable",
+      "new": "import argparse\nimport dataclasses\nimport json\nfrom typing import Iterable"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/router.py",
+      "old": "    if role == \"main\" and not paths:\n        raise ValueError(\"Der 30B-Main-Coder darf nicht ohne konkrete target_paths gestartet werden.\")\n",
+      "new": "    if role == \"main\" and not paths:\n        raise ValueError(\"Der 30B-Main-Coder darf nicht ohne konkrete target_paths gestartet werden.\")\n\n\ndef main() -> int:\n    parser = argparse.ArgumentParser(description=\"Hermclaw role router\")\n    parser.add_argument(\"--stage\", default=\"discovery\")\n    parser.add_argument(\"--target-path\", action=\"append\", default=[])\n    parser.add_argument(\"--failures\", type=int, default=0)\n    parser.add_argument(\"--complexity\", default=\"normal\")\n    parser.add_argument(\"--explicit-role\", choices=[\"fast\", \"main\", \"heavy\"])\n    args = parser.parse_args()\n\n    decision = route_task(\n        stage=args.stage,\n        target_paths=args.target_path,\n        failures=args.failures,\n        complexity=args.complexity,\n        explicit_role=args.explicit_role,\n    )\n    print(json.dumps(dataclasses.asdict(decision), ensure_ascii=False, indent=2))\n    return 0\n\n\nif __name__ == \"__main__\":\n    raise SystemExit(main())\n"
+    }
+  ]
+}
