@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v02-main-runner-lineend-v3-20261007",
+  "action": "commit_files",
+  "request_sha": "1557d7c5aac332ecfccbb301ff3b131a9f944e42",
+  "result": {
+    "id": "502db76d7ad5a1eadb40fae4b6f105c80f3a3016",
+    "short_id": "502db76d",
+    "title": "Model runtime: keep Main workspaces clean across CRLF branches",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/502db76d7ad5a1eadb40fae4b6f105c80f3a3016"
+  }
+}
