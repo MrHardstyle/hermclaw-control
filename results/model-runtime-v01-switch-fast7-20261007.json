@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v01-switch-fast7-20261007",
+  "action": "edit_files",
+  "request_sha": "0abd04cf1a64420d083426bbb5f021ebe8469199",
+  "result": {
+    "id": "9060b214cfca4a7f917ccd0708c1e23f364603a8",
+    "short_id": "9060b214",
+    "title": "Model runtime: move FastCoder to .224 qwen2.5-coder 7B 12K",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/9060b214cfca4a7f917ccd0708c1e23f364603a8",
+    "edit_summary": {
+      "operations": 4,
+      "files": [
+        "model_runtime/profiles.json",
+        "model_runtime/litellm_profiles.yaml.example",
+        "model_runtime/run_fast_discovery.sh"
+      ],
+      "base": "a45d05a70dba190fbcb1a20361565c8028cb952f",
+      "branch_existed": true
+    }
+  }
+}
