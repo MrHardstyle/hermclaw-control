@@ -1,0 +1,15 @@
+{
+  "request_id": "model-runtime-v01-fix-init-20261007-c",
+  "action": "commit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/model-runtime-v01",
+  "target_branch": "chatgpt/model-runtime-v01",
+  "commit_message": "Model runtime: avoid runpy double-import warning",
+  "actions": [
+    {
+      "action": "update",
+      "file_path": "model_runtime/__init__.py",
+      "content": "\"\"\"Hermclaw model routing and Ollama residency management.\n\nSubmodules are intentionally not imported eagerly here. This keeps\npython -m model_runtime.model_manager and python -m model_runtime.router\nfree of runpy double-import warnings.\n\"\"\"\n\n__all__ = [\n    \"ModelManager\",\n    \"ModelProfile\",\n    \"RoutingDecision\",\n    \"load_profiles\",\n    \"route_task\",\n]\n\n\ndef __getattr__(name):\n    if name in {\"ModelManager\", \"ModelProfile\", \"load_profiles\"}:\n        from .model_manager import ModelManager, ModelProfile, load_profiles\n        return {\n            \"ModelManager\": ModelManager,\n            \"ModelProfile\": ModelProfile,\n            \"load_profiles\": load_profiles,\n        }[name]\n    if name in {\"RoutingDecision\", \"route_task\"}:\n        from .router import RoutingDecision, route_task\n        return {\n            \"RoutingDecision\": RoutingDecision,\n            \"route_task\": route_task,\n        }[name]\n    raise AttributeError(name)\n"
+    }
+  ]
+}
