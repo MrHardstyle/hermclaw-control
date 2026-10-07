@@ -1,0 +1,28 @@
+{
+  "request_id": "model-runtime-v01-switch-fast8-20261007",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/model-runtime-v01",
+  "start_sha": "9060b214cfca4a7f917ccd0708c1e23f364603a8",
+  "commit_message": "Model runtime: switch FastCoder to qwen3 8B 12K on .224",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/profiles.json",
+      "old": "      \"model\": \"qwen2.5-coder:7b\",\n      \"ollama_url\": \"http://192.168.178.224:11434\",\n      \"litellm_alias\": \"local-coder-fast-12k\",",
+      "new": "      \"model\": \"qwen3:8b\",\n      \"ollama_url\": \"http://192.168.178.224:11434\",\n      \"litellm_alias\": \"local-coder-qwen3-fast-12k\","
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/litellm_profiles.yaml.example",
+      "old": "  - model_name: local-coder-fast-12k\n    litellm_params:\n      model: ollama_chat/qwen2.5-coder:7b\n      api_base: http://192.168.178.224:11434\n      num_ctx: 12288\n      keep_alive: 3m",
+      "new": "  - model_name: local-coder-qwen3-fast-12k\n    litellm_params:\n      model: ollama_chat/qwen3:8b\n      api_base: http://192.168.178.224:11434\n      num_ctx: 12288\n      keep_alive: 3m"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/run_fast_discovery.sh",
+      "old": "MODEL_ALIAS=\"${HERMCLAW_FAST_ALIAS:-local-coder-fast-12k}\"",
+      "new": "MODEL_ALIAS=\"${HERMCLAW_FAST_ALIAS:-local-coder-qwen3-fast-12k}\""
+    }
+  ]
+}
