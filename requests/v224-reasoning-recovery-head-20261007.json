@@ -1,0 +1,6 @@
+{
+  "request_id": "v224-reasoning-recovery-head-20261007",
+  "action": "get_branch_head",
+  "project": "local-ai/hermclaw",
+  "branch": "redesign/autonomous-agent"
+}
