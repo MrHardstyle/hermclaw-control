@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "request_id": "v224-reasoning-recovery-core-retry1-20261007",
+  "action": "edit_files",
+  "request_sha": "57dfddb1b805e2218a9c6ea3dad85d04a47f7ebc",
+  "result": {
+    "id": "0b37d8e5375fee22f2c702f14a062e8d8f26b6dd",
+    "short_id": "0b37d8e5",
+    "title": "Agent Core v0.2.24: recover reasoning-only action responses",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/0b37d8e5375fee22f2c702f14a062e8d8f26b6dd",
+    "edit_summary": {
+      "operations": 13,
+      "files": [
+        "agent_core/agent_core.py",
+        ".hermclaw/patch.json"
+      ],
+      "base": "87ffac6e110544424ac6cd1b9e68d681624262da",
+      "branch_existed": true
+    }
+  }
+}
