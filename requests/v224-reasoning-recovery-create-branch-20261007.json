@@ -1,0 +1,7 @@
+{
+  "request_id": "v224-reasoning-recovery-create-branch-20261007",
+  "action": "create_branch",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/patch-agent-core-v0224",
+  "ref": "87ffac6e110544424ac6cd1b9e68d681624262da"
+}
