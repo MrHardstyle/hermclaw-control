@@ -1,0 +1,6 @@
+{
+  "ok": false,
+  "request_id": "model-runtime-v02-normalize-in-pipeline-20261007",
+  "error_type": "ValueError",
+  "error": "SHA-Lease fehlgeschlagen: Branch chatgpt/model-runtime-v01 steht auf b5913123b97500ca746167f9b051c5bc6fc08f60, erwartet 7cc779e80b0fcb140eda7a91f372bafb1682376b."
+}
