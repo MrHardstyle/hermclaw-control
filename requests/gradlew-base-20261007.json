@@ -1,0 +1,7 @@
+{
+  "request_id": "gradlew-base-20261007",
+  "action": "read_file",
+  "project": "local-ai/hermclaw",
+  "ref": "cff695cfdbe7da33c075c92eab97b5ef2e9e8531",
+  "path": "android_app/gradlew.bat"
+}
