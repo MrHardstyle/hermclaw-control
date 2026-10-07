@@ -1,0 +1,22 @@
+{
+  "request_id": "model-runtime-v02-git-env-runner-v2-20261007",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/model-runtime-v01",
+  "start_sha": "c6132e8987c2163381258ece0e9294b43708a683",
+  "commit_message": "Model runtime: force exact Git line endings in Main workspaces",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/run_main_from_handoff.sh",
+      "old": "HERMCLAW_AGENT_MAX_REVIEW_CYCLES=\"$INNER_REVIEW_CYCLES\" \\\n\"$AGENT_BIN\" run \\",
+      "new": "GIT_CONFIG_COUNT=2 \\\nGIT_CONFIG_KEY_0=core.autocrlf \\\nGIT_CONFIG_VALUE_0=false \\\nGIT_CONFIG_KEY_1=core.safecrlf \\\nGIT_CONFIG_VALUE_1=false \\\nHERMCLAW_AGENT_MAX_REVIEW_CYCLES=\"$INNER_REVIEW_CYCLES\" \\\n\"$AGENT_BIN\" run \\"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/run_main_from_handoff.sh",
+      "old": "    python3 -m model_runtime.salvage_agent_workspace \\\n      --job-id \"$JOB_ID\" \\\n      --output \"$RUN_META\"",
+      "new": "    python3 -m model_runtime.salvage_agent_workspace \\\n      --job-id \"$JOB_ID\" \\\n      --handoff \"$HANDOFF_JSON\" \\\n      --output \"$RUN_META\""
+    }
+  ]
+}
