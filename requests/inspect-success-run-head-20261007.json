@@ -1,0 +1,6 @@
+{
+  "request_id": "inspect-success-run-head-20261007",
+  "action": "get_branch_head",
+  "project": "local-ai/hermclaw",
+  "branch": "ai/job-routing-v01-main-benutzerfilter-20261007-181244-main-coder-auftrag-gezielte-implementierun"
+}
