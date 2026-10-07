@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v01-main-handoff-runner-20261007",
+  "action": "commit_files",
+  "request_sha": "7b531d70e0a7e30bad6800339a4f2beaa30de99a",
+  "result": {
+    "id": "05075aa461f65e19341fc16777ab040b291feffa",
+    "short_id": "05075aa4",
+    "title": "Model runtime: add Main Coder runner from validated handoff",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/05075aa461f65e19341fc16777ab040b291feffa"
+  }
+}
