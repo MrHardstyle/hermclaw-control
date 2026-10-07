@@ -1,0 +1,6 @@
+{
+  "request_id": "pipeline-final-head-20261007",
+  "action": "get_branch_head",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/model-runtime-v01"
+}
