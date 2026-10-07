@@ -1,0 +1,7 @@
+{
+  "request_id": "read-acceptance-current-20261007",
+  "action": "read_file",
+  "project": "local-ai/hermclaw",
+  "ref": "chatgpt/model-runtime-v01",
+  "path": "model_runtime/acceptance_profiles.py"
+}
