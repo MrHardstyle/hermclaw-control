@@ -1,0 +1,6 @@
+{
+  "ok": false,
+  "request_id": "inspect-main-run-branch-20261007",
+  "error_type": "ValueError",
+  "error": "Branch enthält keinen Commit oder existiert nicht: ai/job-routing-v01-main-benutzerfilter-20261007-181244-main-coder-auftrag-gezielte-implementierun"
+}
