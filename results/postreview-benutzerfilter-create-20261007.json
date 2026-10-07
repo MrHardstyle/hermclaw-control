@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "request_id": "postreview-benutzerfilter-create-20261007",
+  "action": "create_branch",
+  "request_sha": "5aeacbbba5a08f5897e2fcf3695262396bda4499",
+  "result": {
+    "name": "chatgpt/postreview-benutzerfilter-fix",
+    "commit": "80c138b9427abb6cb55f9ab318e639166f51982b"
+  }
+}
