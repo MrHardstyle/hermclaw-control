@@ -1,0 +1,6 @@
+{
+  "ok": false,
+  "request_id": "model-runtime-v02-heavy-ollama-fallback-20261007",
+  "error_type": "ValueError",
+  "error": "replace_text erwartet exakt 1 Treffer in model_runtime/heavy_review.py, gefunden: 0."
+}
