@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "request_id": "v224-reasoning-recovery-create-branch-20261007",
+  "action": "create_branch",
+  "request_sha": "9b21098ba8e72c11fc4bc8a8c2fdec95337d6235",
+  "result": {
+    "name": "chatgpt/patch-agent-core-v0224",
+    "commit": "87ffac6e110544424ac6cd1b9e68d681624262da"
+  }
+}
