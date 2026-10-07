@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v02-acceptance-profile-20261007",
+  "action": "commit_files",
+  "request_sha": "117edf76e34a60b50dc4faac7cfdd0a7b2a8daeb",
+  "result": {
+    "id": "0b0b80006e028355bb383974552d01d9ee41c9d0",
+    "short_id": "0b0b8000",
+    "title": "Model runtime: add deterministic Benutzerfilter acceptance profile",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/0b0b80006e028355bb383974552d01d9ee41c9d0"
+  }
+}
