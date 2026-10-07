@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v02-normalize-handoff-20261007",
+  "action": "commit_files",
+  "request_sha": "704dee0a7b019997372c96a2ce36be1d84000f70",
+  "result": {
+    "id": "b5913123b97500ca746167f9b051c5bc6fc08f60",
+    "short_id": "b5913123",
+    "title": "Model runtime: normalize existing handoff contracts",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/b5913123b97500ca746167f9b051c5bc6fc08f60"
+  }
+}
