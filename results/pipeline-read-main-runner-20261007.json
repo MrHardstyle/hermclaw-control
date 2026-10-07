@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "request_id": "pipeline-read-main-runner-20261007",
+  "action": "read_file",
+  "request_sha": "d4817d937c035dcda435d7fb43463e2a037c071a",
+  "result": {
+    "file_path": "model_runtime/run_main_from_handoff.sh",
+    "ref": "chatgpt/model-runtime-v01",
+    "blob_id": "538dd7a1744525d75902565f392aaad74139afa0",
+    "last_commit_id": "05075aa461f65e19341fc16777ab040b291feffa",
+    "encoding": "utf-8",
+    "content": "#!/usr/bin/env bash\nset -euo pipefail\n\nROOT=\"$(cd \"$(dirname \"${BASH_SOURCE[0]}\")/..\" && pwd)\"\nHANDOFF_JSON=\"${HERMCLAW_HANDOFF_JSON:-/tmp/hermclaw-benutzerfilter-handoff.json}\"\nMODEL_ALIAS=\"${HERMCLAW_MAIN_ALIAS:-local-coder-qwen3coder30-24k}\"\nAGENT_BIN=\"${HERMCLAW_AGENT_BIN:-/home/kiworker/noob2claw_runtime/bin/hermclaw-agent}\"\nJOB_ID=\"${HERMCLAW_JOB_ID:-routing-v01-main-benutzerfilter-$(date +%Y%m%d-%H%M%S)}\"\n\ncd \"$ROOT\"\n\nif [[ ! -s \"$HANDOFF_JSON\" ]]; then\n  echo \"FEHLER: Handoff fehlt: $HANDOFF_JSON\"\n  exit 30\nfi\n\necho \"===== MAIN-CODER MODELL VORBEREITEN =====\"\npython3 -m model_runtime.model_manager prepare main\n\necho\necho \"===== GELADENE MODELLE =====\"\npython3 -m model_runtime.model_manager status\n\necho\necho \"===== MAIN TASK AUS HANDOFF =====\"\nTASK=\"$(python3 -m model_runtime.main_task --handoff \"$HANDOFF_JSON\")\"\nprintf \"%s\\n\" \"$TASK\"\n\necho\necho \"===== START MAIN CODER / 30B / 24K =====\"\n\"$AGENT_BIN\" run \\\n  --repo git@hermclaw-gitlab:local-ai/hermclaw.git \\\n  --base redesign/autonomous-agent \\\n  --job-id \"$JOB_ID\" \\\n  --model \"$MODEL_ALIAS\" \\\n  --context-tokens 24576 \\\n  --max-output-tokens 4096 \\\n  --task \"$TASK\" \\\n  --push\n"
+  }
+}
