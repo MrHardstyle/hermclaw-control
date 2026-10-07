@@ -1,0 +1,7 @@
+{
+  "request_id": "fix-salvage-test-read-20261007",
+  "action": "read_file",
+  "project": "local-ai/hermclaw",
+  "ref": "chatgpt/model-runtime-v01",
+  "path": "model_runtime/tests/test_salvage_agent_workspace.py"
+}
