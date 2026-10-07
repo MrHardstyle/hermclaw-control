@@ -1,0 +1,6 @@
+{
+  "ok": false,
+  "request_id": "model-runtime-v02-git-env-runner-20261007",
+  "error_type": "ValueError",
+  "error": "SHA-Lease fehlgeschlagen: Branch chatgpt/model-runtime-v01 steht auf c6132e8987c2163381258ece0e9294b43708a683, erwartet 3e1ce47f8bb50bbd9a608b39bdcf4b8b7bf9316c."
+}
