@@ -1,0 +1,28 @@
+{
+  "request_id": "model-runtime-v02-det-first-correction-20261007",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/model-runtime-v01",
+  "start_sha": "59eb3cef19f46d3a5d0ffd623cc18ca16a067a06",
+  "commit_message": "Model runtime: correct deterministic failures before Heavy review",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/run_after_handoff.sh",
+      "old": "  VERIFY_DIR=\"/tmp/hermclaw-verify-${JOB_ID}\"\n  VERIFY_JSON=\"/tmp/hermclaw-verify-${JOB_ID}.json\"\n  DIFF_FILE=\"/tmp/hermclaw-diff-${JOB_ID}.patch\"\n  HEAVY_JSON=\"/tmp/hermclaw-heavy-${JOB_ID}.json\"\n",
+      "new": "  VERIFY_DIR=\"/tmp/hermclaw-verify-${JOB_ID}\"\n  VERIFY_JSON=\"/tmp/hermclaw-verify-${JOB_ID}.json\"\n  DIFF_FILE=\"/tmp/hermclaw-diff-${JOB_ID}.patch\"\n  HEAVY_JSON=\"/tmp/hermclaw-heavy-${JOB_ID}.json\"\n  SANITIZE_JSON=\"/tmp/hermclaw-sanitize-${JOB_ID}.json\"\n"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/run_after_handoff.sh",
+      "old": "  git clone --quiet --single-branch --branch \"$RESULT_BRANCH\" \\\n    git@hermclaw-gitlab:local-ai/hermclaw.git \"$VERIFY_DIR\"\n\n  set +e\n  python3 -m model_runtime.deterministic_verifier",
+      "new": "  git clone --quiet --single-branch --branch \"$RESULT_BRANCH\" \\\n    git@hermclaw-gitlab:local-ai/hermclaw.git \"$VERIFY_DIR\"\n\n  echo \"===== STRICT-TARGET SANITIZER =====\"\n  python3 -m model_runtime.sanitize_result_branch \\\n    --repo \"$VERIFY_DIR\" \\\n    --base-ref \"$VERIFY_BASE_COMMIT\" \\\n    --handoff \"$HANDOFF_JSON\" \\\n    --output \"$SANITIZE_JSON\"\n\n  set +e\n  python3 -m model_runtime.deterministic_verifier"
+    },
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/run_after_handoff.sh",
+      "old": "  LAST_VERIFY=\"$VERIFY_JSON\"\n\n  echo\n  echo \"===== HEAVY REVIEW / 27B / 24K =====\"\n  python3 -m model_runtime.model_manager prepare heavy\n\n  set +e\n  python3 -m model_runtime.heavy_review \\\n    --handoff \"$HANDOFF_JSON\" \\\n    --verifier \"$VERIFY_JSON\" \\\n    --diff \"$DIFF_FILE\" \\\n    --output \"$HEAVY_JSON\" \\\n    --endpoint \"$LITELLM_URL\" \\\n    --model \"$HEAVY_ALIAS\"\n  HEAVY_RC=$?\n  set -e\n\n  LAST_HEAVY=\"$HEAVY_JSON\"\n",
+      "new": "  LAST_VERIFY=\"$VERIFY_JSON\"\n\n  if [[ ! -s \"$VERIFY_JSON\" ]]; then\n    echo \"FEHLER: Verifier hat keinen Report erzeugt.\"\n    exit 43\n  fi\n\n  if [[ $VERIFY_RC -ne 0 ]]; then\n    echo\n    echo \"===== DETERMINISTISCHE KORREKTUR ENTSCHEIDUNG =====\"\n    echo \"[PIPELINE] Verifier hat Blocker gefunden; Heavy Review wird bis nach deren Behebung übersprungen.\"\n    python3 - \"$VERIFY_JSON\" \"$HEAVY_JSON\" <<'PY'\nimport json, sys\nverifier_path, output_path = sys.argv[1:]\nverifier = json.load(open(verifier_path, encoding='utf-8'))\nissues = []\nfor item in verifier.get('blockers', []):\n    code = str(item.get('code', 'BLOCKER'))\n    message = str(item.get('message', '')).strip()\n    paths = item.get('paths') or []\n    path = str(item.get('path', '')).strip()\n    if not path and isinstance(paths, list) and paths:\n        path = ', '.join(str(p) for p in paths)\n    evidence = str(item.get('evidence', '')).strip()\n    if not evidence:\n        evidence = json.dumps(item, ensure_ascii=False)\n    issues.append({\n        'severity': 'blocker',\n        'path': path,\n        'evidence': f'{code}: {evidence}',\n        'required_change': message or f'Blocker {code} beheben.',\n    })\nresult = {\n    'schema': 1,\n    'verdict': 'corrections',\n    'summary': f'Deterministischer Verifier meldet {len(issues)} Blocker.',\n    'issues': issues,\n    'tests_to_run': verifier.get('acceptance_requirements', {}).get('tests', []),\n    'verifier_ok': False,\n    '_generated_by': 'deterministic_verifier',\n}\nopen(output_path, 'w', encoding='utf-8').write(\n    json.dumps(result, ensure_ascii=False, indent=2) + '\\n'\n)\nPY\n    HEAVY_RC=30\n  else\n    echo\n    echo \"===== HEAVY REVIEW / 27B / 24K =====\"\n    python3 -m model_runtime.model_manager prepare heavy\n\n    set +e\n    python3 -m model_runtime.heavy_review \\\n      --handoff \"$HANDOFF_JSON\" \\\n      --verifier \"$VERIFY_JSON\" \\\n      --diff \"$DIFF_FILE\" \\\n      --output \"$HEAVY_JSON\" \\\n      --endpoint \"$LITELLM_URL\" \\\n      --model \"$HEAVY_ALIAS\"\n    HEAVY_RC=$?\n    set -e\n  fi\n\n  LAST_HEAVY=\"$HEAVY_JSON\"\n"
+    }
+  ]
+}
