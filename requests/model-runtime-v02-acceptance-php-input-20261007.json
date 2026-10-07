@@ -1,0 +1,16 @@
+{
+  "request_id": "model-runtime-v02-acceptance-php-input-20261007",
+  "action": "edit_files",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/model-runtime-v01",
+  "start_sha": "fce8b5969b8a27a321b116700b25be4d8f5b2956",
+  "commit_message": "Model runtime: parse search input across embedded PHP",
+  "edits": [
+    {
+      "operation": "replace_text",
+      "file_path": "model_runtime/acceptance_profiles.py",
+      "old": "    input_match = re.search(\n        r\"<input\\\\b[^>]*\\\\bname\\\\s*=\\\\s*(['\\\\\\\"])suche\\\\1[^>]*>\",\n        settings,\n        flags=re.IGNORECASE | re.DOTALL,\n    )\n    input_tag = input_match.group(0) if input_match else \"\"\n",
+      "new": "    input_match = re.search(\n        r\"<input\\\\b(?:(?!<input\\\\b).)*?\\\\bname\\\\s*=\\\\s*(['\\\\\\\"])suche\\\\1\",\n        settings,\n        flags=re.IGNORECASE | re.DOTALL,\n    )\n    input_tag = \"\"\n    if input_match:\n        input_start = input_match.start()\n        form_end = settings.find(\"</form>\", input_match.end())\n        if form_end >= 0 and form_end - input_start <= 1600:\n            input_tag = settings[input_start:form_end + len(\"</form>\")]\n        else:\n            input_tag = settings[input_start:input_start + 1200]\n"
+    }
+  ]
+}
