@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v02-verifier-20261007",
+  "action": "commit_files",
+  "request_sha": "15fb990aa68a7e340b4a3efc4ab6b919f1f955f3",
+  "result": {
+    "id": "51aadfc15fca20866800172324c8cfff69f56303",
+    "short_id": "51aadfc1",
+    "title": "Model runtime: add deterministic post-main verifier",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/51aadfc15fca20866800172324c8cfff69f56303"
+  }
+}
