@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v01-lock-cli-20261007",
+  "action": "edit_files",
+  "request_sha": "270bc2f131764c01648e65ed99bb96df5535572d",
+  "result": {
+    "id": "342d700def1a604a582f5ebebb05b40c9849fb60",
+    "short_id": "342d700d",
+    "title": "Model runtime v0.1: serialize model switching and add routing CLI",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/342d700def1a604a582f5ebebb05b40c9849fb60",
+    "edit_summary": {
+      "operations": 8,
+      "files": [
+        "model_runtime/model_manager.py",
+        "model_runtime/router.py"
+      ],
+      "base": "59938caf2112cf038519c7e9f5b820b68aafea2c",
+      "branch_existed": true
+    }
+  }
+}
