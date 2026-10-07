@@ -1,0 +1,7 @@
+{
+  "request_id": "corr1-read-funcs-20261007",
+  "action": "read_file",
+  "project": "local-ai/hermclaw",
+  "ref": "ai/job-routing-v02-main-20261007-214752-i1-314916-main-coder-korrektur-aus-verifier-heavy-re",
+  "path": "inc/funktionen_benutzer.php"
+}
