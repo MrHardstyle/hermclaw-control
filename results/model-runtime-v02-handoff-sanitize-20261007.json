@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v02-handoff-sanitize-20261007",
+  "action": "edit_files",
+  "request_sha": "0c35ae94330e4313d32d075b764b7afb32684ce5",
+  "result": {
+    "id": "d067dc47b0364e446adf76427d0800af7680eaa4",
+    "short_id": "d067dc47",
+    "title": "Model runtime: remove contradictory model constraints from handoff",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/d067dc47b0364e446adf76427d0800af7680eaa4",
+    "edit_summary": {
+      "operations": 2,
+      "files": [
+        "model_runtime/fast_handoff.py"
+      ],
+      "base": "4e5b923133f2d3df1161756bc167ce8e31417ba2",
+      "branch_existed": true
+    }
+  }
+}
