@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v02-heavy-review-20261007",
+  "action": "commit_files",
+  "request_sha": "cf818bb0d5af6ddcc7cc8b59946ceda425411bcc",
+  "result": {
+    "id": "66c0d93b408ddefd7853df05a9a660d64649c32d",
+    "short_id": "66c0d93b",
+    "title": "Model runtime: add Heavy review and correction task",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/66c0d93b408ddefd7853df05a9a660d64649c32d"
+  }
+}
