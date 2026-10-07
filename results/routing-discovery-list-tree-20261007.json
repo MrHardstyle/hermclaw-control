@@ -1,0 +1,2006 @@
+{
+  "ok": true,
+  "request_id": "routing-discovery-list-tree-20261007",
+  "action": "list_tree",
+  "request_sha": "700908d3dfe0e0aab9119e77f05aa3e06eac6fcf",
+  "result": [
+    {
+      "id": "383ab1ae1b64db5f79055490f9d6908d6e8c2336",
+      "name": ".hermclaw",
+      "type": "tree",
+      "path": ".hermclaw"
+    },
+    {
+      "id": "c9e2b63d4efd346960bf8c228c81ab3471e52ae0",
+      "name": "agent_core",
+      "type": "tree",
+      "path": "agent_core"
+    },
+    {
+      "id": "668b7525939cfbb89d912c9a16194c3060cff731",
+      "name": "tests",
+      "type": "tree",
+      "path": "agent_core/tests"
+    },
+    {
+      "id": "b784b7822a5117c38dcabdf14f25d8526dbe4d25",
+      "name": "android_app",
+      "type": "tree",
+      "path": "android_app"
+    },
+    {
+      "id": "109ce60a38308567698e7083a3b6a06279420452",
+      "name": "app",
+      "type": "tree",
+      "path": "android_app/app"
+    },
+    {
+      "id": "71b41b5978521a591c5f63b4797248849eff3cc0",
+      "name": "src",
+      "type": "tree",
+      "path": "android_app/app/src"
+    },
+    {
+      "id": "0c8973bc90c0878847d3acfef28e587d81ea0b48",
+      "name": "main",
+      "type": "tree",
+      "path": "android_app/app/src/main"
+    },
+    {
+      "id": "b741df93a6d78bc0b90bf613c7b237f2c502c691",
+      "name": "java",
+      "type": "tree",
+      "path": "android_app/app/src/main/java"
+    },
+    {
+      "id": "e7ab28ee4362520a88829db1d30a5d598e01d07a",
+      "name": "com",
+      "type": "tree",
+      "path": "android_app/app/src/main/java/com"
+    },
+    {
+      "id": "ff2614be6eb159ec9909156e905f622d5a3710a5",
+      "name": "kowacore",
+      "type": "tree",
+      "path": "android_app/app/src/main/java/com/kowacore"
+    },
+    {
+      "id": "27b0c51670b9152ca684848637a5861b0ae331b6",
+      "name": "app",
+      "type": "tree",
+      "path": "android_app/app/src/main/java/com/kowacore/app"
+    },
+    {
+      "id": "f288d94ad0eb872c8c6826205259c44c702ba495",
+      "name": "res",
+      "type": "tree",
+      "path": "android_app/app/src/main/res"
+    },
+    {
+      "id": "2fe5963819932f4e6b3a22bc917f9529e53baf0c",
+      "name": "drawable",
+      "type": "tree",
+      "path": "android_app/app/src/main/res/drawable"
+    },
+    {
+      "id": "482b0f59d4a98ccb19279af74fcc51471516035e",
+      "name": "mipmap-anydpi-v26",
+      "type": "tree",
+      "path": "android_app/app/src/main/res/mipmap-anydpi-v26"
+    },
+    {
+      "id": "c3185e7e0eee6172b85875f1740b63ec2eba1cc3",
+      "name": "values",
+      "type": "tree",
+      "path": "android_app/app/src/main/res/values"
+    },
+    {
+      "id": "67f96ddfce1e136f28daaee330bc3330ddeebc29",
+      "name": "xml",
+      "type": "tree",
+      "path": "android_app/app/src/main/res/xml"
+    },
+    {
+      "id": "7957ca6b011bc21f8b1170ddb0fd94ba96a76aa9",
+      "name": "gradle",
+      "type": "tree",
+      "path": "android_app/gradle"
+    },
+    {
+      "id": "ea579660c77332c11b40df1475914a98943d3206",
+      "name": "wrapper",
+      "type": "tree",
+      "path": "android_app/gradle/wrapper"
+    },
+    {
+      "id": "7ac14565d3024897af05f1a3fec48131a3e4afc4",
+      "name": "api",
+      "type": "tree",
+      "path": "api"
+    },
+    {
+      "id": "207bce53d7828779d16aacee90d22fc71817f16b",
+      "name": "css",
+      "type": "tree",
+      "path": "css"
+    },
+    {
+      "id": "c44121474bf66c0b87113e4f9b8d121db9ac73b1",
+      "name": "docs",
+      "type": "tree",
+      "path": "docs"
+    },
+    {
+      "id": "f52aa3226ece451b52f45b5e3282c5ea1057c3b1",
+      "name": "multiworker",
+      "type": "tree",
+      "path": "docs/multiworker"
+    },
+    {
+      "id": "8c8dfbbf2e5c79520867c7a33448077fd53197f4",
+      "name": "v11_migration",
+      "type": "tree",
+      "path": "docs/v11_migration"
+    },
+    {
+      "id": "5431105ea2262035f598f743748ed0ae2bb7baa1",
+      "name": "v12_memory",
+      "type": "tree",
+      "path": "docs/v12_memory"
+    },
+    {
+      "id": "bb4e86a64dd55c589a6fb975b06ae2d17dedca15",
+      "name": "v13_production",
+      "type": "tree",
+      "path": "docs/v13_production"
+    },
+    {
+      "id": "20ab01f1673939ef1dd66a8b6d59a5ba50789e77",
+      "name": "etsy_worker",
+      "type": "tree",
+      "path": "etsy_worker"
+    },
+    {
+      "id": "4cd0cd2a516edb72e4e4595473e77243c4d4b127",
+      "name": "fonts",
+      "type": "tree",
+      "path": "fonts"
+    },
+    {
+      "id": "88b52aef6766a7e03eb4684deef88196cf04c412",
+      "name": "image_worker",
+      "type": "tree",
+      "path": "image_worker"
+    },
+    {
+      "id": "8b01e1ab73c03911e7c7cb3d9c23745cf48e5f0a",
+      "name": "img",
+      "type": "tree",
+      "path": "img"
+    },
+    {
+      "id": "0819e4bd961b9a6571e00bdd228322b13503e86b",
+      "name": "logo",
+      "type": "tree",
+      "path": "img/logo"
+    },
+    {
+      "id": "d3c5894e304b983c92dda2b189707668821ae4e7",
+      "name": "inc",
+      "type": "tree",
+      "path": "inc"
+    },
+    {
+      "id": "9102abde15866252ffd2077b3a157fb24c3efbb6",
+      "name": "js",
+      "type": "tree",
+      "path": "js"
+    },
+    {
+      "id": "a3192083361394df064387678180e519aa85e75e",
+      "name": "mcp",
+      "type": "tree",
+      "path": "mcp"
+    },
+    {
+      "id": "f1c44721c101faa6e684c0e6a95c63056e5a20b6",
+      "name": "multiworker_orchestrator",
+      "type": "tree",
+      "path": "multiworker_orchestrator"
+    },
+    {
+      "id": "5c617c2eab1d8d67570d28961f1bdf37e538744d",
+      "name": "nav",
+      "type": "tree",
+      "path": "nav"
+    },
+    {
+      "id": "c3189ec006a2765a8c1e65ea1a849591d220bfd9",
+      "name": "noob2claw_client",
+      "type": "tree",
+      "path": "noob2claw_client"
+    },
+    {
+      "id": "ceb511f4f0d526d5a7320e213aa61091b120d647",
+      "name": "scripts",
+      "type": "tree",
+      "path": "scripts"
+    },
+    {
+      "id": "a44cdbe36f2cdbde0bba04b300589f74c3e64ef9",
+      "name": "sql",
+      "type": "tree",
+      "path": "sql"
+    },
+    {
+      "id": "c0c744e5003b14caf51ca6c819e2575f47c0eb61",
+      "name": "migrations",
+      "type": "tree",
+      "path": "sql/migrations"
+    },
+    {
+      "id": "3f3ad08db9363621ad6ef1a068d7a1378d03b8c3",
+      "name": "systemd",
+      "type": "tree",
+      "path": "systemd"
+    },
+    {
+      "id": "68143167a0b1808bc348a9fe59f1ec80b760b99a",
+      "name": "video_worker",
+      "type": "tree",
+      "path": "video_worker"
+    },
+    {
+      "id": "48b054521c53911086f4619dc366c8f7608293a3",
+      "name": "windows_client",
+      "type": "tree",
+      "path": "windows_client"
+    },
+    {
+      "id": "4280b982e66d1202f3ed30ef7176508d2263b2d9",
+      "name": "src",
+      "type": "tree",
+      "path": "windows_client/src"
+    },
+    {
+      "id": "70fbb243e72a650cabf917a0c7ee525e07ca2644",
+      "name": ".gitattributes",
+      "type": "blob",
+      "path": ".gitattributes"
+    },
+    {
+      "id": "8c2718df7486ae46a0a44dd9da56a7ab67ccd2b7",
+      "name": ".gitignore",
+      "type": "blob",
+      "path": ".gitignore"
+    },
+    {
+      "id": "49ba661bc57faac9d7fb66deb2e95d3a0b65d0a4",
+      "name": "patch.json",
+      "type": "blob",
+      "path": ".hermclaw/patch.json"
+    },
+    {
+      "id": "1999fa7c2386ceb3390cda630908969b4f8fb8dc",
+      "name": ".htaccess",
+      "type": "blob",
+      "path": ".htaccess"
+    },
+    {
+      "id": "09a6e2b19d0a15ddc956a7ac5f3bef1d2586fc12",
+      "name": "PHASE31_PHASE4_REPORT.md",
+      "type": "blob",
+      "path": "PHASE31_PHASE4_REPORT.md"
+    },
+    {
+      "id": "baed00d79e2772b23340719f7ec8a04efd7b562a",
+      "name": "README.md",
+      "type": "blob",
+      "path": "README.md"
+    },
+    {
+      "id": "c5cc1bcdef19dbf9485c1a72ba6aab293015e37c",
+      "name": ".gitignore",
+      "type": "blob",
+      "path": "agent_core/.gitignore"
+    },
+    {
+      "id": "446cf3b10b783141c75f2040b7d2ae593f6b436e",
+      "name": "EVENTS.md",
+      "type": "blob",
+      "path": "agent_core/EVENTS.md"
+    },
+    {
+      "id": "c20e1bb950ed846da0247e93f2a3894e40e229ec",
+      "name": "agent_core.py",
+      "type": "blob",
+      "path": "agent_core/agent_core.py"
+    },
+    {
+      "id": "3f31d5d42058bb1532220db79361b5f8aa8ddffc",
+      "name": "test_acceptance_contract_v0222.py",
+      "type": "blob",
+      "path": "agent_core/tests/test_acceptance_contract_v0222.py"
+    },
+    {
+      "id": "5a3ce7221e6e02c3f1d167f26608562afac7e83e",
+      "name": "test_acceptance_false_negative_v0221.py",
+      "type": "blob",
+      "path": "agent_core/tests/test_acceptance_false_negative_v0221.py"
+    },
+    {
+      "id": "b418ae51c13811927f2a971f80130959ff5007c3",
+      "name": "test_acceptance_final_state_v0218.py",
+      "type": "blob",
+      "path": "agent_core/tests/test_acceptance_final_state_v0218.py"
+    },
+    {
+      "id": "275fd2c007c4357249b9b0ef7d7db70725adae06",
+      "name": "test_acceptance_gate_v0220.py",
+      "type": "blob",
+      "path": "agent_core/tests/test_acceptance_gate_v0220.py"
+    },
+    {
+      "id": "c4e2cba775c048cda0ca17b782066618ba67e7f5",
+      "name": "test_agent_core.py",
+      "type": "blob",
+      "path": "agent_core/tests/test_agent_core.py"
+    },
+    {
+      "id": "98bb0f7769cd6bdf966e239c9c9a67ae5473e4df",
+      "name": "test_reasoning_recovery_v0224.py",
+      "type": "blob",
+      "path": "agent_core/tests/test_reasoning_recovery_v0224.py"
+    },
+    {
+      "id": "a7288e247d7b8dba20e7caaaf9182e50d693ce9e",
+      "name": "test_verification_scripts_v0223.py",
+      "type": "blob",
+      "path": "agent_core/tests/test_verification_scripts_v0223.py"
+    },
+    {
+      "id": "74452bf5efec503025fda76ab9ebb9c9113018b3",
+      "name": "agenten_chat_download.php",
+      "type": "blob",
+      "path": "agenten_chat_download.php"
+    },
+    {
+      "id": "b3a3e9e499fa7468a7778aec889741cdfe9d55a2",
+      "name": ".gitignore",
+      "type": "blob",
+      "path": "android_app/.gitignore"
+    },
+    {
+      "id": "b66e80882967080d48181b5b53a8be18cc94d610",
+      "name": ".htaccess",
+      "type": "blob",
+      "path": "android_app/.htaccess"
+    },
+    {
+      "id": "701c9afadede658b468563393e8f5728f948525d",
+      "name": "README.md",
+      "type": "blob",
+      "path": "android_app/README.md"
+    },
+    {
+      "id": "820b31b4f297316d5c38290e10b134ba80f89e6c",
+      "name": "build.gradle.kts",
+      "type": "blob",
+      "path": "android_app/app/build.gradle.kts"
+    },
+    {
+      "id": "3ccb94a6a2598c10f82b0d118db74695f7f29026",
+      "name": "AndroidManifest.xml",
+      "type": "blob",
+      "path": "android_app/app/src/main/AndroidManifest.xml"
+    },
+    {
+      "id": "3e8d3a2c1c7b458e5e90a303b3273ca25c77f4d7",
+      "name": "MainActivity.java",
+      "type": "blob",
+      "path": "android_app/app/src/main/java/com/kowacore/app/MainActivity.java"
+    },
+    {
+      "id": "b53c5a1105cbbe4a1df95ae078fad12fead2ef08",
+      "name": "ic_launcher_background.xml",
+      "type": "blob",
+      "path": "android_app/app/src/main/res/drawable/ic_launcher_background.xml"
+    },
+    {
+      "id": "ab36c0d2dda5d83e98934b5b5b107bc66f95d9fc",
+      "name": "ic_launcher_foreground.xml",
+      "type": "blob",
+      "path": "android_app/app/src/main/res/drawable/ic_launcher_foreground.xml"
+    },
+    {
+      "id": "6b78462d615bfe7003b31d0534dcad416b75ad25",
+      "name": "ic_launcher.xml",
+      "type": "blob",
+      "path": "android_app/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+      "id": "6b78462d615bfe7003b31d0534dcad416b75ad25",
+      "name": "ic_launcher_round.xml",
+      "type": "blob",
+      "path": "android_app/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+      "id": "778e07ee71c96064aeb049510a0492d7f22461f1",
+      "name": "colors.xml",
+      "type": "blob",
+      "path": "android_app/app/src/main/res/values/colors.xml"
+    },
+    {
+      "id": "b0d1e99a9c5cd15fff71f23d598bbf7bcdcb3433",
+      "name": "strings.xml",
+      "type": "blob",
+      "path": "android_app/app/src/main/res/values/strings.xml"
+    },
+    {
+      "id": "69c17ab334157995ee1a7d2a971edbf4925d699e",
+      "name": "styles.xml",
+      "type": "blob",
+      "path": "android_app/app/src/main/res/values/styles.xml"
+    },
+    {
+      "id": "cd3166ba5419a3b435a63f6303f9dddf9c875dcf",
+      "name": "network_security_config.xml",
+      "type": "blob",
+      "path": "android_app/app/src/main/res/xml/network_security_config.xml"
+    },
+    {
+      "id": "57caa56dc522ad4cb469128ba1f0cf464b0704e7",
+      "name": "build.gradle.kts",
+      "type": "blob",
+      "path": "android_app/build.gradle.kts"
+    },
+    {
+      "id": "651d485b98cc6868f278fc4ed6a5fedc6dc04760",
+      "name": "gradle-wrapper-shared.jar",
+      "type": "blob",
+      "path": "android_app/gradle/wrapper/gradle-wrapper-shared.jar"
+    },
+    {
+      "id": "e6441136f3d4ba8a0da8d277868979cfbc8ad796",
+      "name": "gradle-wrapper.jar",
+      "type": "blob",
+      "path": "android_app/gradle/wrapper/gradle-wrapper.jar"
+    },
+    {
+      "id": "b82aa23a4f05d39d81870f8355ca43324f027298",
+      "name": "gradle-wrapper.properties",
+      "type": "blob",
+      "path": "android_app/gradle/wrapper/gradle-wrapper.properties"
+    },
+    {
+      "id": "1aa94a4269074199e6ed2c37e8db3e0826030965",
+      "name": "gradlew",
+      "type": "blob",
+      "path": "android_app/gradlew"
+    },
+    {
+      "id": "7101f8e4676fcad8adc961e929ea3bcb37b5262f",
+      "name": "gradlew.bat",
+      "type": "blob",
+      "path": "android_app/gradlew.bat"
+    },
+    {
+      "id": "1dfa4eb9ff184768600111f58bca0c2ba842556c",
+      "name": "settings.gradle.kts",
+      "type": "blob",
+      "path": "android_app/settings.gradle.kts"
+    },
+    {
+      "id": "1240a5add30168876d073662bac938e20b4684cb",
+      "name": "api.php",
+      "type": "blob",
+      "path": "api.php"
+    },
+    {
+      "id": "b66e80882967080d48181b5b53a8be18cc94d610",
+      "name": ".htaccess",
+      "type": "blob",
+      "path": "api/.htaccess"
+    },
+    {
+      "id": "29f5f7127aa13526646d4ea49fdf651023ea70ed",
+      "name": "agenten.php",
+      "type": "blob",
+      "path": "api/agenten.php"
+    },
+    {
+      "id": "29f5f7127aa13526646d4ea49fdf651023ea70ed",
+      "name": "benutzer.php",
+      "type": "blob",
+      "path": "api/benutzer.php"
+    },
+    {
+      "id": "1077ef2e3502beddb0a6b0ba77b1087b2acac072",
+      "name": "index.php",
+      "type": "blob",
+      "path": "api/index.php"
+    },
+    {
+      "id": "29f5f7127aa13526646d4ea49fdf651023ea70ed",
+      "name": "status.php",
+      "type": "blob",
+      "path": "api/status.php"
+    },
+    {
+      "id": "29f5f7127aa13526646d4ea49fdf651023ea70ed",
+      "name": "system.php",
+      "type": "blob",
+      "path": "api/system.php"
+    },
+    {
+      "id": "c79bbb612d089ba903ff720ae16a03de08db0506",
+      "name": "calculator.py",
+      "type": "blob",
+      "path": "calculator.py"
+    },
+    {
+      "id": "7c95f886418f8257f31862062acff32c0917961a",
+      "name": "cron.php",
+      "type": "blob",
+      "path": "cron.php"
+    },
+    {
+      "id": "1ecdf362de5a891bd332bff1651933e265a57b67",
+      "name": "agenten_chat.css",
+      "type": "blob",
+      "path": "css/agenten_chat.css"
+    },
+    {
+      "id": "c5bb32bd687fe782480b9af93c3a4d1c9ce2f24d",
+      "name": "basis.css",
+      "type": "blob",
+      "path": "css/basis.css"
+    },
+    {
+      "id": "95957d989105d3d8b48aad634a476fd6dfa8e849",
+      "name": "bild_agent.css",
+      "type": "blob",
+      "path": "css/bild_agent.css"
+    },
+    {
+      "id": "6ac9bf6e6e544700e6035e704bcc6d37ce35775b",
+      "name": "dashboard.css",
+      "type": "blob",
+      "path": "css/dashboard.css"
+    },
+    {
+      "id": "a5b22dfc6e0fc111ea84b25d87b6e6313e250b5b",
+      "name": "designsystem.css",
+      "type": "blob",
+      "path": "css/designsystem.css"
+    },
+    {
+      "id": "83f14480ef911b52cb92580bb407a7ae369b2ca4",
+      "name": "formulare.css",
+      "type": "blob",
+      "path": "css/formulare.css"
+    },
+    {
+      "id": "ead96fdc424b604916918d2978241f2d041f8d93",
+      "name": "hilfsklassen.css",
+      "type": "blob",
+      "path": "css/hilfsklassen.css"
+    },
+    {
+      "id": "69c99aa42c75e9de3b0fc4b9b25dd4f438dcb8fc",
+      "name": "komponenten.css",
+      "type": "blob",
+      "path": "css/komponenten.css"
+    },
+    {
+      "id": "80c6cab6649ce5d0db1483eea1e8fde2a5826552",
+      "name": "layout.css",
+      "type": "blob",
+      "path": "css/layout.css"
+    },
+    {
+      "id": "256c970646f39f32e43c277402dd1468a8412e24",
+      "name": "multiagent.css",
+      "type": "blob",
+      "path": "css/multiagent.css"
+    },
+    {
+      "id": "7d555ed737eef1f2c37b9791cb63e51eff3fdf14",
+      "name": "navigation.css",
+      "type": "blob",
+      "path": "css/navigation.css"
+    },
+    {
+      "id": "ca7d8bac3b09eb7a36db80dfabf78cf18c255d5b",
+      "name": "qualitaet.css",
+      "type": "blob",
+      "path": "css/qualitaet.css"
+    },
+    {
+      "id": "27d5ab1f032c8c9578f504ca85404cf6065284db",
+      "name": "reset.css",
+      "type": "blob",
+      "path": "css/reset.css"
+    },
+    {
+      "id": "ffed17fad6669937b79c7c5edc4f1d205703135b",
+      "name": "responsive.css",
+      "type": "blob",
+      "path": "css/responsive.css"
+    },
+    {
+      "id": "c7675b5d30a2052b4e9bd7c350c9cbb74d64645e",
+      "name": "schnittstellen.css",
+      "type": "blob",
+      "path": "css/schnittstellen.css"
+    },
+    {
+      "id": "6eb159226ce6511f7a846b23f24c6ecfaa687d80",
+      "name": "style.css",
+      "type": "blob",
+      "path": "css/style.css"
+    },
+    {
+      "id": "fe78edb2e6d90ec6b92df8af999b49bff2002bc5",
+      "name": "tabellen.css",
+      "type": "blob",
+      "path": "css/tabellen.css"
+    },
+    {
+      "id": "5f5c97cd43a9bfc04a0ce9c127740b16f6b5cbb2",
+      "name": "tokens.css",
+      "type": "blob",
+      "path": "css/tokens.css"
+    },
+    {
+      "id": "6fd1c939483e076e12f428a9eda2b3799b59a792",
+      "name": "wiki.css",
+      "type": "blob",
+      "path": "css/wiki.css"
+    },
+    {
+      "id": "cd9f71eb391b138aa9e0d2d5dbe27573b5ce7cb7",
+      "name": "wiki_app.css",
+      "type": "blob",
+      "path": "css/wiki_app.css"
+    },
+    {
+      "id": "d4a9396d8a8d27628cb3aa8c18e6abac33217924",
+      "name": "API_CHANGE_PLAN.md",
+      "type": "blob",
+      "path": "docs/multiworker/API_CHANGE_PLAN.md"
+    },
+    {
+      "id": "738d5564859ed9a2f06d5ba7c701d7da4e85a045",
+      "name": "CODING_WORKER_ROOT_CAUSE.md",
+      "type": "blob",
+      "path": "docs/multiworker/CODING_WORKER_ROOT_CAUSE.md"
+    },
+    {
+      "id": "a10cdd4f82ef59401d1223d2a77453728c4d47a3",
+      "name": "CURRENT_STATE.md",
+      "type": "blob",
+      "path": "docs/multiworker/CURRENT_STATE.md"
+    },
+    {
+      "id": "2673ec0dee030ebd7c5ab6d911fa927245f6d2bf",
+      "name": "DB_CHANGE_PLAN.md",
+      "type": "blob",
+      "path": "docs/multiworker/DB_CHANGE_PLAN.md"
+    },
+    {
+      "id": "c63aa4bd2a432bebd53761ced53b47a5c90f0fef",
+      "name": "DEPLOYMENT_TARGETS.md",
+      "type": "blob",
+      "path": "docs/multiworker/DEPLOYMENT_TARGETS.md"
+    },
+    {
+      "id": "7a63a3130682c96bc4c1948322deb7729db0c419",
+      "name": "GAP_ANALYSIS.md",
+      "type": "blob",
+      "path": "docs/multiworker/GAP_ANALYSIS.md"
+    },
+    {
+      "id": "c417bc13fbebb8b7baacf95e72b2b3351f501b24",
+      "name": "IMPLEMENTATION_PLAN.md",
+      "type": "blob",
+      "path": "docs/multiworker/IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "id": "1e0eb88810a874f8be18d30c918013f589d9b3b0",
+      "name": "IMPLEMENTATION_RESULTS_2026_09_26.md",
+      "type": "blob",
+      "path": "docs/multiworker/IMPLEMENTATION_RESULTS_2026_09_26.md"
+    },
+    {
+      "id": "3af68148c7844cfa200d1c326b8cdaaee0d5c578",
+      "name": "INFRASTRUCTURE_MAP.md",
+      "type": "blob",
+      "path": "docs/multiworker/INFRASTRUCTURE_MAP.md"
+    },
+    {
+      "id": "e050f297af5b3ed0dfbca3c673bcc043e2c108c6",
+      "name": "MODEL_PLAN.md",
+      "type": "blob",
+      "path": "docs/multiworker/MODEL_PLAN.md"
+    },
+    {
+      "id": "cab0e3cdcb6805c2e2e8cbf074736dbd2cbfd10c",
+      "name": "RESOURCE_PLAN.md",
+      "type": "blob",
+      "path": "docs/multiworker/RESOURCE_PLAN.md"
+    },
+    {
+      "id": "9a05c8116ed7c9d51fe0ee5537ae7a420f1947dc",
+      "name": "REUSE_MAP.md",
+      "type": "blob",
+      "path": "docs/multiworker/REUSE_MAP.md"
+    },
+    {
+      "id": "4f96164e0fa32467e903ee8bc802563ea8d07d9a",
+      "name": "ROLLBACK_PLAN.md",
+      "type": "blob",
+      "path": "docs/multiworker/ROLLBACK_PLAN.md"
+    },
+    {
+      "id": "89e1a6d3c756423190ba7c8d240c31fe1d29f2eb",
+      "name": "SSH_ACCESS_AUDIT.md",
+      "type": "blob",
+      "path": "docs/multiworker/SSH_ACCESS_AUDIT.md"
+    },
+    {
+      "id": "8ff5a1ce58530075a6d1389ac8c0766a2dc50a93",
+      "name": "TEST_PLAN.md",
+      "type": "blob",
+      "path": "docs/multiworker/TEST_PLAN.md"
+    },
+    {
+      "id": "9412b1284105719aff678314dbaf279b8c96bf78",
+      "name": "UI_CHANGE_PLAN.md",
+      "type": "blob",
+      "path": "docs/multiworker/UI_CHANGE_PLAN.md"
+    },
+    {
+      "id": "7a37dfbaa1157924a422f4807dc08275a6473371",
+      "name": "VM_225_PLAN.md",
+      "type": "blob",
+      "path": "docs/multiworker/VM_225_PLAN.md"
+    },
+    {
+      "id": "ba61bd5b3d9798e876c4b08d70783e49ba42e289",
+      "name": "VM_RESOURCE_PLAN.md",
+      "type": "blob",
+      "path": "docs/multiworker/VM_RESOURCE_PLAN.md"
+    },
+    {
+      "id": "d5563025ac834aeb7fbdf9367dc903857acebf47",
+      "name": "WORKER_INTEGRATION_PLAN.md",
+      "type": "blob",
+      "path": "docs/multiworker/WORKER_INTEGRATION_PLAN.md"
+    },
+    {
+      "id": "639111318afef27669a08c77d0c3e3c839b20e83",
+      "name": "AGENT_MATRIX.md",
+      "type": "blob",
+      "path": "docs/v11_migration/AGENT_MATRIX.md"
+    },
+    {
+      "id": "3b980514283e9cb554663dbbf020d6a107d4ac3b",
+      "name": "CURRENT_STATE.md",
+      "type": "blob",
+      "path": "docs/v11_migration/CURRENT_STATE.md"
+    },
+    {
+      "id": "28966d95994779f009f74d966d8be77795d9b74d",
+      "name": "LITELLM_CONFIG.md",
+      "type": "blob",
+      "path": "docs/v11_migration/LITELLM_CONFIG.md"
+    },
+    {
+      "id": "8ff072de6c31bbe027f6b77c58915844819747cf",
+      "name": "PRE_ROLLBACK_STATE.md",
+      "type": "blob",
+      "path": "docs/v11_migration/PRE_ROLLBACK_STATE.md"
+    },
+    {
+      "id": "01735f0e97b9d7d0ab33054426d8ed09a124d5cc",
+      "name": "ROLLBACK_PLAN.md",
+      "type": "blob",
+      "path": "docs/v11_migration/ROLLBACK_PLAN.md"
+    },
+    {
+      "id": "b14521b3a1145c3c567680ba4b91f59553ebe7d5",
+      "name": "ROLLBACK_RESULT.md",
+      "type": "blob",
+      "path": "docs/v11_migration/ROLLBACK_RESULT.md"
+    },
+    {
+      "id": "5e3b0cbc3c894e1df07179340998cf92c0c372c8",
+      "name": "ROLLBACK_V11.md",
+      "type": "blob",
+      "path": "docs/v11_migration/ROLLBACK_V11.md"
+    },
+    {
+      "id": "6fd4774362b8616050299f034ef9242362f197d4",
+      "name": "SSH_ACCESS_MATRIX.md",
+      "type": "blob",
+      "path": "docs/v11_migration/SSH_ACCESS_MATRIX.md"
+    },
+    {
+      "id": "6cb92dbe79bfc6fc444039d1e0b1e94aa298da97",
+      "name": "TEST_RESULTS.md",
+      "type": "blob",
+      "path": "docs/v11_migration/TEST_RESULTS.md"
+    },
+    {
+      "id": "7c0ee8a462db2328408dd28f8ac62fe316599f25",
+      "name": "V10_DELTA.md",
+      "type": "blob",
+      "path": "docs/v11_migration/V10_DELTA.md"
+    },
+    {
+      "id": "3fa47a73716e80b5de307e9751d6ab1f12d65d7e",
+      "name": "V11_TOPOLOGY.md",
+      "type": "blob",
+      "path": "docs/v11_migration/V11_TOPOLOGY.md"
+    },
+    {
+      "id": "33f04c3a2a618a4618333dd9065cf7de6e595366",
+      "name": "VM_STOP_ROOT_CAUSE.md",
+      "type": "blob",
+      "path": "docs/v11_migration/VM_STOP_ROOT_CAUSE.md"
+    },
+    {
+      "id": "d26e5f5c01e378c3ca71e34115355a6be2e5ceab",
+      "name": "LITELLM_POST_UPGRADE_ROUTING.md",
+      "type": "blob",
+      "path": "docs/v12_memory/LITELLM_POST_UPGRADE_ROUTING.md"
+    },
+    {
+      "id": "4a98543519740a070609bdfdcce0177b78cbaad8",
+      "name": "MODEL_MEMORY_TESTS.md",
+      "type": "blob",
+      "path": "docs/v12_memory/MODEL_MEMORY_TESTS.md"
+    },
+    {
+      "id": "5590792074060a88646ef64522f8df7604f3d50c",
+      "name": "POST_UPGRADE_HARDWARE.md",
+      "type": "blob",
+      "path": "docs/v12_memory/POST_UPGRADE_HARDWARE.md"
+    },
+    {
+      "id": "f3e580296f9a07262a51ee200721f24111b7b76e",
+      "name": "TOWER2_PRE_UPGRADE_OOM_HISTORY.md",
+      "type": "blob",
+      "path": "docs/v12_memory/TOWER2_PRE_UPGRADE_OOM_HISTORY.md"
+    },
+    {
+      "id": "ce9afea2bd711243b9b412e771157a3826cc5b89",
+      "name": "V12_ROLLBACK.md",
+      "type": "blob",
+      "path": "docs/v12_memory/V12_ROLLBACK.md"
+    },
+    {
+      "id": "6a972afb6a6bd56faac97039a85508d95459a597",
+      "name": "V12_TEST_RESULTS.md",
+      "type": "blob",
+      "path": "docs/v12_memory/V12_TEST_RESULTS.md"
+    },
+    {
+      "id": "7412ee77ed84f7922fcf6089223ca33685d8016a",
+      "name": "VM_MEMORY_PLAN.md",
+      "type": "blob",
+      "path": "docs/v12_memory/VM_MEMORY_PLAN.md"
+    },
+    {
+      "id": "6c70e8c71bccf597081f614adc9a4f806e674bc7",
+      "name": "AGENT_TUNING.md",
+      "type": "blob",
+      "path": "docs/v13_production/AGENT_TUNING.md"
+    },
+    {
+      "id": "a4115a57da52cd1f607e73255482064d8dc891b3",
+      "name": "BACKUP_BASELINE.md",
+      "type": "blob",
+      "path": "docs/v13_production/BACKUP_BASELINE.md"
+    },
+    {
+      "id": "2a4f7e00ad20d2711ba4ba52487495ecf08c0531",
+      "name": "BASELINE.md",
+      "type": "blob",
+      "path": "docs/v13_production/BASELINE.md"
+    },
+    {
+      "id": "b48c67f8fca779b73e2a9fd75da3bdfe4371fa75",
+      "name": "CHAT_CONTEXT_ROOT_CAUSE.md",
+      "type": "blob",
+      "path": "docs/v13_production/CHAT_CONTEXT_ROOT_CAUSE.md"
+    },
+    {
+      "id": "5c4202f5a4f7a20c12e55737b3e6537cbd16588b",
+      "name": "CHAT_MEMORY_DESIGN.md",
+      "type": "blob",
+      "path": "docs/v13_production/CHAT_MEMORY_DESIGN.md"
+    },
+    {
+      "id": "eec0292efa86a00dd7804bd12e6ce63b4813e975",
+      "name": "CODER_TOOLLOOP_ROOT_CAUSE_2026_09_28.md",
+      "type": "blob",
+      "path": "docs/v13_production/CODER_TOOLLOOP_ROOT_CAUSE_2026_09_28.md"
+    },
+    {
+      "id": "493c4191cf9d2cbe440c7ce72abd90059b679c5e",
+      "name": "IMAGE_TEST.md",
+      "type": "blob",
+      "path": "docs/v13_production/IMAGE_TEST.md"
+    },
+    {
+      "id": "c152c66acbe3b7905d5ce597383a9ae4d6facb88",
+      "name": "MODEL_ROUTING.md",
+      "type": "blob",
+      "path": "docs/v13_production/MODEL_ROUTING.md"
+    },
+    {
+      "id": "7bfd56ee891fd86ffd02f834f4eac641bba2d51e",
+      "name": "MODEL_UNLOAD_ROOT_CAUSE.md",
+      "type": "blob",
+      "path": "docs/v13_production/MODEL_UNLOAD_ROOT_CAUSE.md"
+    },
+    {
+      "id": "8584c7fab402a77446bb56e55367610fcc164793",
+      "name": "MODEL_UNLOAD_TESTS.md",
+      "type": "blob",
+      "path": "docs/v13_production/MODEL_UNLOAD_TESTS.md"
+    },
+    {
+      "id": "f7fdb2ed63911e32683269dacee6c97e4532113c",
+      "name": "PILOT_TESTS.md",
+      "type": "blob",
+      "path": "docs/v13_production/PILOT_TESTS.md"
+    },
+    {
+      "id": "a4981ecfc1c85c2b5bc2ba1f797d73fea8d50686",
+      "name": "SSH_BASELINE.md",
+      "type": "blob",
+      "path": "docs/v13_production/SSH_BASELINE.md"
+    },
+    {
+      "id": "64071f6dedae501fb2d479879720db9a5aa82317",
+      "name": "SYSTEM_MONITORING.md",
+      "type": "blob",
+      "path": "docs/v13_production/SYSTEM_MONITORING.md"
+    },
+    {
+      "id": "4ba1370ed4bf02a8a9c545a75f407e17b2900066",
+      "name": "V13_ROLLBACK.md",
+      "type": "blob",
+      "path": "docs/v13_production/V13_ROLLBACK.md"
+    },
+    {
+      "id": "c0c5e3b148125bab9bd242a31835f0ba91121cb2",
+      "name": "V13_TEST_RESULTS.md",
+      "type": "blob",
+      "path": "docs/v13_production/V13_TEST_RESULTS.md"
+    },
+    {
+      "id": "b66e80882967080d48181b5b53a8be18cc94d610",
+      "name": ".htaccess",
+      "type": "blob",
+      "path": "etsy_worker/.htaccess"
+    },
+    {
+      "id": "9843987f400721a2b543bca50f722528c21d1b0b",
+      "name": "README.md",
+      "type": "blob",
+      "path": "etsy_worker/README.md"
+    },
+    {
+      "id": "634b717543cc37444955b5660d03ca1a6b2ef692",
+      "name": "config.example.php",
+      "type": "blob",
+      "path": "etsy_worker/config.example.php"
+    },
+    {
+      "id": "3f814d95d188ea47348bba13880b799f42ee215c",
+      "name": "worker.php",
+      "type": "blob",
+      "path": "etsy_worker/worker.php"
+    },
+    {
+      "id": "eb569cfbe6522d23588144c023b18aba37fe57df",
+      "name": "README.md",
+      "type": "blob",
+      "path": "fonts/README.md"
+    },
+    {
+      "id": "fe274df40d9ff1898223f48c037be08e35c1d87a",
+      "name": "README.md",
+      "type": "blob",
+      "path": "image_worker/README.md"
+    },
+    {
+      "id": "bfa23f27428806145291170f4f83fc64ca868613",
+      "name": "config.example.php",
+      "type": "blob",
+      "path": "image_worker/config.example.php"
+    },
+    {
+      "id": "83d1e058f149547e80091fbe82618bd04ca8cddc",
+      "name": "generate_diffusers.py",
+      "type": "blob",
+      "path": "image_worker/generate_diffusers.py"
+    },
+    {
+      "id": "531ae06ac5835197f2091a3e2c96b0269ae381ed",
+      "name": "worker.php",
+      "type": "blob",
+      "path": "image_worker/worker.php"
+    },
+    {
+      "id": "ec2b4b058527c7c426299c72e199961debe43f21",
+      "name": "logo.png",
+      "type": "blob",
+      "path": "img/logo/logo.png"
+    },
+    {
+      "id": "372a2e2bdc7e38e3ad759ab70e83e20b36ebee59",
+      "name": ".htaccess",
+      "type": "blob",
+      "path": "inc/.htaccess"
+    },
+    {
+      "id": "eb94ed939a486e1650e21985898b1e049551e8aa",
+      "name": "config.php",
+      "type": "blob",
+      "path": "inc/config.php"
+    },
+    {
+      "id": "cdccb8900b5ba2be0cdea10971047d35c1d6a483",
+      "name": "datenbank.php",
+      "type": "blob",
+      "path": "inc/datenbank.php"
+    },
+    {
+      "id": "53052538f30c7edd631c07a03477c00e74b98dfc",
+      "name": "footer.php",
+      "type": "blob",
+      "path": "inc/footer.php"
+    },
+    {
+      "id": "1fa53261c9ed43dbd0546f1c298d0704172269f3",
+      "name": "funktionen.php",
+      "type": "blob",
+      "path": "inc/funktionen.php"
+    },
+    {
+      "id": "8599f1542c10668c5ac81804165ffdf6e602503d",
+      "name": "funktionen_agenten.php",
+      "type": "blob",
+      "path": "inc/funktionen_agenten.php"
+    },
+    {
+      "id": "08e8351f0f2d516a4a967163cb847952c9a4b2e5",
+      "name": "funktionen_agenten_auftraege.php",
+      "type": "blob",
+      "path": "inc/funktionen_agenten_auftraege.php"
+    },
+    {
+      "id": "55a57218a8f548de79d3fda80679345d5c8b04b7",
+      "name": "funktionen_agenten_chat.php",
+      "type": "blob",
+      "path": "inc/funktionen_agenten_chat.php"
+    },
+    {
+      "id": "a08cb5071d552a38a7ecf68c12b607a71277f3a6",
+      "name": "funktionen_agenten_client_log.php",
+      "type": "blob",
+      "path": "inc/funktionen_agenten_client_log.php"
+    },
+    {
+      "id": "38da4d154e4890d1dd8719e0f50ee2bed54b29d4",
+      "name": "funktionen_agenten_client_prozesse.php",
+      "type": "blob",
+      "path": "inc/funktionen_agenten_client_prozesse.php"
+    },
+    {
+      "id": "8bec1d6e8044dd172adc163724815dd0e0b41d22",
+      "name": "funktionen_agenten_client_updates.php",
+      "type": "blob",
+      "path": "inc/funktionen_agenten_client_updates.php"
+    },
+    {
+      "id": "cb0ed0996f87921e47486f7567092d47413f8cf5",
+      "name": "funktionen_agenten_clients.php",
+      "type": "blob",
+      "path": "inc/funktionen_agenten_clients.php"
+    },
+    {
+      "id": "2b1b57fbfe35ac6dea23eeb9836ef1db7d80f2e8",
+      "name": "funktionen_agents.php",
+      "type": "blob",
+      "path": "inc/funktionen_agents.php"
+    },
+    {
+      "id": "ed9a66a653b7f64593fcdd647c5298d0353131ad",
+      "name": "funktionen_api.php",
+      "type": "blob",
+      "path": "inc/funktionen_api.php"
+    },
+    {
+      "id": "a7876585b4e58249672d3afff687d4bc1ab26915",
+      "name": "funktionen_benutzer.php",
+      "type": "blob",
+      "path": "inc/funktionen_benutzer.php"
+    },
+    {
+      "id": "db1391905b7b7f3f34c2c26e559f27ec344854c0",
+      "name": "funktionen_bild_agent.php",
+      "type": "blob",
+      "path": "inc/funktionen_bild_agent.php"
+    },
+    {
+      "id": "bd0dd75dd5c949c5d80eda945b58ffdc6af344c2",
+      "name": "funktionen_cli_ergebnis.php",
+      "type": "blob",
+      "path": "inc/funktionen_cli_ergebnis.php"
+    },
+    {
+      "id": "f603ab3e5df9e77889062b6ab8166c29f86bd5fa",
+      "name": "funktionen_client_api.php",
+      "type": "blob",
+      "path": "inc/funktionen_client_api.php"
+    },
+    {
+      "id": "43f6e1ff61261a531e9b7805cca1b40af0bfbe94",
+      "name": "funktionen_client_update.php",
+      "type": "blob",
+      "path": "inc/funktionen_client_update.php"
+    },
+    {
+      "id": "47f4eb2f88d354b1b19ef4b94edb5bdbc10735d9",
+      "name": "funktionen_config.php",
+      "type": "blob",
+      "path": "inc/funktionen_config.php"
+    },
+    {
+      "id": "f20b6df1e65a38af0f0447d2c8e6b8dc2b26c93d",
+      "name": "funktionen_crypto.php",
+      "type": "blob",
+      "path": "inc/funktionen_crypto.php"
+    },
+    {
+      "id": "b1c41ea53494588612f61e1cf3dc008858fa3254",
+      "name": "funktionen_dateien.php",
+      "type": "blob",
+      "path": "inc/funktionen_dateien.php"
+    },
+    {
+      "id": "d4ef432432b99644b5a4b6176cb0749faf8c4b5c",
+      "name": "funktionen_debug.php",
+      "type": "blob",
+      "path": "inc/funktionen_debug.php"
+    },
+    {
+      "id": "78847dceae5079f8cb113f6e1ef47d0ba746427f",
+      "name": "funktionen_einstellungen.php",
+      "type": "blob",
+      "path": "inc/funktionen_einstellungen.php"
+    },
+    {
+      "id": "05a2078b42cab7427cb03012cbbc749f358f52a7",
+      "name": "funktionen_etsy.php",
+      "type": "blob",
+      "path": "inc/funktionen_etsy.php"
+    },
+    {
+      "id": "12a61e6f815ab1e1a7a0b703c96f374299038509",
+      "name": "funktionen_integrationen.php",
+      "type": "blob",
+      "path": "inc/funktionen_integrationen.php"
+    },
+    {
+      "id": "b7f4bb0ce91b99296d3f016704013b4ed5f742ee",
+      "name": "funktionen_json.php",
+      "type": "blob",
+      "path": "inc/funktionen_json.php"
+    },
+    {
+      "id": "e59ebba4ec53041ba5d142ad16100244224b3347",
+      "name": "funktionen_login.php",
+      "type": "blob",
+      "path": "inc/funktionen_login.php"
+    },
+    {
+      "id": "5666247e66f6b79aa4d99fb3c2d45793e262822f",
+      "name": "funktionen_logs.php",
+      "type": "blob",
+      "path": "inc/funktionen_logs.php"
+    },
+    {
+      "id": "6b3f9946244e67f76611e4b7e8e69866aa7cd8fd",
+      "name": "funktionen_mcp.php",
+      "type": "blob",
+      "path": "inc/funktionen_mcp.php"
+    },
+    {
+      "id": "21ff44e8eb6993360b96013cae8498a02d97d058",
+      "name": "funktionen_mcp_wiki.php",
+      "type": "blob",
+      "path": "inc/funktionen_mcp_wiki.php"
+    },
+    {
+      "id": "9a30f48de052c42af96aa4ad02aa7f8376a3de2a",
+      "name": "funktionen_multiagent.php",
+      "type": "blob",
+      "path": "inc/funktionen_multiagent.php"
+    },
+    {
+      "id": "e5b168c4df7acc2b1eaf451f96038c4731b0f8e3",
+      "name": "funktionen_multiworker.php",
+      "type": "blob",
+      "path": "inc/funktionen_multiworker.php"
+    },
+    {
+      "id": "4f4010d83155b5d9659e0fa33cb865b33a5b6cd1",
+      "name": "funktionen_navigation.php",
+      "type": "blob",
+      "path": "inc/funktionen_navigation.php"
+    },
+    {
+      "id": "09ecf08473078a2415b31fa79b6536fff56da49e",
+      "name": "funktionen_qualitaet.php",
+      "type": "blob",
+      "path": "inc/funktionen_qualitaet.php"
+    },
+    {
+      "id": "074ed90617334369350ee7452baf75612824752b",
+      "name": "funktionen_rechte.php",
+      "type": "blob",
+      "path": "inc/funktionen_rechte.php"
+    },
+    {
+      "id": "f29458e51b4d78c8d845521308ed15f104570fa7",
+      "name": "funktionen_sessions.php",
+      "type": "blob",
+      "path": "inc/funktionen_sessions.php"
+    },
+    {
+      "id": "cc11c8b42224d19454e8ec1fc29ca537d39bc1cc",
+      "name": "funktionen_system.php",
+      "type": "blob",
+      "path": "inc/funktionen_system.php"
+    },
+    {
+      "id": "ec93f6228429c75213d371dbe3d8c2570a8d75b6",
+      "name": "funktionen_totp.php",
+      "type": "blob",
+      "path": "inc/funktionen_totp.php"
+    },
+    {
+      "id": "08e2327462625bbd44b786de74981410be49b157",
+      "name": "funktionen_validierung.php",
+      "type": "blob",
+      "path": "inc/funktionen_validierung.php"
+    },
+    {
+      "id": "5887570eb7527988c42b14e9e5349088a7e30614",
+      "name": "funktionen_video_analyse.php",
+      "type": "blob",
+      "path": "inc/funktionen_video_analyse.php"
+    },
+    {
+      "id": "4947ceb08c7bc7239aa95084e79843503b447e62",
+      "name": "funktionen_wiki.php",
+      "type": "blob",
+      "path": "inc/funktionen_wiki.php"
+    },
+    {
+      "id": "31b9e45b3c47ed8e448a4c7ec6184ecd6ca1b9de",
+      "name": "header.php",
+      "type": "blob",
+      "path": "inc/header.php"
+    },
+    {
+      "id": "062e22354699298e642360158329937a55454f0f",
+      "name": "meldungen.php",
+      "type": "blob",
+      "path": "inc/meldungen.php"
+    },
+    {
+      "id": "50ee59755bdfd77182f89052bdf597cb2386fa38",
+      "name": "navigation.php",
+      "type": "blob",
+      "path": "inc/navigation.php"
+    },
+    {
+      "id": "b838f49b3093f8827324d1fe134ecc9b2ac59698",
+      "name": "session.php",
+      "type": "blob",
+      "path": "inc/session.php"
+    },
+    {
+      "id": "b5ba381defa62d4ef369698878b01e63a26402f3",
+      "name": "wiki_teaser_app.php",
+      "type": "blob",
+      "path": "inc/wiki_teaser_app.php"
+    },
+    {
+      "id": "573f7688c781237741744607439adb8801b75fb7",
+      "name": "index.php",
+      "type": "blob",
+      "path": "index.php"
+    },
+    {
+      "id": "c0bfef7a128871a7097236f4712c8f3b28f2e69b",
+      "name": "install-agent-core.sh",
+      "type": "blob",
+      "path": "install-agent-core.sh"
+    },
+    {
+      "id": "1c31253664b5339c8a780c59ff8948671c74e576",
+      "name": "agenten_chat.js",
+      "type": "blob",
+      "path": "js/agenten_chat.js"
+    },
+    {
+      "id": "418517ff8c6f532d0ce15b8c034e9c453b7612a1",
+      "name": "ajax.js",
+      "type": "blob",
+      "path": "js/ajax.js"
+    },
+    {
+      "id": "e727d1addfc7746a5f78bb08f6108c329fe2a178",
+      "name": "app.js",
+      "type": "blob",
+      "path": "js/app.js"
+    },
+    {
+      "id": "e35af6361f55d97ecd2bd1c4ad549857a3642080",
+      "name": "dashboard.js",
+      "type": "blob",
+      "path": "js/dashboard.js"
+    },
+    {
+      "id": "657cae79c59e06e5b39e2aea8b4adf37737c0903",
+      "name": "formulare.js",
+      "type": "blob",
+      "path": "js/formulare.js"
+    },
+    {
+      "id": "f399cb7f5178ddb95d88db6f4d4ae46f44a3ec70",
+      "name": "multiagent.js",
+      "type": "blob",
+      "path": "js/multiagent.js"
+    },
+    {
+      "id": "93e83d95346f0f86ee489bbd5354b17485c4d229",
+      "name": "multiworker.js",
+      "type": "blob",
+      "path": "js/multiworker.js"
+    },
+    {
+      "id": "73647eb3e67c0c00d0e99d45b18764141e47c507",
+      "name": "navigation.js",
+      "type": "blob",
+      "path": "js/navigation.js"
+    },
+    {
+      "id": "ab0fdabc2f97a40beb9f63b0bff3a99e946b1684",
+      "name": "tabellen.js",
+      "type": "blob",
+      "path": "js/tabellen.js"
+    },
+    {
+      "id": "e0d0318b5e654d2ebb4f24ec5c6c09aeb9c78d5c",
+      "name": "wiki.js",
+      "type": "blob",
+      "path": "js/wiki.js"
+    },
+    {
+      "id": "5c7a6488eea7fd1e0380577d40a969b18cdf57f4",
+      "name": "login.php",
+      "type": "blob",
+      "path": "login.php"
+    },
+    {
+      "id": "a15efe153f889ca43f914b258748ba32cd7c25ee",
+      "name": "logout.php",
+      "type": "blob",
+      "path": "logout.php"
+    },
+    {
+      "id": "b510aca2060d5cfdcfe3027c38f709c88b5252a5",
+      "name": "mcp.php",
+      "type": "blob",
+      "path": "mcp.php"
+    },
+    {
+      "id": "b66e80882967080d48181b5b53a8be18cc94d610",
+      "name": ".htaccess",
+      "type": "blob",
+      "path": "mcp/.htaccess"
+    },
+    {
+      "id": "672f5c905fefca1bd9d69894c1cd7c6e136beedf",
+      "name": "index.php",
+      "type": "blob",
+      "path": "mcp/index.php"
+    },
+    {
+      "id": "1fdda7026bfa3863fdab0cce44a4ac1d5253758d",
+      "name": "resources.php",
+      "type": "blob",
+      "path": "mcp/resources.php"
+    },
+    {
+      "id": "1f82cfd2fa0f2d877ce0653d9b10feb692fd1b18",
+      "name": "server.php",
+      "type": "blob",
+      "path": "mcp/server.php"
+    },
+    {
+      "id": "7f7d37e46aa77944933dd45fffad3ad3e28490d0",
+      "name": "tools.php",
+      "type": "blob",
+      "path": "mcp/tools.php"
+    },
+    {
+      "id": "1d02a4ef0b276c031bd6c7401b672168963888e4",
+      "name": "multiworker_events.php",
+      "type": "blob",
+      "path": "multiworker_events.php"
+    },
+    {
+      "id": "70e697b82aadadcb39e74d25de584d4bcb426561",
+      "name": "config.example.json",
+      "type": "blob",
+      "path": "multiworker_orchestrator/config.example.json"
+    },
+    {
+      "id": "3d78b8ff1cae7b604ec72dff8d71450e38ef6815",
+      "name": "orchestrator.py",
+      "type": "blob",
+      "path": "multiworker_orchestrator/orchestrator.py"
+    },
+    {
+      "id": "c0f49c5ec0c157c679eb2e89f9a63e10a5ba47bb",
+      "name": "control_agenten_auftraege.php",
+      "type": "blob",
+      "path": "nav/control_agenten_auftraege.php"
+    },
+    {
+      "id": "4d48b2c62f53d083270a2aa7ef4b4cfb1caf18a3",
+      "name": "control_agenten_client_log.php",
+      "type": "blob",
+      "path": "nav/control_agenten_client_log.php"
+    },
+    {
+      "id": "458260757d7f4c2f1fbee37a85d1f5bb80a5fd67",
+      "name": "control_agenten_client_prozesse.php",
+      "type": "blob",
+      "path": "nav/control_agenten_client_prozesse.php"
+    },
+    {
+      "id": "43ee652d957020ecf260d66183e6cddaa13fa443",
+      "name": "control_agenten_updates.php",
+      "type": "blob",
+      "path": "nav/control_agenten_updates.php"
+    },
+    {
+      "id": "2d9fc1234e18367e21319b872e76cefd52a815a7",
+      "name": "control_logs.php",
+      "type": "blob",
+      "path": "nav/control_logs.php"
+    },
+    {
+      "id": "23305501f78397a8e653649e626ed166e976b1ab",
+      "name": "control_mcp_log.php",
+      "type": "blob",
+      "path": "nav/control_mcp_log.php"
+    },
+    {
+      "id": "9c0f5743334cd01c2c9c378f178525f9e5bdf3e1",
+      "name": "control_qualitaet.php",
+      "type": "blob",
+      "path": "nav/control_qualitaet.php"
+    },
+    {
+      "id": "9410ef57cc7bd32b8d15f786aa1689301ac0b363",
+      "name": "main_anleitung.php",
+      "type": "blob",
+      "path": "nav/main_anleitung.php"
+    },
+    {
+      "id": "07113e414c5330deb065f780e70698f453107959",
+      "name": "main_dashboard.php",
+      "type": "blob",
+      "path": "nav/main_dashboard.php"
+    },
+    {
+      "id": "ef903e8f98e55b36d062351b64550029d7337c13",
+      "name": "settings_agenten_clients.php",
+      "type": "blob",
+      "path": "nav/settings_agenten_clients.php"
+    },
+    {
+      "id": "e647c685d8b281ca4f5cacc431661fc8e02ff4b1",
+      "name": "settings_agents.php",
+      "type": "blob",
+      "path": "nav/settings_agents.php"
+    },
+    {
+      "id": "750c4b6eabf576954812b306f9a35db8f9801d08",
+      "name": "settings_benutzer.php",
+      "type": "blob",
+      "path": "nav/settings_benutzer.php"
+    },
+    {
+      "id": "0b4b910fe13cc0d66938d454aac769402e0f0acd",
+      "name": "settings_integrationen.php",
+      "type": "blob",
+      "path": "nav/settings_integrationen.php"
+    },
+    {
+      "id": "946cc17ff75a5052b3e14ae6171dfbf0e162d56b",
+      "name": "settings_mcp_benutzer.php",
+      "type": "blob",
+      "path": "nav/settings_mcp_benutzer.php"
+    },
+    {
+      "id": "a1a9cc92db6dd78a7d94febb8b3c6046a045b426",
+      "name": "settings_schnittstellen.php",
+      "type": "blob",
+      "path": "nav/settings_schnittstellen.php"
+    },
+    {
+      "id": "b45ebd1a457bbbb9c49381edbfbc954fb1ea4373",
+      "name": "settings_system.php",
+      "type": "blob",
+      "path": "nav/settings_system.php"
+    },
+    {
+      "id": "c088e35ff9307d14b5d06f4b4d45b23e77dcd8de",
+      "name": "tools_android_app.php",
+      "type": "blob",
+      "path": "nav/tools_android_app.php"
+    },
+    {
+      "id": "47b96d668336ea36662e9cfe65704f33d31b5dcd",
+      "name": "tools_windows_client.php",
+      "type": "blob",
+      "path": "nav/tools_windows_client.php"
+    },
+    {
+      "id": "8ea8d9b12568b321f1f2a2f74994178567072f44",
+      "name": "work_agenten.php",
+      "type": "blob",
+      "path": "nav/work_agenten.php"
+    },
+    {
+      "id": "3dc09220f70f3920b765ff4729fc9c7192bd10ff",
+      "name": "work_agenten_chat.php",
+      "type": "blob",
+      "path": "nav/work_agenten_chat.php"
+    },
+    {
+      "id": "f8b1728db21cfd586028bf41f7bcaf2f5e9d1d6a",
+      "name": "work_agents.php",
+      "type": "blob",
+      "path": "nav/work_agents.php"
+    },
+    {
+      "id": "615ecedd4aa974157d66493de34b73128eb293e0",
+      "name": "work_auftragszentrale.php",
+      "type": "blob",
+      "path": "nav/work_auftragszentrale.php"
+    },
+    {
+      "id": "0d9a503bf84d6021448397dcaa01e3f980b00af3",
+      "name": "work_bild_agent.php",
+      "type": "blob",
+      "path": "nav/work_bild_agent.php"
+    },
+    {
+      "id": "97fa8dbf60beccd701a156443453d8f5e0942f83",
+      "name": "work_etsy.php",
+      "type": "blob",
+      "path": "nav/work_etsy.php"
+    },
+    {
+      "id": "b26fa5c4ceb48502e545a233fe6d979befe93b3e",
+      "name": "work_multiagent.php",
+      "type": "blob",
+      "path": "nav/work_multiagent.php"
+    },
+    {
+      "id": "1c6974ee0a26eeb93c49626178f2018f57e1fcfe",
+      "name": "work_video_analyse.php",
+      "type": "blob",
+      "path": "nav/work_video_analyse.php"
+    },
+    {
+      "id": "0287290182808487ad63046a34ba9452f671f377",
+      "name": "work_wiki.php",
+      "type": "blob",
+      "path": "nav/work_wiki.php"
+    },
+    {
+      "id": "de2f3752bae5bdce8d13423513a6bddbc7a04b6d",
+      "name": "work_wiki_teaser.php",
+      "type": "blob",
+      "path": "nav/work_wiki_teaser.php"
+    },
+    {
+      "id": "b66e80882967080d48181b5b53a8be18cc94d610",
+      "name": ".htaccess",
+      "type": "blob",
+      "path": "noob2claw_client/.htaccess"
+    },
+    {
+      "id": "4b945781d97b822ca1a562cff048e91a7bb6b79f",
+      "name": "README_CLIENT.md",
+      "type": "blob",
+      "path": "noob2claw_client/README_CLIENT.md"
+    },
+    {
+      "id": "35901ab5bc549f59754d18c8c6cf676478e6a179",
+      "name": "client.php",
+      "type": "blob",
+      "path": "noob2claw_client/client.php"
+    },
+    {
+      "id": "bcf2b172e369c9df246bb4bd784372001221d342",
+      "name": "config.example.php",
+      "type": "blob",
+      "path": "noob2claw_client/config.example.php"
+    },
+    {
+      "id": "627d7a8ea65bee5716a2a49fe508fb2ed257ccc8",
+      "name": "funktionen.php",
+      "type": "blob",
+      "path": "noob2claw_client/funktionen.php"
+    },
+    {
+      "id": "cc4dc417cbf5bff8d28954065741a928aee785cc",
+      "name": "install.sh",
+      "type": "blob",
+      "path": "noob2claw_client/install.sh"
+    },
+    {
+      "id": "62bc9ddc3686c2e23c597fd2a5a81e17d12a90e1",
+      "name": "manifest.json",
+      "type": "blob",
+      "path": "noob2claw_client/manifest.json"
+    },
+    {
+      "id": "b10063d96326227033ec5c5fe59035e1dd81ff26",
+      "name": "windows_tool.php",
+      "type": "blob",
+      "path": "noob2claw_client/windows_tool.php"
+    },
+    {
+      "id": "d0b92fd435adf0c89f8c00bc3a511a1a4082a26b",
+      "name": "quality_runner.php",
+      "type": "blob",
+      "path": "quality_runner.php"
+    },
+    {
+      "id": "eff5aaa171142eb12de15fcb88d5521aad4bb10c",
+      "name": "multiworker_runner.php",
+      "type": "blob",
+      "path": "scripts/multiworker_runner.php"
+    },
+    {
+      "id": "42bbbd54a790e6648d78c0b4c9c3786b921dfb93",
+      "name": "noob2claw-heavy-unload.sh",
+      "type": "blob",
+      "path": "scripts/noob2claw-heavy-unload.sh"
+    },
+    {
+      "id": "27267ab10bf93d6ab2fe7f80b1dffdd25496fd72",
+      "name": "system_metrics_collector.php",
+      "type": "blob",
+      "path": "scripts/system_metrics_collector.php"
+    },
+    {
+      "id": "af095ac26210cd28e74103ed56fac316bbc2a8ec",
+      "name": "setup-system-package-helper.sh",
+      "type": "blob",
+      "path": "setup-system-package-helper.sh"
+    },
+    {
+      "id": "d0cf97e2ff63f5f3c90c2f2a15356c1542975e6c",
+      "name": "basisdaten.sql",
+      "type": "blob",
+      "path": "sql/basisdaten.sql"
+    },
+    {
+      "id": "814cfd5d2f94a75e32e69e68bdf0cb767a78d00c",
+      "name": "2026_07_27_folge10_agenten_clients.sql",
+      "type": "blob",
+      "path": "sql/migrations/2026_07_27_folge10_agenten_clients.sql"
+    },
+    {
+      "id": "afdd22cf0e8a499e27b4024ad1c335f9e6fe3d25",
+      "name": "2026_07_29_folge11_agenten_chat.sql",
+      "type": "blob",
+      "path": "sql/migrations/2026_07_29_folge11_agenten_chat.sql"
+    },
+    {
+      "id": "dfde1691e198e432c4a24c2cb48b1eee86d6f951",
+      "name": "2026_07_31_folge12_wiki.sql",
+      "type": "blob",
+      "path": "sql/migrations/2026_07_31_folge12_wiki.sql"
+    },
+    {
+      "id": "e34421ec44bc682db6c1ad9bbc095070114eac7e",
+      "name": "2026_08_01_2fa_totp.sql",
+      "type": "blob",
+      "path": "sql/migrations/2026_08_01_2fa_totp.sql"
+    },
+    {
+      "id": "7b53c01dcd1875ce78f5fb4a9384d6c6fca64753",
+      "name": "2026_08_01_2fa_trusted_devices.sql",
+      "type": "blob",
+      "path": "sql/migrations/2026_08_01_2fa_trusted_devices.sql"
+    },
+    {
+      "id": "8b6b486502f4db1cd377d99bab772cbe7caef016",
+      "name": "2026_08_01_agent_user_acl.sql",
+      "type": "blob",
+      "path": "sql/migrations/2026_08_01_agent_user_acl.sql"
+    },
+    {
+      "id": "bc305889e7343adc30eeb69e60c45655695a8ccf",
+      "name": "2026_08_12_folge13_mcp_wiki.sql",
+      "type": "blob",
+      "path": "sql/migrations/2026_08_12_folge13_mcp_wiki.sql"
+    },
+    {
+      "id": "3b9c5f4dd95718934c4941af0860dac3ee7a5bdf",
+      "name": "2026_08_15_etsy_worker.sql",
+      "type": "blob",
+      "path": "sql/migrations/2026_08_15_etsy_worker.sql"
+    },
+    {
+      "id": "84c8c11ee25732fe068b364d651568f55c93b57d",
+      "name": "2026_09_12_folge14_integrationen.sql",
+      "type": "blob",
+      "path": "sql/migrations/2026_09_12_folge14_integrationen.sql"
+    },
+    {
+      "id": "130396ee0e4bbd8f6dbc6d9c356cc5d90bd1fd9a",
+      "name": "2026_09_18_quen_video_agent.sql",
+      "type": "blob",
+      "path": "sql/migrations/2026_09_18_quen_video_agent.sql"
+    },
+    {
+      "id": "e483c0a6df24ad49deb48ff3941a84e78f71140a",
+      "name": "2026_09_18_video_analyse.sql",
+      "type": "blob",
+      "path": "sql/migrations/2026_09_18_video_analyse.sql"
+    },
+    {
+      "id": "1952580ef53e62401c874ac01e364b94b26ef0a7",
+      "name": "2026_09_23_multiagent_phase1.sql",
+      "type": "blob",
+      "path": "sql/migrations/2026_09_23_multiagent_phase1.sql"
+    },
+    {
+      "id": "853f5e2719d705de0c284527d604154dd5496a2a",
+      "name": "2026_09_23_multiagent_phase3_gateway.sql",
+      "type": "blob",
+      "path": "sql/migrations/2026_09_23_multiagent_phase3_gateway.sql"
+    },
+    {
+      "id": "e1603b0395023f08309c4ce60ebd70dfe1175ccb",
+      "name": "2026_09_24_multiagent_artefakte.sql",
+      "type": "blob",
+      "path": "sql/migrations/2026_09_24_multiagent_artefakte.sql"
+    },
+    {
+      "id": "bb7ec389775d8d5d3f1e22fcafdfc531fe92958f",
+      "name": "2026_09_24_multiagent_chat_wiki_prompt.sql",
+      "type": "blob",
+      "path": "sql/migrations/2026_09_24_multiagent_chat_wiki_prompt.sql"
+    },
+    {
+      "id": "ab2172555a0c24ba65ef0cfdbd4df9867b435484",
+      "name": "2026_09_24_multiagent_orchestrator_local.sql",
+      "type": "blob",
+      "path": "sql/migrations/2026_09_24_multiagent_orchestrator_local.sql"
+    },
+    {
+      "id": "de125eacbaf44b14600a4e564e50a717e0118555",
+      "name": "2026_09_24_multiagent_phase31_model_assignments.sql",
+      "type": "blob",
+      "path": "sql/migrations/2026_09_24_multiagent_phase31_model_assignments.sql"
+    },
+    {
+      "id": "dd3484edae4d1f0e90b3dbc7527e0d399063edcc",
+      "name": "2026_09_24_multiagent_ssh_access_prompt.sql",
+      "type": "blob",
+      "path": "sql/migrations/2026_09_24_multiagent_ssh_access_prompt.sql"
+    },
+    {
+      "id": "c8ce7367cb1d2216e2db07fb74653e6b909f3372",
+      "name": "2026_09_24_multiagent_worker_distribution.sql",
+      "type": "blob",
+      "path": "sql/migrations/2026_09_24_multiagent_worker_distribution.sql"
+    },
+    {
+      "id": "09d13b2d4733ef34625ca6424350fd778c67030d",
+      "name": "2026_09_24_phase4_bild_agent.sql",
+      "type": "blob",
+      "path": "sql/migrations/2026_09_24_phase4_bild_agent.sql"
+    },
+    {
+      "id": "9bfec85796a9b058b417f526cf59db62d164a2dd",
+      "name": "2026_09_24_phase5_qualitaet.sql",
+      "type": "blob",
+      "path": "sql/migrations/2026_09_24_phase5_qualitaet.sql"
+    },
+    {
+      "id": "79c63db54394597dc4fd2ddca615e3da0eec3fee",
+      "name": "2026_09_24_phase6_qualitaetsautomation.sql",
+      "type": "blob",
+      "path": "sql/migrations/2026_09_24_phase6_qualitaetsautomation.sql"
+    },
+    {
+      "id": "279731107b9a079aa84aac65d09a9a567e3f1967",
+      "name": "2026_09_24_zz_multiagent_restore_local_models.sql",
+      "type": "blob",
+      "path": "sql/migrations/2026_09_24_zz_multiagent_restore_local_models.sql"
+    },
+    {
+      "id": "5656949e96db84fb973c0dd405f74db5e0171d0e",
+      "name": "2026_09_24_zzz_multiagent_target_models.sql",
+      "type": "blob",
+      "path": "sql/migrations/2026_09_24_zzz_multiagent_target_models.sql"
+    },
+    {
+      "id": "eec01de34bc66697f494194b35bf06d59cee994c",
+      "name": "2026_09_25_multiagent_cpu_ollama_stability.sql",
+      "type": "blob",
+      "path": "sql/migrations/2026_09_25_multiagent_cpu_ollama_stability.sql"
+    },
+    {
+      "id": "ec7b5fee6f46afb9403b3bc39c7a101ba5cfac96",
+      "name": "2026_09_25_multiworker_v7_runtime.sql",
+      "type": "blob",
+      "path": "sql/migrations/2026_09_25_multiworker_v7_runtime.sql"
+    },
+    {
+      "id": "59fd5697d94babd1ec2eefca9ff966fa561b4ea3",
+      "name": "2026_09_26_multiworker_master_control.sql",
+      "type": "blob",
+      "path": "sql/migrations/2026_09_26_multiworker_master_control.sql"
+    },
+    {
+      "id": "72e23e4625f56a928e915ec739bc1f481e8c8e40",
+      "name": "2026_09_26_multiworker_v10_control.sql",
+      "type": "blob",
+      "path": "sql/migrations/2026_09_26_multiworker_v10_control.sql"
+    },
+    {
+      "id": "b1d298d6d5319a56170e26ae10b0d41dc1f317c5",
+      "name": "2026_09_26_multiworker_v10_worker_api.sql",
+      "type": "blob",
+      "path": "sql/migrations/2026_09_26_multiworker_v10_worker_api.sql"
+    },
+    {
+      "id": "3160ead8997347fc4f5bfeff27b605f3b5343391",
+      "name": "2026_09_28_agenten_chat_memory.sql",
+      "type": "blob",
+      "path": "sql/migrations/2026_09_28_agenten_chat_memory.sql"
+    },
+    {
+      "id": "ccfae376a93385aba2b3b7cac9a38380c122c1d6",
+      "name": "README.md",
+      "type": "blob",
+      "path": "sql/migrations/README.md"
+    },
+    {
+      "id": "182e7c713e584f1e779787ee8a716cb0fe6f32cc",
+      "name": "schema.sql",
+      "type": "blob",
+      "path": "sql/schema.sql"
+    },
+    {
+      "id": "1c5097820ab5ef828b5b9748c34019095094c6b3",
+      "name": "testdaten.sql",
+      "type": "blob",
+      "path": "sql/testdaten.sql"
+    },
+    {
+      "id": "3088718622342a297b043c98cc9ed3ad3f1939d3",
+      "name": "noob2claw-heavy-unload.service",
+      "type": "blob",
+      "path": "systemd/noob2claw-heavy-unload.service"
+    },
+    {
+      "id": "6375574393a6f34cb3b2d82c20d3ca8ede91c781",
+      "name": "test_calculator.py",
+      "type": "blob",
+      "path": "test_calculator.py"
+    },
+    {
+      "id": "0a86bf3d3e565ecc9ce1218ca08d0f6285c239dd",
+      "name": "tools_download.php",
+      "type": "blob",
+      "path": "tools_download.php"
+    },
+    {
+      "id": "23841424dc1ec815a0afcdf1cb810f694419db64",
+      "name": "video_upload.php",
+      "type": "blob",
+      "path": "video_upload.php"
+    },
+    {
+      "id": "fbe358fdd8da89fc1a8b72b6baf4bc1ebaf3f772",
+      "name": "README.md",
+      "type": "blob",
+      "path": "video_worker/README.md"
+    },
+    {
+      "id": "d0efaf4dce70865692c428a67efb2bfae82a001c",
+      "name": "config.example.php",
+      "type": "blob",
+      "path": "video_worker/config.example.php"
+    },
+    {
+      "id": "bcce647c9a657b65011ee1160a09ccbc9a707368",
+      "name": "worker.php",
+      "type": "blob",
+      "path": "video_worker/worker.php"
+    },
+    {
+      "id": "da9ce57fe4c02ff0567dcf5454f8fb0787040e28",
+      "name": "wiki.php",
+      "type": "blob",
+      "path": "wiki.php"
+    },
+    {
+      "id": "84c582b8d5e8e3206e01b8b8c7c59ecfb35393ae",
+      "name": "wiki_download.php",
+      "type": "blob",
+      "path": "wiki_download.php"
+    },
+    {
+      "id": "b66e80882967080d48181b5b53a8be18cc94d610",
+      "name": ".htaccess",
+      "type": "blob",
+      "path": "windows_client/.htaccess"
+    },
+    {
+      "id": "3c1fe401178df6928bdd43e3b614a22527e2e149",
+      "name": "Noob2ClawWindowsClient.ps1",
+      "type": "blob",
+      "path": "windows_client/Noob2ClawWindowsClient.ps1"
+    },
+    {
+      "id": "b06749e3afb682581940a2c94e2268081b693ab2",
+      "name": "README.md",
+      "type": "blob",
+      "path": "windows_client/README.md"
+    },
+    {
+      "id": "a1201ea5b2b50536eef5f940dded7160087d42c7",
+      "name": "config.example.ps1",
+      "type": "blob",
+      "path": "windows_client/config.example.ps1"
+    },
+    {
+      "id": "765b0cfa37543fffcacecdacb4ee87a52765d980",
+      "name": "install-scheduled-task.ps1",
+      "type": "blob",
+      "path": "windows_client/install-scheduled-task.ps1"
+    },
+    {
+      "id": "49ca282f0bdd72826c77334bd4179ea003616ff1",
+      "name": "Noob2ClawWindowsClient.c",
+      "type": "blob",
+      "path": "windows_client/src/Noob2ClawWindowsClient.c"
+    }
+  ]
+}
