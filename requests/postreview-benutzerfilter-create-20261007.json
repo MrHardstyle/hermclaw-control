@@ -1,0 +1,7 @@
+{
+  "request_id": "postreview-benutzerfilter-create-20261007",
+  "action": "create_branch",
+  "project": "local-ai/hermclaw",
+  "branch": "chatgpt/postreview-benutzerfilter-fix",
+  "ref": "80c138b9427abb6cb55f9ab318e639166f51982b"
+}
