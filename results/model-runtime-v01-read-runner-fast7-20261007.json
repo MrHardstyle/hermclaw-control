@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v01-read-runner-fast7-20261007",
+  "action": "read_file",
+  "request_sha": "25dc0fbe3c9e5ecd19cdc0a6deea543b98888550",
+  "result": {
+    "file_path": "model_runtime/run_fast_discovery.sh",
+    "ref": "chatgpt/model-runtime-v01",
+    "blob_id": "e00fb0cfab0d3a1fb6749ec951771e7e06ec6447",
+    "last_commit_id": "a45d05a70dba190fbcb1a20361565c8028cb952f",
+    "encoding": "utf-8",
+    "content": "#!/usr/bin/env bash\nset -euo pipefail\n\nROOT=\"$(cd \"$(dirname \"${BASH_SOURCE[0]}\")/..\" && pwd)\"\nTASK_FILE=\"$ROOT/.hermclaw/tasks/routing-v01-fast-benutzerfilter-discovery.txt\"\nMODEL_ALIAS=\"${HERMCLAW_FAST_ALIAS:-local-coder-fast-16k}\"\nLITELLM_URL=\"${HERMCLAW_LITELLM_URL:-http://127.0.0.1:4000/v1/chat/completions}\"\nAGENT_BIN=\"${HERMCLAW_AGENT_BIN:-/home/kiworker/noob2claw_runtime/bin/hermclaw-agent}\"\n\ncd \"$ROOT\"\n\necho \"===== FAST MODELL VORBEREITEN =====\"\npython3 -m model_runtime.model_manager prepare fast\n\necho\necho \"===== GELADENE MODELLE =====\"\npython3 -m model_runtime.model_manager status\n\necho\necho \"===== LITELLM ALIAS SMOKE TEST =====\"\nTMP_BODY=\"$(mktemp)\"\ntrap 'rm -f \"$TMP_BODY\"' EXIT\n\nHTTP_CODE=\"$(\n  curl -sS -o \"$TMP_BODY\" -w '%{http_code}' \"$LITELLM_URL\"     -H 'Content-Type: application/json'     -d \"{\n      \\\"model\\\": \\\"$MODEL_ALIAS\\\",\n      \\\"messages\\\": [{\\\"role\\\": \\\"user\\\", \\\"content\\\": \\\"Antworte exakt mit FAST_OK\\\"}],\n      \\\"temperature\\\": 0,\n      \\\"max_tokens\\\": 32\n    }\"\n)\"\n\ncat \"$TMP_BODY\"\necho\n\nif [[ \"$HTTP_CODE\" != \"200\" ]]; then\n  echo\n  echo \"FEHLER: LiteLLM antwortet mit HTTP $HTTP_CODE für Alias '$MODEL_ALIAS'.\"\n  echo \"Der FastCoder ist in Ollama geladen, aber der LiteLLM-Alias/Gateway ist noch nicht korrekt erreichbar.\"\n  echo \"Hermclaw wird noch nicht gestartet.\"\n  exit 20\nfi\n\necho\necho \"===== AGENT CORE =====\"\n\"$AGENT_BIN\" --version\n\necho\necho \"===== START ROUTING TEST / PHASE 1 / FASTCODER =====\"\n\"$AGENT_BIN\" run   --repo git@hermclaw-gitlab:local-ai/hermclaw.git   --base redesign/autonomous-agent   --job-id routing-v01-fast-benutzerfilter-discovery   --model \"$MODEL_ALIAS\"   --context-tokens 16384   --max-output-tokens 4096   --task \"$(cat \"$TASK_FILE\")\"   --push\n"
+  }
+}
