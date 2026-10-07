@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "request_id": "detdisc-fix-head-20261007",
+  "action": "get_branch_head",
+  "request_sha": "aa75ad7e575f6180be3b462488a87087b2c2f589",
+  "result": {
+    "branch": "chatgpt/model-runtime-v01",
+    "commit": "05075aa461f65e19341fc16777ab040b291feffa",
+    "short_id": "05075aa4",
+    "title": "Model runtime: add Main Coder runner from validated handoff",
+    "committed_date": "2026-10-07T17:24:43.000+00:00"
+  }
+}
