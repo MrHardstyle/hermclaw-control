@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "request_id": "pipeline-read-profiles-20261007",
+  "action": "read_file",
+  "request_sha": "68ecfcfb7e6582bbfbe887db5a48caaa7663eb82",
+  "result": {
+    "file_path": "model_runtime/profiles.json",
+    "ref": "chatgpt/model-runtime-v01",
+    "blob_id": "d5e34ff4e8461cb5c936e62205def8201011321d",
+    "last_commit_id": "95bafa0db162a10ea8c4177a7525fbacc0f29b6a",
+    "encoding": "utf-8",
+    "content": "{\n  \"schema\": 1,\n  \"roles\": {\n    \"fast\": {\n      \"model\": \"qwen3:8b\",\n      \"ollama_url\": \"http://192.168.178.224:11434\",\n      \"litellm_alias\": \"local-coder-qwen3-fast-12k\",\n      \"context_tokens\": 12288,\n      \"keep_alive\": \"3m\",\n      \"exclusive_group\": \"large-224\",\n      \"purpose\": \"Repository-Suche, Bestandserfassung, kleine Änderungen, Tests und Übergabepakete\",\n      \"requires_target_paths\": false\n    },\n    \"main\": {\n      \"model\": \"qwen3-coder:30b\",\n      \"ollama_url\": \"http://192.168.178.224:11434\",\n      \"litellm_alias\": \"local-coder-qwen3coder30-24k\",\n      \"context_tokens\": 24576,\n      \"keep_alive\": \"5m\",\n      \"exclusive_group\": \"large-224\",\n      \"purpose\": \"Gezielte Implementierung auf bereits eingegrenzten Dateien und Symbolen\",\n      \"requires_target_paths\": true\n    },\n    \"heavy\": {\n      \"model\": \"qwen3.8:27b\",\n      \"ollama_url\": \"http://192.168.178.224:11434\",\n      \"litellm_alias\": \"local-coder-qwen38-24k\",\n      \"context_tokens\": 24576,\n      \"keep_alive\": \"5m\",\n      \"exclusive_group\": \"large-224\",\n      \"purpose\": \"Architektur, schwierige Fehlersuche, Planung, Review und Eskalation\",\n      \"requires_target_paths\": false\n    }\n  }\n}\n"
+  }
+}
