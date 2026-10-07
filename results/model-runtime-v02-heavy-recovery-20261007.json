@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v02-heavy-recovery-20261007",
+  "action": "commit_files",
+  "request_sha": "f22d6f6684d3b1871bfc9eefa8ab6b25ef41ea1b",
+  "result": {
+    "id": "7dd7470e77552abdfa18aedb351eca38b1dc7667",
+    "short_id": "7dd7470e",
+    "title": "Model runtime: recover Heavy review from reasoning-only output",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/7dd7470e77552abdfa18aedb351eca38b1dc7667"
+  }
+}
