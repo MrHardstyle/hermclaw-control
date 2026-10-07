@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "request_id": "read-correction-task-20261007",
+  "action": "read_file",
+  "request_sha": "8e33ebbd331235743dd0587ee09408333349029a",
+  "result": {
+    "file_path": "model_runtime/review_correction_task.py",
+    "ref": "chatgpt/model-runtime-v01",
+    "blob_id": "3faabe14c490969dd9349c6138e7a73afc47fed7",
+    "last_commit_id": "66c0d93b408ddefd7853df05a9a660d64649c32d",
+    "encoding": "utf-8",
+    "content": "from __future__ import annotations\n\nimport argparse\nimport json\nfrom pathlib import Path\n\n\ndef render(handoff: dict, verifier: dict, heavy: dict) -> str:\n    issues = heavy.get(\"issues\", [])\n    blockers = verifier.get(\"blockers\", [])\n    warnings = verifier.get(\"warnings\", [])\n    target_paths = handoff.get(\"target_paths\", [])\n\n    return f\"\"\"MAIN-CODER-KORREKTUR – aus Verifier + Heavy Review\n\nORIGINALZIEL:\n{handoff.get('task', '')}\n\nVERBINDLICHE ZIELDATEIEN:\n{chr(10).join(f'- {p}' for p in target_paths)}\n\nDETERMINISTISCHE BLOCKER:\n{json.dumps(blockers, ensure_ascii=False, indent=2)}\n\nDETERMINISTISCHE WARNUNGEN:\n{json.dumps(warnings, ensure_ascii=False, indent=2)}\n\nHEAVY-REVIEW-ISSUES:\n{json.dumps(issues, ensure_ascii=False, indent=2)}\n\nHEAVY-VERLANGTE TESTS:\n{json.dumps(heavy.get('tests_to_run', []), ensure_ascii=False, indent=2)}\n\nREGELN:\n- Arbeite auf dem bereits implementierten Ergebnisbranch; bestehende korrekte Änderungen erhalten.\n- Behebe jeden blocker/major Issue konkret und nachweisbar.\n- Beginne mit den verbindlichen Zieldateien; keine breite Repository-Suche.\n- Fachfremde Refactorings sind verboten.\n- Explizit verbotene Pfade nicht ändern: {', '.join(handoff.get('forbidden_paths', [])) or '(keine)'}.\n- Führe Syntax-/Lint-Prüfungen und die vom Heavy Review geforderten Tests aus.\n- Prüfe den finalen Diff vor dem Abschluss.\n- Wenn ein Issue ohne zusätzliche Datei nicht lösbar ist, begründe die notwendige Abhängigkeit präzise; nicht raten.\n\nABSCHLUSS:\n- Erst finish, wenn alle Blocker/Major-Issues behoben und relevante Tests gelaufen sind.\n\"\"\"\n\n\ndef main() -> int:\n    parser = argparse.ArgumentParser()\n    parser.add_argument(\"--handoff\", required=True)\n    parser.add_argument(\"--verifier\", required=True)\n    parser.add_argument(\"--heavy\", required=True)\n    args = parser.parse_args()\n\n    handoff = json.loads(Path(args.handoff).read_text(encoding=\"utf-8\"))\n    verifier = json.loads(Path(args.verifier).read_text(encoding=\"utf-8\"))\n    heavy = json.loads(Path(args.heavy).read_text(encoding=\"utf-8\"))\n    print(render(handoff, verifier, heavy))\n    return 0\n\n\nif __name__ == \"__main__\":\n    raise SystemExit(main())\n"
+  }
+}
