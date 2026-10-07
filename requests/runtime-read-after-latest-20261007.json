@@ -1,0 +1,7 @@
+{
+  "request_id": "runtime-read-after-latest-20261007",
+  "action": "read_file",
+  "project": "local-ai/hermclaw",
+  "ref": "chatgpt/model-runtime-v01",
+  "path": "model_runtime/run_after_handoff.sh"
+}
