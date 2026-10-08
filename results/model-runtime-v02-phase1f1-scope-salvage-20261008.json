@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "request_id": "model-runtime-v02-phase1f1-scope-salvage-20261008",
+  "action": "commit_files",
+  "request_sha": "f381c9b4d93fb7506d34d312dd2d48db2c2be25c",
+  "result": {
+    "id": "3f0c5c7c28f6d5bc752fef5e080ff5ab9b7b81bc",
+    "short_id": "3f0c5c7c",
+    "title": "Add Phase 1F.1 scope-safe salvage task",
+    "web_url": "http://192.168.178.226/local-ai/hermclaw/-/commit/3f0c5c7c28f6d5bc752fef5e080ff5ab9b7b81bc"
+  }
+}
